@@ -1,0 +1,69 @@
+{
+    "products": [
+       { 
+        "id" : 1,
+        "title": "Surat Keputusan",
+        "subtitle": "Mekanisme Penjualan Air Melalui Truk Tangki",
+        "created_at": "12-12-2023",
+        "type": "Peraturan Perundang-undangan",
+        "author": "Tangerang ( Kota )",
+        "rules": "Peraturan Walikota",
+        "status": 3,
+        "number":"2.1",
+        "year":"2022",
+        "attachment": "SK No. 2.1 - 2022 Mekanisme Penjualan Air Melalui Truk Tangki.pdf"
+        },
+       { 
+        "id" : 2,
+        "title": "Surat Keputusan No. 3.3",
+        "subtitle": "Prosedur Pengembalian Biaya Pemasangan SL",
+        "created_at": "12-12-2023",
+        "type": "Peraturan Perundang-undangan",
+        "author": "Tangerang ( Kota )",
+        "rules": "Peraturan Walikota",
+        "status": 2,
+        "number":"3.3",
+        "year":"2022",
+        "attachment": "SK No. 3.3 - 2022 Prosedur Pengembalian Biaya Pemasangan SL.pdf"
+        },
+       { 
+        "id" : 3,
+        "title": "Surat Keputusan No. 3.4",
+        "subtitle": "Penetapan Batas Maksimal Pembaca Meter Kepada Pelanggan Baru Hibah SL Dari PERUMDAM TKR kepada PERUMDA TB",
+        "created_at": "12-12-2023",
+        "type": "Peraturan Perundang-undangan",
+        "author": "Tangerang ( Kota )",
+        "rules": "Peraturan Walikota",
+        "status": 2,
+        "number":"3.4",
+        "year":"2022",
+        "attachment": "SK No. 3.4 - 2022 Penetapan Batas Maksimal Pembaca Meter Kepada Pelanggan Baru Hibah SL Dari PERUMDAM TKR kepada PERUMDA TB.pdf"
+        },
+       { 
+        "id" : 4,
+        "title": "Surat Keputusan No. 4",
+        "subtitle": "Besaran Biaya SL 0,5 inch",
+        "created_at": "12-12-2023",
+        "type": "Peraturan Perundang-undangan",
+        "author": "Tangerang ( Kota )",
+        "rules": "Peraturan Walikota",
+        "status": 2,
+        "number":"4",
+        "year":"2022",
+        "attachment": "SK No. 4 - 2022 Besaran Biaya SL 0,5 inch.pdf"
+        },
+       { 
+        "id" : 5,
+        "title": "Surat Keputusan No. 6",
+        "subtitle": "Perubahan Kedua Denda Keterlambatan Pembayaran Rek. Air",
+        "created_at": "12-12-2023",
+        "type": "Peraturan Perundang-undangan",
+        "author": "Tangerang ( Kota )",
+        "rules": "Peraturan Walikota",
+        "status": 2,
+        "number":"6",
+        "year":"2022",
+        "attachment": "SK No. 6 - 2022 Perubahan Kedua Denda Keterlambatan Pembayaran Rek. Air.pdf"
+        }
+    ]
+}
