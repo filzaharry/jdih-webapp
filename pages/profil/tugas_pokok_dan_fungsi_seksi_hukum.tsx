@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import SocialMediaRow from "@/components/SocialMediaRow";
 
-export default function Tupoksi()  {
+export default function Tupoksi() {
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
   return (
@@ -77,7 +77,7 @@ export default function Tupoksi()  {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="w-full grid grid-cols-1 sm:px-8 lg:px-20 lg:pt-20"
             >
-              <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.10.111/build/pdf.worker.js">
+              {/* <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.js">
                 <div
                   style={{
                     height: "750px",
@@ -91,10 +91,12 @@ export default function Tupoksi()  {
                     plugins={[defaultLayoutPluginInstance]}
                   />
                 </div>
-              </Worker>
+              </Worker> */}
+              <object data="http://localhost:3000/other/tupoksi.pdf" type="application/pdf" width="100%" height="900"></object>
+              {/* <object data="http://africau.edu/images/default/sample.pdf" type="application/pdf" width="100%" height="900"></object> */}
               <br /><br /><br />
-            <hr className="w-full h-0.5 mt-8 bg-[#D9D9D9]" />
-              <SocialMediaRow/>
+              <hr className="w-full h-0.5 mt-8 bg-[#D9D9D9]" />
+              <SocialMediaRow />
             </motion.div>
           </section>
           <div

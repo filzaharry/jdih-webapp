@@ -48,10 +48,11 @@ export default  function Home() {
           
           <Product />
 
-          <div className="h-screen bg-blueWaveBackground bg-no-repeat bg-cover bg-center">
-            <Information />
+          <div className="h-screen bg-no-repeat bg-cover bg-center">
+          {/* <div className="h-screen bg-blueWaveBackground bg-no-repeat bg-cover bg-center"> */}
+            {/* <Information /> */}
             {/* <VideoBanner /> */}
-            <Certificate />
+            {/* <Certificate /> */}
             <MediaPartner />
             <div
               className="

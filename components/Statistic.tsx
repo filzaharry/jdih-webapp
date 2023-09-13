@@ -6,15 +6,15 @@ import { profileImg } from "@/public";
 import Linechart from "./Linechart";
 
 const Statistic = () => {
-  const [perda, setPerda] = useState(true);
+  const [perdir, setperdir] = useState(true);
   const [perwal, setPerwal] = useState(false);
 
-  const handlePerda = () => {
-    setPerda(true);
+  const handleperdir = () => {
+    setperdir(true);
     setPerwal(false);
   };
   const handlePerwal = () => {
-    setPerda(false);
+    setperdir(false);
     setPerwal(true);
   };
   return (
@@ -34,21 +34,21 @@ const Statistic = () => {
 
         <div className="flex md:flex-row sm:flex-col my-4">
           <button
-            onClick={handlePerda}
+            onClick={handleperdir}
             className={`${
-              perda
+              perdir
                 ? "bg-btnPrimary px-10 py-3 my-2 text-white md:mr-2"
-                : "border border-gray-400 px-10 py-3 my-2 text-gray-400"
+                : "border border-gray-400 px-10 py-3 my-2 md:mr-2 text-gray-400"
             } rounded-xl`}
           >
-            Grafik Data Perda
+            Grafik Data Perdir
           </button>
           <button
             onClick={handlePerwal}
             className={`${
               perwal
                 ? "bg-btnPrimary px-10 py-3 my-2 text-white md:mr-2"
-                : "border border-gray-400 px-10 py-3 my-2 text-gray-400"
+                : "border border-gray-400 px-10 py-3 my-2 md:mr-2 text-gray-400"
             } rounded-xl`}
           >
             Grafik Data Perwal

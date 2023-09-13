@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SectionTitle from "./SectionTitle";
 import ProductCard from "./ProductCard";
-import useWindowDimensions from "./../components/hooks/dimensions";
+// import useWindowDimensions from "./../components/hooks/dimensions";
 import axios from "axios";
 import { useRouter } from "next/router";
 
