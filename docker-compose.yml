@@ -1,0 +1,25 @@
+version: '3.0'
+
+services:
+    app:
+        build: .
+        container_name: hdi-jdih-web-front-end-container
+        ports:
+            - 5004:5004
+        env_file: .env.production
+        environment:
+            TZ: Asia/Jakarta
+        restart: always
+        volumes:
+            - hdi-jdih-web-front-end-volume:/vol/app
+        networks:
+            - hdi-jdih
+
+volumes:
+    hdi-jdih-web-front-end-volume:
+        name: hdi-jdih-web-front-end-volume
+
+networks:
+    hdi-jdih:
+        driver: bridge
+        external: true
