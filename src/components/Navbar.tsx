@@ -90,7 +90,7 @@ const Navbar = () => {
             {DataNavbar.map((item, i) => {
               return (
                 <div
-                  
+                  key={i}
                   className="flex items-center gap-1 text-textDark
         hover:text-textGreen cursor-pointer duration-300 nav-link"
                 >
@@ -104,10 +104,10 @@ const Navbar = () => {
                       className="dropdown inline-block relative"
                     >
                       {item.submenu.length == 0 ? (
-                        <span key={i} onClick={() => router.push(item.route)}>{item.name}</span>
+                        <span  onClick={() => router.push(item.route)}>{item.name}</span>
                       ) : (
                         <>
-                          <button  key={i}className="flex flex-row items-center">
+                          <button  className="flex flex-row items-center">
                             <span>{item.name}</span>
                             <IoIosArrowDown className="ml-2 mt-1 w-4 text-bold" />
                           </button>

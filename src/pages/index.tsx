@@ -1,16 +1,16 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/src/components/Navbar";
 import Head from "next/head";
 
-import Banner from "@/components/Banner";
-import { Footer } from "@/components/Footer";
-import BannerForm from "@/components/BannerForm";
-import Statistic from "@/components/Statistic";
-import Product from "@/components/Product";
-import Information from "@/components/Information";
-import VideoBanner from "@/components/VideoBanner";
-import Certificate from "@/components/Certificate";
-import MediaPartner from "@/components/MediaPartner";
-import { Header } from "@/components/Header";
+import Banner from "@/src/components/Banner";
+import { Footer } from "@/src/components/Footer";
+import BannerForm from "@/src/components/BannerForm";
+import Statistic from "@/src/components/Statistic";
+import Product from "@/src/components/Product";
+import Information from "@/src/components/Information";
+import VideoBanner from "@/src/components/VideoBanner";
+import Certificate from "@/src/components/Certificate";
+import MediaPartner from "@/src/components/MediaPartner";
+import { Header } from "@/src/components/Header";
 
 
 export default  function Home() {

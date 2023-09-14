@@ -1,5 +1,5 @@
 import React from "react";
-import ArchiveCard from "./ArchiveCard";
+// import ArchiveCard from "./ArchiveCard";
 import SectionTitle from "./SectionTitle";
 import ProductCard from "./ProductCard";
 import InformationCard from "./InformationCard";

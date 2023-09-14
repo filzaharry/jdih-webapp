@@ -1,11 +1,11 @@
 import Head from "next/head";
 import React from "react";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/src/components/Footer";
 import { AiFillInfoCircle } from "react-icons/ai";
-import { Header } from "@/components/Header";
-import Navbar from "@/components/Navbar";
+import { Header } from "@/src/components/Header";
+import Navbar from "@/src/components/Navbar";
 import { motion } from "framer-motion";
-import SocialMediaRow from "@/components/SocialMediaRow";
+import SocialMediaRow from "@/src/components/SocialMediaRow";
 
 export default function Agenda() {
   return (

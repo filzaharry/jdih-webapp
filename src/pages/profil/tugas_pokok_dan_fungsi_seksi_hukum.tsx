@@ -2,10 +2,10 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Viewer, Worker } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
-import { Header } from "@/components/Header";
-import Navbar from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import SocialMediaRow from "@/components/SocialMediaRow";
+import { Header } from "@/src/components/Header";
+import Navbar from "@/src/components/Navbar";
+import { Footer } from "@/src/components/Footer";
+import SocialMediaRow from "@/src/components/SocialMediaRow";
 
 export default function Tupoksi() {
   const defaultLayoutPluginInstance = defaultLayoutPlugin();

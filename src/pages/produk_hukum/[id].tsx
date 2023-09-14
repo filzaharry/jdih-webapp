@@ -1,11 +1,11 @@
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/src/components/Footer";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Header } from "@/components/Header";
-import Navbar from "@/components/Navbar";
-import { DetailProductList } from "@/components/DetailProductList";
-import SocialMediaRow from "@/components/SocialMediaRow";
+import { Header } from "@/src/components/Header";
+import Navbar from "@/src/components/Navbar";
+import { DetailProductList } from "@/src/components/DetailProductList";
+import SocialMediaRow from "@/src/components/SocialMediaRow";
 import axios from "axios";
 
 interface ProductDetailInterface {
@@ -26,18 +26,20 @@ type Products = ProductDetailInterface;
 
 const ProdukHukumDetail = () => {
   const router = useRouter();
-  const { id } = router.query;
+  // const { id } = router.query;
   const [data, setData] = useState<Products | null>(null);
+  const [idDetail, setIdDetail] = useState(0);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    
+    const id:any = router.query
     if (!router.isReady) return;
     // codes using router.query
+    setIdDetail(id)
     
     const fetchData = async () => {
       try {
-        const url = "http://localhost:5001/api/jdih/product_of_law/detail?polId=" + id;
+        const url = "http://localhost:5001/api/jdih/product_of_law/detail?polId=" + idDetail;
         const { data: response } = await axios.get(url); 
         setData(response.data);
       } catch (error) {
@@ -48,7 +50,7 @@ const ProdukHukumDetail = () => {
     };
 
     fetchData();
-  }, [router.isReady]);
+  }, [router.isReady, idDetail, router.query]);
 
   if (isLoading) {
     return <p>Product Data Is Loading ...</p>;

@@ -1,18 +1,18 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/src/components/Footer";
 import { RiBox1Fill, RiFacebookCircleFill } from "react-icons/ri";
 import { AiFillInfoCircle } from "react-icons/ai";
-import { Header } from "@/components/Header";
-import Navbar from "@/components/Navbar";
-import { DetailProductList } from "@/components/DetailProductList";
-import Banner from "@/components/Banner";
+import { Header } from "@/src/components/Header";
+import Navbar from "@/src/components/Navbar";
+import { DetailProductList } from "@/src/components/DetailProductList";
+import Banner from "@/src/components/Banner";
 import { motion } from "framer-motion";
-import SocialMediaRow from "@/components/SocialMediaRow";
+import SocialMediaRow from "@/src/components/SocialMediaRow";
 import axios from "axios";
-import PeraturanPerundanganItem from "@/components/atom/PeraturanPerundanganItem";
-import ProductCard from "@/components/ProductCard";
-import Status from "@/components/atom/Status";
+import PeraturanPerundanganItem from "@/src/components/atom/PeraturanPerundanganItem";
+import ProductCard from "@/src/components/ProductCard";
+import Status from "@/src/components/atom/Status";
 import { BiSolidCheckCircle, BiSolidCity } from "react-icons/bi";
 import { useRouter } from "next/router";
 
@@ -228,7 +228,7 @@ export default function History() {
               <div className="grid grid-cols-1 gap-6">
                 {/* <p>{JSON.stringify(data?.data)}</p> */}
                 {data?.data?.map((val, i) => (
-                  <div  onClick={() => router.push("/produk_hukum/"+val.id)} className="mb-4 hover:bg-slate-100 px-8 py-4 rounded-xl">
+                  <div key={i}  onClick={() => router.push("/produk_hukum/"+val.id)} className="mb-4 hover:bg-slate-100 px-8 py-4 rounded-xl">
                     <div className="flex flex-row items-center justify-between">
                       <div className="flex flex-row items-center">
                         <p className="text-xl text-slate-400 ">

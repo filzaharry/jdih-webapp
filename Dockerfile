@@ -1,5 +1,5 @@
 # Use base image (LTS) for production as builder                                             
-FROM node:16.17.0 AS builder                                                                 
+FROM node:18.17.1 AS builder                                                                 
                                                                                              
 # Set the working directory for builder                                                      
 WORKDIR /vol/app                                                                             
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build                                                                            
                                                                                              
 # Use base image (bullseye-slim) for production                                              
-FROM node:16.17.0-bullseye-slim AS production                                                
+FROM node:18.17.1-bullseye-slim AS production                                                
                                                                                              
 # Set the working directory inside the container for production                              
 WORKDIR /vol/app                                                                             

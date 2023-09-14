@@ -1,12 +1,12 @@
 import Head from "next/head";
 import React from "react";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/src/components/Footer";
 import { RiBox1Fill } from "react-icons/ri";
 import { AiFillInfoCircle } from "react-icons/ai";
-import { Header } from "@/components/Header";
-import Navbar from "@/components/Navbar";
-import { DetailProductList } from "@/components/DetailProductList";
-import Banner from "@/components/Banner";
+import { Header } from "@/src/components/Header";
+import Navbar from "@/src/components/Navbar";
+import { DetailProductList } from "@/src/components/DetailProductList";
+import Banner from "@/src/components/Banner";
 import { motion } from "framer-motion";
 import Image from "next/image";
 

@@ -1,11 +1,11 @@
 import Head from "next/head";
 import React from "react";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/src/components/Footer";
 import { AiFillInfoCircle } from "react-icons/ai";
-import { Header } from "@/components/Header";
-import Navbar from "@/components/Navbar";
+import { Header } from "@/src/components/Header";
+import Navbar from "@/src/components/Navbar";
 import { motion } from "framer-motion";
-import SocialMediaRow from "@/components/SocialMediaRow";
+import SocialMediaRow from "@/src/components/SocialMediaRow";
 
 export default function SejarahPerumdaTb() {
   return (
@@ -89,7 +89,7 @@ export default function SejarahPerumdaTb() {
               </div>
               <div className="py-4 lg:mt-4">
                 <p className="sm:text-sm lg:text-lg text-justify">
-                  Pertengahan Abad XV: Tiga Aria Pada Masa Kolonialisme Belanda
+                  {`Pertengahan Abad XV: Tiga Aria Pada Masa Kolonialisme Belanda
                   (abad XV), Sultan Banten mengangkat Tiga Aria / Maulana yang
                   merupakan kerabat jauh Sultan dari Kerjaaan Sumedang Larang
                   bernama Yudhanegara, Wangsakara dan Santika. Kegiatannya
@@ -162,7 +162,7 @@ export default function SejarahPerumdaTb() {
                   MACHMUDTahun 1998-2003 : Bapak Drs. H. MOCH. THAMRINTahun
                   2003-2013 : Bapak Drs. H. WAHIDIN HALIM (2 Periode)Tahun
                   2013-2023 : Bapak H. ARIEF R. WISMANSYAH, B.Sc., M.Kes. (2
-                  Periode)Sumber : tangerangkota.go.id
+                  Periode)Sumber : tangerangkota.go.id`}
                 </p>
               </div>
               <hr className="w-full h-0.5 mt-8 bg-[#D9D9D9]" />
