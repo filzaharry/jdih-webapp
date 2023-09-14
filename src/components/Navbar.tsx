@@ -86,40 +86,91 @@ const Navbar = () => {
         </motion.div>
 
         <div className="hidden xl:inline-flex items-center gap-7 ">
-          <ul className="flex text-xl gap-7">
-            {DataNavbar.map((item, i) => {
-              return (
-                <div
-                  key={i}
-                  className="flex items-center gap-1 text-textDark
-        hover:text-textGreen cursor-pointer duration-300 nav-link"
-                >
+          {DataNavbar.map((item, i) => {
+            return (
+              <ul key={i} className="flex text-xl gap-7">
+                <div className="flex items-center gap-1 text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link">
                   <motion.li
                     initial={{ y: -10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.1 }}
                   >
-                    <div
-                      
-                      className="dropdown inline-block relative"
-                    >
+                    <div className="dropdown inline-block relative">
                       {item.submenu.length == 0 ? (
-                        <span  onClick={() => router.push(item.route)}>{item.name}</span>
+                        <span onClick={() => router.push(item.route)}>
+                          {item.name}
+                        </span>
                       ) : (
                         <>
-                          <button  className="flex flex-row items-center">
+                          <button className="flex flex-row items-center">
                             <span>{item.name}</span>
                             <IoIosArrowDown className="ml-2 mt-1 w-4 text-bold" />
                           </button>
                           <ul className="dropdown-content absolute hidden text-gray-600 lg:w-80 bg-white text-lg lg:rounded-lg space-y-2 p-2 shadow-bannerFormShadow ">
-                            {item.submenu.map((sub_item, x) => {
+                            {item.submenu.map((sub_item, x) => (
+                              <div key={x}>
+                                {sub_item.submenu.length == 0 ? (
+                                  <li
+                                    onClick={() =>
+                                      router.push(
+                                        item.route + "/" + sub_item.route
+                                      )
+                                    }
+                                  >
+                                    <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
+                                      {sub_item.name}
+                                    </p>
+                                  </li>
+                                ) : (
+                                  <li className="dropdown">
+                                    <p className=" hover:bg-gray-200 rounded-sm py-2 px-4 flex flex-row  justify-between ">
+                                      <span>{sub_item.name}</span>
+                                      <IoIosArrowDown className="ml-2 mt-1 w-4 text-bold" />
+                                    </p>
+                                    <ul className="dropdown-content ml-40 absolute hidden text-gray-600 lg:w-80 bg-white text-lg lg:rounded-lg space-y-2 p-2 shadow-bannerFormShadow ">
+                                      {sub_item.submenu.map(
+                                        (sub_sub_item, y) => {
+                                          return (
+                                            <li
+                                              key={y}
+                                              onClick={() =>
+                                                router.push(
+                                                  item.route +
+                                                    "/" +
+                                                    sub_item.route +
+                                                    "/" +
+                                                    sub_sub_item.route
+                                                )
+                                              }
+                                            >
+                                              <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
+                                                {sub_sub_item.name}
+                                              </p>
+                                            </li>
+                                          );
+                                        }
+                                      )}
+                                    </ul>
+                                  </li>
+                                )}
+                              </div>
+                            ))}
+                            {/* {item.submenu.map((sub_item, x) => {
                               return sub_item.submenu.length == 0 ? (
-                                <li key={x} onClick={() => router.push(item.route+'/'+sub_item.route)}>
+                                <li
+                                  key={x}
+                                  onClick={() =>
+                                    router.push(
+                                      item.route + "/" + sub_item.route
+                                    )
+                                  }
+                                >
                                   <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
                                     {sub_item.name}
                                   </p>
                                 </li>
-                              ) : (
+                              ) 
+                              : (
                                 <>
                                   <li key={x} className="dropdown">
                                     <p className=" hover:bg-gray-200 rounded-sm py-2 px-4 flex flex-row  justify-between ">
@@ -130,7 +181,18 @@ const Navbar = () => {
                                       {sub_item.submenu.map(
                                         (sub_sub_item, y) => {
                                           return (
-                                            <li key={y} onClick={() => router.push(item.route+'/'+sub_item.route+'/'+sub_sub_item.route)}>
+                                            <li
+                                              key={y}
+                                              onClick={() =>
+                                                router.push(
+                                                  item.route +
+                                                    "/" +
+                                                    sub_item.route +
+                                                    "/" +
+                                                    sub_sub_item.route
+                                                )
+                                              }
+                                            >
                                               <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
                                                 {sub_sub_item.name}
                                               </p>
@@ -142,16 +204,16 @@ const Navbar = () => {
                                   </li>
                                 </>
                               );
-                            })}
+                            })} */}
                           </ul>
                         </>
                       )}
                     </div>
                   </motion.li>
                 </div>
-              );
-            })}
-          </ul>
+              </ul>
+            );
+          })}
         </div>
 
         {/* hamburger */}
@@ -225,12 +287,15 @@ const Navbar = () => {
                                     return sub_item.submenu.length == 0 ? (
                                       <li key={x} className="text-md">
                                         <p className="hover:bg-white rounded-sm py-2 px-4 block text-white hover:text-[#7B83FF] cursor-pointer">
-                                          {sub_item.route}
+                                          {sub_item.name}
                                         </p>
                                       </li>
                                     ) : (
                                       <>
-                                        <li key={x} className="dropdown text-md">
+                                        <li
+                                          key={x}
+                                          className="dropdown text-md"
+                                        >
                                           <p className=" hover:bg-white rounded-sm py-2 px-4 text-white hover:text-[#7B83FF] cursor-pointer flex flex-row justify-between ">
                                             <span>{sub_item.name}</span>
                                             <IoIosArrowDown className="ml-2 mt-1 w-4 text-bold" />
