@@ -20,7 +20,8 @@ const Product = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const url = "http://localhost:5001/api/jdih/product_of_law"
+    const url = "https://beta-mobilepdam.bengkelkutakkatik.id/api/product_of_law/limit/4"
+    // const url = "http://localhost:5001/api/jdih/product_of_law"
     
     const fetchData = async () => {
       try {

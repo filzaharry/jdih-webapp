@@ -44,7 +44,8 @@ export default function History() {
     const fetchData = async () => {
       try {
         const { data: response } = await axios.get(
-          "http://localhost:5001/api/jdih/product_of_law"
+          "https://beta-mobilepdam.bengkelkutakkatik.id/api/product_of_law/limit/0"
+          // "http://localhost:5001/api/jdih/product_of_law"
         );
         setData(response);
       } catch (error) {
@@ -226,7 +227,6 @@ export default function History() {
     flex flex-col gap-8"
             >
               <div className="grid grid-cols-1 gap-6">
-                {/* <p>{JSON.stringify(data?.data)}</p> */}
                 {data?.data?.map((val, i) => (
                   <div key={i}  onClick={() => router.push("/produk_hukum/"+val.id)} className="mb-4 hover:bg-slate-100 px-8 py-4 rounded-xl">
                     <div className="flex flex-row items-center justify-between">
@@ -238,7 +238,8 @@ export default function History() {
                         <p className="text-lg text-slate-400 mr-10">
                           - {val.year}
                         </p>
-                        <Status desc={val.status.toString()} />
+                        <Status desc={'2'} />
+                        {/* <Status desc={val.status.toString()} /> */}
                       </div>
                       <div className="">
                         <p className="cursor-pointer text-colorSecondary inline-block align-bottom sm:text-sm lg:text-md">

@@ -1,4 +1,4 @@
-import { cardBoxes, infoPhoto } from "@/public";
+import { cardBoxes, infoPhoto, logoKotaTng } from "@/public";
 import Image from "next/image";
 import React from "react";
 import { TbFiles } from "react-icons/tb";
@@ -33,7 +33,8 @@ const MediaCard = ({ title, desc, listItem, link }: Props) => {
         <div className="">
           <Image
             className="object-cover w-14"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Lambang_Kota_Tangerang.png/542px-Lambang_Kota_Tangerang.png"
+            src={logoKotaTng}
+            // src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Lambang_Kota_Tangerang.png/542px-Lambang_Kota_Tangerang.png"
             alt="profileImg"
             width={2670}
             height={80}

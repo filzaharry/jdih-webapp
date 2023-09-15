@@ -23,23 +23,31 @@ interface ProductDetailInterface {
 }
 
 type Products = ProductDetailInterface;
+type IdProduct = number;
 
 const ProdukHukumDetail = () => {
   const router = useRouter();
   // const { id } = router.query;
   const [data, setData] = useState<Products | null>(null);
-  const [idDetail, setIdDetail] = useState(0);
+  const [idDetail, setIdDetail] = useState< IdProduct| null>(0);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     const id:any = router.query
     if (!router.isReady) return;
     // codes using router.query
-    setIdDetail(id)
+    setIdDetail(id.id)
+    
     
     const fetchData = async () => {
       try {
-        const url = "http://localhost:5001/api/jdih/product_of_law/detail?polId=" + idDetail;
+        // console.log("idDetail");
+        // console.log(idDetail.id.toString());
+        
+        // const url = "http://localhost:5001/api/jdih/product_of_law/detail?polId=" + idDetail;
+        const url = "https://beta-mobilepdam.bengkelkutakkatik.id/api/product_of_law/detail/" + idDetail;
+        console.log('url ---->', url);
+        
         const { data: response } = await axios.get(url); 
         setData(response.data);
       } catch (error) {
