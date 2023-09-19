@@ -29,41 +29,15 @@ type Product = {
   data:ProductDetailInterface
 };
 
-export const getServerSideProps = (async (context) => {
-  const id = context?.params?.id
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL  + "product_of_law/detail/" + id;
-  const res = await fetch(apiUrl!.toString());
-  const dataResult = await res.json();
-  
-  return { props: { dataResult } };
-}) satisfies GetServerSideProps<{
-  dataResult: Product;
-}>;
 
-const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const DetailArtikelHukum = () => {
   const router = useRouter();
   const { id } = router.query;
   const [data, setData] = useState<Product | null>(null);
   const [isLoading, setLoading] = useState(true);
   const apiPdfUrl = process.env.NEXT_PUBLIC_PDF
 
-  useEffect(() => {
-    console.log("dataResult");
-    console.log(dataResult);
-    
-    if (!router.isReady) return;
-    // codes using router.query
 
-    if (dataResult.statusCode == 200) {
-      setLoading(false);
-      setData(dataResult)
-    }
-
-  }, [router.isReady]);
-
-  if (isLoading) {
-    return <p>Product Data Is Loading ...</p>;
-  } else {
     return (
       <>
         <Header />
@@ -106,7 +80,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
                 transition={{ duration: 0.5, delay: 0.8 }}
                 className="text-lg md:max-w-[630px] font-medium text-white"
               >
-                {`${data?.data?.title}`}
+                {`123123`}
               </motion.p>
             </section>
             <section
@@ -130,47 +104,41 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
                 className="w-full grid grid-cols-1 sm:px-8 lg:px-20 lg:pt-20"
               >
                 <p className="sm:text-xl lg:text-4xl sm:pb-10 lg:pb-28">
-                  {data == null
-                    ? ""
-                    : data?.data?.title +
-                      " No. " +
-                      data?.data?.number +
-                      " " +
-                      data?.data?.subtitle}
+                  {'123123'}
                 </p>
                 <DetailProductList
                   title="Tipe Dokumen"
-                  desc={data == null ? "" : data?.data?.type}
+                  desc={'123123'}
                   status={1}
                 />
                 <DetailProductList
                   title="Judul"
-                  desc={data == null ? "" : data?.data?.subtitle}
+                  desc={'123123'}
                   status={1}
                 />
                 <DetailProductList
                   title="T.E.U Badang/Pengarang"
-                  desc={data == null ? "" : data?.data?.author}
+                  desc={'123123'}
                   status={1}
                 />
                 <DetailProductList
                   title="Nomor Peraturan"
-                  desc={data == null ? "" : data?.data?.number}
+                  desc={'123123'}
                   status={1}
                 />
                 <DetailProductList
                   title="Jenis / Bentuk Peraturan"
-                  desc={data == null ? "" : data?.data?.rules}
+                  desc={'123123'}
                   status={1}
                 />
                 <DetailProductList
                   title="Status Peraturan"
-                  desc={data == null ? "" : data?.data?.status?.toString()}
+                  desc={'123123'}
                   status={2}
                 />
                 <DetailProductList
                   title="Lampiran"
-                  desc={data == null ? "" : apiPdfUrl+'/'+data?.data?.attachment.replace('.pdf','')}
+                  desc={'123123'}
                   status={3}
                 />
 
@@ -193,7 +161,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
         </main>
       </>
     );
-  }
+  
 };
 
-export default ProdukHukumDetail;
+export default DetailArtikelHukum;

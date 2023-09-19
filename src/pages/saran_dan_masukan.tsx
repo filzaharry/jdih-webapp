@@ -1,11 +1,14 @@
 import Head from "next/head";
 import React from "react";
-import { Footer } from "@/src/components/Footer";
 import { AiFillInfoCircle } from "react-icons/ai";
-import { Header } from "@/src/components/Header";
-import Navbar from "@/src/components/Navbar";
+import { Header } from "../components/Header";
+import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
-import SocialMediaRow from "@/src/components/SocialMediaRow";
+import SocialMediaRow from "../components/SocialMediaRow";
+import { RiBox1Fill } from "react-icons/ri";
+import Image from "next/image";
+import { user } from "@/public";
+import { Footer } from "../components/Footer";
 
 export default function SaranDanMasukan() {
   return (
@@ -59,94 +62,138 @@ export default function SaranDanMasukan() {
             id="home"
             className="
             max-w-contentContainer
-            sml:pt-20
-            lg:py-10 
-            lg:mt-40
-            xl:mt-0 xl:pt-0
-            lgl:py-32 
+            bg-white shadow-bannerFormShadow 
             sm:w-[90%] 
             mdl:w-[90%]
-          bg-white shadow-bannerFormShadow 
-            rounded-3xl mt-10 mx-auto py-10 sm:mb-20"
+            rounded-3xl mt-10 mx-auto pt-10 sm:mb-20
+            "
           >
             <motion.div
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="w-full grid grid-cols-1 sm:px-8 lg:px-20 lg:pt-20"
+              className="w-full grid grid-cols-1 px-10 "
             >
-              <p className="sm:text-xl lg:text-4xl sm:pb-10 lg:pb-8">
-                Sambutan Manager Bagian Umum, Hukum, Dan Pengembangan SDM
-                Perumda Tirta Benteng Kota Tangerang
-              </p>
-
-              <div className="flex flex-row">
-                <div className="flex flex-row sm:mr-2 lg:mr-10">
-                  <AiFillInfoCircle className="sm:text-sm lg:text-xl sm:mr-1 lg:mr-2 mt-0.5 text-[#FF4E4E]" />
-                  <p className="text-colorPrimary sm:text-sm lg:text-lg">
-                    Selasa, 18 Juli 2023
-                  </p>
+              <div className="flex flex-row justify-between">
+                <p className="text-2xl pb-12">Masukkan Saran Anda Disini</p>
+                <p></p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="">
+                  <div className="flex">
+                    <RiBox1Fill className="text-xl mr-2 mb-2" />
+                    <p className="text-base">Nama</p>
+                  </div>
+                  <input
+                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                    type="text"
+                    placeholder="Masukkan Nama"
+                  ></input>
                 </div>
-                <div className="flex flex-row">
-                  <AiFillInfoCircle className="sm:text-sm lg:text-xl sm:mr-1 lg:mr-2 mt-0.5 text-[#FF4E4E]" />
-                  <p className="text-colorPrimary sm:text-sm lg:text-lg">
-                    Umum
-                  </p>
+                <div className="">
+                  <div className="flex">
+                    <RiBox1Fill className="text-xl mr-2 mb-2" />
+                    <p className="text-base">Email</p>
+                  </div>
+                  <input
+                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                    type="email"
+                    placeholder="Masukkan Email"
+                  ></input>
                 </div>
               </div>
-              <div className="py-4 lg:mt-4">
-                <p className="sm:text-sm lg:text-lg text-justify">
-                  Assalamualaikum Wr. Wb dan Salam Sejahtera Selalu{" "}
-                </p>
-                <br />
-                <p className="sm:text-sm lg:text-lg text-justify">
-                  Jaringan Dokumentasi Informasi Hukum (JDIH) Perumda Tirta
-                  Benteng Kota Tangerang Sebagaimana Yang Ada Saat Ini Merupakan
-                  Salah Satu Bukti Komitmen Pemerintah Kota Tangerang Untuk
-                  Melaksanakan Transparansi, Sekaligus Pemenuhan Kewajiban
-                  Pelayanan Publik dalam Penyediaan Informasi Publik Yang
-                  Dibutuhkan Oleh Masyarakat dan Pihak Yang Membutuhkan Lainnya.
-                </p>
-                <br />
-                <p className="sm:text-sm lg:text-lg text-justify">
-                  Kehadiran JDIH Perumda Tirta Benteng Merupakan Wadah untuk
-                  Penyebarluasan Produk Hukum dengan memanfaatkan sarana
-                  teknologi informasi yang terus berkembang. JDIH Perumda Tirta
-                  Benteng yang telah tampil di dunia maya pada tahun 2023 dapat
-                  diakses melalui alamat https://jdih@perumdatirtabenteng.co.id
-                  dimana isi dari website tersebut adalah produk Hukum yang
-                  telah dikeluarkan oleh Perumda Tirta Benteng Sejak tahun 2008
-                  sampai 2023 disertai dengan Link untuk mengunduh (Download)
-                  Produk Hukum yang di Butuhkan.
-                </p>
-                <br />
-                <p className="sm:text-sm lg:text-lg text-justify">
-                  Guna peningkatan kualitas penyajian dimasa yang akan datang,
-                  maka kami sangat terbuka untuk menerima saran-saran positif
-                  dari pengguna website/netter dan masyarakat umumnya. Untuk itu
-                  jika anda memiliki saran dan masukan Maka silahkan disampaikan
-                  melalui website ini (www.perumdatirtabenteng.co.id/webmail)
-                  atau secara tertulis ke Bagian Hukum Perumda Tirta Benteng
-                  Kota Tangerang.
-                </p>
-                <br />
-                <p className="sm:text-sm lg:text-lg text-justify">
-                  Demikian Yang bisa kami sampaikan Wassalamualaikum Wr.Wb, dan
-                  Salam Sejahtera selalu.
-                </p>
-                <br />
-                <p className="sm:text-sm lg:text-lg text-justify">
-                  Manager Bagian Umum, Hukum, Dan Pengembangan SDM Perumda Tirta
-                  Benteng Kota Tangerang.
-                </p>
-                <p className="font-bold sm:text-sm lg:text-lg text-justify">
-                  Hari Hartian, SH.
-                </p>
+              <div className="grid grid-cols-4 gap-4 mt-8">
+                <div className="">
+                  <div className="flex">
+                    <RiBox1Fill className="text-xl mr-2 mb-2" />
+                    <p className="text-base">Pendapat Anda</p>
+                  </div>
+                  <div className="dropdown relative inline-block text-left w-full">
+                    <p className=" px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none">
+                      Pilih Subjek
+                    </p>
+                    <div
+                      className="dropdown-content hidden absolute right-0 z-10 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="menu-button"
+                    >
+                      <div className="py-1" role="none">
+                        <p className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm">
+                          Sangat Puas
+                        </p>
+                        <p className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm">
+                          Puas
+                        </p>
+                        <p className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm">
+                          Tidak Puas
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-span-3">
+                  <div className="flex">
+                    <RiBox1Fill className="text-xl mr-2 mb-2" />
+                    <p className="text-base">Tentang</p>
+                  </div>
+                  <input
+                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                    type="text"
+                    placeholder="Tentang Produk Hukum"
+                  ></input>
+                </div>
               </div>
-              <hr className="w-full h-0.5 mt-8 bg-[#D9D9D9]" />
-              <SocialMediaRow />
+              <div className="flex flex-row justify-between my-10">
+                <div className=""></div>
+                <div className="flex flex-row items-center">
+                  <div className="flex flex-row items-center">
+                    <div className="bg-btnPrimary w-4 h-4 rounded-md mr-2"></div>
+                    <p>{`I'm not robot`}</p>
+                  </div>
+                  <button className="rounded-xl bg-btnPrimary text-white px-10 py-4 ml-8">
+                    Kirim
+                  </button>
+                </div>
+              </div>
             </motion.div>
-          </section>
+        </section>
+          <div
+            className="
+          max-w-contentContainer mx-auto 
+          sm:w-[90%] sm:mt-10
+          flex flex-col gap-8"
+          >
+            <div className="flex flex-row w-[80%]">
+              <Image
+                className="w-10 h-10 "
+                src={user}
+                alt="user"
+                width={100}
+                height={100}
+              />
+              <div className="mx-4">
+                <p className="text-xl text-colorPrimary">John Doe</p>
+                <p className="text-sm text-red-500">12-12-2023</p>
+                <p className="my-4">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                  distinctio dicta, cum, repudiandae ex culpa illum voluptas
+                  mollitia atque enim itaque et a dolorem vero nostrum. Dolorum
+                  totam deserunt repellendus assumenda magnam debitis aperiam
+                  vitae alias, nesciunt fuga facilis eius illo rerum quo
+                  inventore excepturi. Repudiandae perspiciatis excepturi aut.
+                  Iste dolorum excepturi possimus voluptatem illum nostrum
+                  eveniet, iusto beatae alias molestiae doloremque eos itaque
+                  consequatur? Rem sit debitis tempore non in libero quisquam,
+                  sapiente inventore atque ab ad molestiae? Laborum minima
+                  ducimus inventore veritatis repellat est enim aut earum
+                  deserunt necessitatibus voluptas vel eveniet consequatur,
+                  impedit ullam error exercitationem placeat!
+                </p>
+                
+              </div>
+            </div>
+          </div>
           <div
             className="
               bg-blackWaveBackground 

@@ -4,22 +4,27 @@ import { BiSolidCity } from "react-icons/bi";
 
 const PeraturanPerundanganItem = () => {
   return (
-    <div className="mb-4 hover:bg-slate-200 px-8 py-4 rounded-xl">
-      <div className="flex flex-row items-center">
-        <p className="text-xl text-slate-400 ">121 - </p>
-        <p className="text-xl text-black mx-2">Peraturan Walikota</p>
-        <p className="text-xl text-slate-400 mr-10">- 2022</p>
-        <Status desc={`Berlaku`} />
-        <Status desc={`Detail`} />
+    <div className="mb-4 px-8 pb-4 rounded-lg">
+      <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-row">
+          <p className="text-lg text-slate-400 ">121 - </p>
+          <p className="text-lg text-black mx-2">Peraturan Walikota</p>
+          <p className="text-lg text-slate-400 mr-10">- 2022</p>
+          <Status desc={`Berlaku`} />
+        </div>
+        <div className="">
+          <p className="text-red-400 border-b border-red-400">Lihat detail</p>
+        </div>
       </div>
-      <div className="flex flex-row mt-4">
-        <BiSolidCity className="text-2xl text-slate-400" />
-        <p className="text-md text-gray-700 ml-4">
-          Pemberian Remunerasi pada Badan Layanan Umum Daerah Unit Pelaksana
-          Teknis Pusat Kesehatan Masyarakat dan Laboratorium Kesehatan Daerah.
+      <div className="flex flex-row mt-4 items-center">
+        {/* <BiSolidCity className="text-2xl text-slate-400" /> */}
+        <p className="text-md text-gray-700">
+          Perubahan Atas Peraturan Wali Kota Nomor 121 Tahun 2022 Tentang
+          Pemberian Remunerasi Pada Badan Layanan Umum Daerah Unit Pelaksana
+          Teknis Pusat Kesehatan Masyarakat Dan Laboratorium Kesehatan Daerah
         </p>
       </div>
-      <hr className="w-full h-0.5 mt-10  border-0 rounded bg-slate-200" />
+      <hr className="w-full h-[1.4px] mt-8 border-0 rounded bg-slate-200" />
     </div>
   );
 };

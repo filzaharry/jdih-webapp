@@ -1,10 +1,11 @@
 import React from "react";
-// import ArchiveCard from "./ArchiveCard";
 import SectionTitle from "./SectionTitle";
 import ProductCard from "./ProductCard";
 import InformationCard from "./InformationCard";
+import { useRouter } from "next/router";
 
 const Information = () => {
+    const router = useRouter();
     return (
         <div
             id="info"
@@ -16,7 +17,7 @@ const Information = () => {
             ">
             <div className="flex justify-between items-end">
                 <SectionTitle title="Informasi" />
-                <p className='text-colorSecondary inline-block align-bottom lg:text-lg sm:text-sm'>Lihat Semua</p>
+                <p onClick={() => router.push("/informasi/berita_hukum")} className='text-colorSecondary inline-block align-bottom lg:text-lg sm:text-sm'>Lihat Semua</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 <InformationCard

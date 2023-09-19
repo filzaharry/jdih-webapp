@@ -31,9 +31,9 @@ interface ProductsInterface {
 }
 
 type Products = {
-  statusCode:number,
-  message:string,
-  data:ProductsInterface[]
+  statusCode: number;
+  message: string;
+  data: ProductsInterface[];
 };
 
 export default function History() {
@@ -44,8 +44,7 @@ export default function History() {
     const fetchData = async () => {
       try {
         const { data: response } = await axios.get(
-          "https://beta-mobilepdam.bengkelkutakkatik.id/api/product_of_law/limit/0"
-          // "http://localhost:5001/api/jdih/product_of_law"
+          "http://localhost:5001/api/jdih/product_of_law"
         );
         setData(response);
       } catch (error) {
@@ -92,7 +91,7 @@ export default function History() {
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="text-4xl lgl:text-5xl font-titleFont text-white"
+                className="text-4xl lgl:text-5xl font-titleFont font-semibold text-white"
               >
                 Produk Hukum
               </motion.h1>
@@ -105,18 +104,25 @@ export default function History() {
                 {`Beranda > Produk Hukum`}
               </motion.p>
             </section>
+
             <section
               id="home"
-              className="max-w-contentContainer sm:w-[90%] bg-white shadow-bannerFormShadow rounded-2xl xl:mt-32 mx-auto"
+              className="
+            max-w-contentContainer
+            bg-white shadow-bannerFormShadow 
+            sm:w-[90%] 
+            mdl:w-[90%]
+            rounded-3xl mt-10 mx-auto pt-10 sm:mb-20
+            "
             >
               <motion.div
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="w-full grid grid-cols-1 px-20 py-10"
+                className="w-full grid grid-cols-1 px-10 pb-10"
               >
                 <div className="flex flex-row justify-between">
-                  <p className="text-4xl pb-12">Cari Produk Hukum</p>
+                  <p className="text-2xl pb-12">Cari Produk Hukum</p>
                   <button className="rounded-xl bg-btnPrimary text-white px-10 h-[60%]">
                     Cari
                   </button>
@@ -221,14 +227,14 @@ export default function History() {
                 </div>
               </motion.div>
             </section>
-            <div
-              className="max-w-contentContainer mx-auto 
-    sm:w-[90%] sm:mt-10
-    flex flex-col gap-8"
-            >
+            <div className="max-w-contentContainer mx-auto sm:w-[90%] sm:mt-10 flex flex-col gap-8">
               <div className="grid grid-cols-1 gap-6">
+                {/* <p>{JSON.stringify(data?.data)}</p> */}
                 {data?.data?.map((val, i) => (
-                  <div key={i}  onClick={() => router.push("/produk_hukum/"+val.id)} className="mb-4 hover:bg-slate-100 px-8 py-4 rounded-xl">
+                  <div key={i}
+                    onClick={() => router.push("/produk_hukum/" + val.id)}
+                    className="mb-4 hover:bg-slate-100 px-8 py-4 rounded-xl"
+                  >
                     <div className="flex flex-row items-center justify-between">
                       <div className="flex flex-row items-center">
                         <p className="text-xl text-slate-400 ">
@@ -238,8 +244,7 @@ export default function History() {
                         <p className="text-lg text-slate-400 mr-10">
                           - {val.year}
                         </p>
-                        <Status desc={'2'} />
-                        {/* <Status desc={val.status.toString()} /> */}
+                        <Status desc={val.status.toString()} />
                       </div>
                       <div className="">
                         <p className="cursor-pointer text-colorSecondary inline-block align-bottom sm:text-sm lg:text-md">

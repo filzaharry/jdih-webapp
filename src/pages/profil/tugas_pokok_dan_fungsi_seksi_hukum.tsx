@@ -54,7 +54,7 @@ export default function Tupoksi() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-lg md:max-w-[630px] font-medium text-white"
             >
-              {`Beranda > Informasi > Tugas Pokok dan Fungsi Seksi Hukum`}
+              {`Beranda > Profil > Tugas Pokok dan Fungsi Seksi Hukum`}
             </motion.p>
           </section>
           <section

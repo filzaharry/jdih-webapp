@@ -77,6 +77,11 @@ const DataNavbar = [
         submenu: [],
       },
       {
+        name: "Agenda",
+        route: "/agenda",
+        submenu: [],
+      },
+      {
         name: "Informasi Lainnya",
         route: "/informasi_lainnya",
         submenu: [

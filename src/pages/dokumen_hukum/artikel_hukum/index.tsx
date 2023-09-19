@@ -11,8 +11,9 @@ import Status from "@/src/components/atom/Status";
 import { BiSolidCity } from "react-icons/bi";
 import PeraturanPerundanganItem from "@/src/components/atom/PeraturanPerundanganItem";
 import { Footer } from "@/src/components/Footer";
+import ArticleOfLaw from "@/src/components/ArticleOfLaw";
 
-export default function PeraturanPerundangan() {
+export default function ArtikelHukum() {
   return (
     <>
       <Header />
@@ -33,7 +34,7 @@ export default function PeraturanPerundangan() {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="text-4xl lgl:text-5xl font-titleFont text-white font-semibold"
             >
-              Peraturan Perundang - Undangan
+              Artikel Hukum
             </motion.h1>
             <motion.p
               initial={{ y: 10, opacity: 0 }}
@@ -41,7 +42,7 @@ export default function PeraturanPerundangan() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-lg md:max-w-[630px] font-medium text-white"
             >
-              {`Beranda > Peraturan Perundang - Undangan`}
+              {`Beranda > Dokumen Hukum > Artikel Hukum`}
             </motion.p>
           </section>
           <section
@@ -61,43 +62,32 @@ export default function PeraturanPerundangan() {
               className="w-full grid grid-cols-1 px-10 pb-10"
             >
               <div className="flex flex-row justify-between">
-                <p className="text-2xl pb-12">Cari Produk Hukum</p>
+                <p className="text-2xl pb-12">Cari Artikel Hukum</p>
                 <button className="rounded-xl bg-btnPrimary text-white px-10 h-[60%]">
                   Cari
                 </button>
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 <div className="">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Produk Hukum</p>
+                    <p className="text-base">Judul</p>
                   </div>
                   <input
                     className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
                     type="text"
-                    placeholder="Masukkan Tahun Produk"
+                    placeholder="Masukkan Judul Artikel"
                   ></input>
                 </div>
                 <div className="">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Produk Hukum</p>
+                    <p className="text-base">Sumber</p>
                   </div>
                   <input
                     className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
                     type="text"
-                    placeholder="Masukkan Tahun Produk"
-                  ></input>
-                </div>
-                <div className="">
-                  <div className="flex">
-                    <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Produk Hukum</p>
-                  </div>
-                  <input
-                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
-                    type="text"
-                    placeholder="Masukkan Tahun Produk"
+                    placeholder="Masukkan Sumber Artikel"
                   ></input>
                 </div>
               </div>
@@ -105,34 +95,33 @@ export default function PeraturanPerundangan() {
                 <div className="">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Status</p>
+                    <p className="text-base">Subjek</p>
                   </div>
                   <input
                     className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
                     type="text"
-                    placeholder="Pilih Status Produk"
+                    placeholder="Masukkan Subjek Artikel"
                   ></input>
                 </div>
                 <div className="">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Tentang</p>
+                    <p className="text-base">Tahun Terbit</p>
                   </div>
                   <input
                     className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
                     type="text"
-                    placeholder="Tentang Produk Hukum"
+                    placeholder="Masukkan Tahun Terbit"
                   ></input>
                 </div>
               </div>
             </motion.div>
           </section>
           <div className="max-w-contentContainer mx-auto mt-20">
-            <PeraturanPerundanganItem />
-            <PeraturanPerundanganItem />
-            <PeraturanPerundanganItem />
-            <PeraturanPerundanganItem />
-            <PeraturanPerundanganItem />
+            <ArticleOfLaw />
+            <ArticleOfLaw />
+            <ArticleOfLaw />
+            <ArticleOfLaw />
           </div>
           <div
             className="

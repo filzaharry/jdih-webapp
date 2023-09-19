@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 // import useWindowDimensions from "./../components/hooks/dimensions";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 
 interface ProductInterface {
   id: string;
@@ -18,10 +19,13 @@ const Product = () => {
   const router = useRouter();
   const [data, setData] = useState<Products | null>(null);
   const [isLoading, setLoading] = useState(true);
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL
+  const limit = process.env.NEXT_PUBLIC_LIMIT
 
   useEffect(() => {
-    const url = "https://beta-mobilepdam.bengkelkutakkatik.id/api/product_of_law/limit/4"
-    // const url = "http://localhost:5001/api/jdih/product_of_law"
+    console.log();
+    
+    const url = apiUrl + "product_of_law/limit/" +limit
     
     const fetchData = async () => {
       try {
