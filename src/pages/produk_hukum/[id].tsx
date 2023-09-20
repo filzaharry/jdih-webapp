@@ -59,6 +59,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
       setData(dataResult)
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
 
   if (isLoading) {

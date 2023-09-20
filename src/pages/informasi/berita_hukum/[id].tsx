@@ -57,6 +57,7 @@ const NewsDetail = ({
       setLoading(false);
       setData(dataResult);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
 
   if (isLoading) {
@@ -104,7 +105,7 @@ const NewsDetail = ({
             "
             >
               {data?.data?.map((val, i) => (
-                <motion.div
+                <motion.div key={i}
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.8 }}

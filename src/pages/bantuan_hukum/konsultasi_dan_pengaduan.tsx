@@ -9,8 +9,35 @@ import { RiBox1Fill } from "react-icons/ri";
 import Image from "next/image";
 import { user } from "@/public";
 import { Footer } from "@/src/components/Footer";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 
-export default function KonsultasiPengaduan() {
+interface NewsDetailInterface {
+  id: string;
+  title: string;
+  subtitle: string;
+  created_at: string;
+}
+
+type News = {
+  statusCode: number;
+  message: string;
+  data: NewsDetailInterface[];
+};
+
+export const getServerSideProps = (async (context) => {
+  const path = context?.params?.id;
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL + "news/" + path;
+  const res = await fetch(apiUrl!.toString());
+  const dataResult = await res.json();
+
+  return { props: { dataResult } };
+}) satisfies GetServerSideProps<{
+  dataResult: News;
+}>;
+
+const KonsultasiPengaduan = ({
+  dataResult,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <Header />
@@ -194,3 +221,4 @@ export default function KonsultasiPengaduan() {
     </>
   );
 }
+export default KonsultasiPengaduan;
