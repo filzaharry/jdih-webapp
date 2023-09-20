@@ -171,7 +171,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
                 />
                 <DetailProductList
                   title="Lampiran"
-                  desc={data == null ? "" : apiPdfUrl+'/'+data?.data?.attachment.replace('.pdf','')}
+                  desc={data == null ? "" : apiPdfUrl+'/product_of_law/'+data?.data?.attachment}
                   status={3}
                 />
 
