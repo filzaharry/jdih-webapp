@@ -3,6 +3,7 @@ import React from 'react'
 import { AiFillInfoCircle } from 'react-icons/ai'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
+import { infoImage } from '@/public'
 
 
 interface Props {
@@ -25,7 +26,7 @@ const NewsItem = ({id, title, subtitle, path}: Props) => {
   >
     <Image
       className="object-cover w-[300px] h-[200px] rounded-2xl sm:mb-4 lg:mb-10"
-      src="https://www.perumdatirtabenteng.co.id/assets/uploads/post_20221223_1671769686.jpg"
+      src={infoImage}
       alt="profileImg"
       width={2670}
       height={80}

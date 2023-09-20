@@ -1,4 +1,4 @@
-import { cardBoxes, infoPhoto } from '@/public'
+import { cardBoxes, infoImage, infoPhoto } from '@/public'
 import Image from 'next/image'
 import { useRouter } from 'next/router';
 import React from 'react'
@@ -19,7 +19,7 @@ const InformationCard = ({ id, title, subtitle, picture, created_at }: Props) =>
             <div className='items-center'>
             <Image
                 className="w-full rounded-xl"
-                src="https://www.perumdatirtabenteng.co.id/assets/uploads/post_20221223_1671769686.jpg"
+                src={infoImage}
                 alt="profileImg"
                 width={2670}
                 height={80}

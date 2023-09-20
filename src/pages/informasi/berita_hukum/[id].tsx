@@ -12,6 +12,7 @@ import Image from "next/image";
 import SocialMediaRow from "@/src/components/SocialMediaRow";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
+import { infoImage } from "@/public";
 
 interface NewsDetailInterface {
   id: string;
@@ -104,8 +105,7 @@ const NewsDetail = ({
             rounded-3xl mt-10 mx-auto pt-10 pb-20 sm:mb-20
             "
             >
-              {data?.data?.map((val, i) => (
-                <motion.div key={i}
+                <motion.div 
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.8 }}
@@ -113,13 +113,13 @@ const NewsDetail = ({
                 >
                   <Image
                     className="object-cover w-full h-[800px] rounded-2xl mb-10 shadow-bannerFormShadow "
-                    src="https://www.perumdatirtabenteng.co.id/assets/uploads/post_20221223_1671769686.jpg"
+                    src={infoImage}
                     alt="profileImg"
                     width={2670}
                     height={80}
                   />
                   <div className="mx-10 mt-10">
-                    <p className="text-4xl mb-10">{val.title}</p>
+                    <p className="text-4xl mb-10">Lorem Ipsum</p>
 
                     <div className="flex flex-row">
                       <div className="flex flex-row mr-10">
@@ -145,7 +145,7 @@ const NewsDetail = ({
                     <SocialMediaRow />
                   </div>
                 </motion.div>
-              ))}
+              {/* ))} */}
             </section>
 
             <div
