@@ -26,7 +26,7 @@ interface ProductDetailInterface {
 type Product = {
   statusCode: number;
   message: string;
-  data:ProductDetailInterface
+  data: ProductDetailInterface
 };
 
 export const getServerSideProps = (async (context) => {

@@ -76,9 +76,13 @@ const Navbar = () => {
           <div
             className="
           xs:h-12 xs:w-12 
-          sm:h-18 sm:w-18sm:mt-2 sm:ml-2 sm:mt-2 sm:bg-white sm:rounded-lg
-          mdl:h-20 mdl:w-24 mdl:bg-transparent
-          lg:h-28 lg:w-28
+          sm:h-18 sm:w-18 
+          sm:ml-2 sm:mt-2 
+          bg-white rounded-lg
+          mdl:h-20 mdl:w-24
+          lg:h-20 lg:w-20
+          lg:mt-4 lg:pr-1
+          lg:ml-4
           "
           >
             <Image className="w-full h-full" src={ayoTng} alt="ayoTng" />
@@ -155,56 +159,6 @@ const Navbar = () => {
                                 )}
                               </div>
                             ))}
-                            {/* {item.submenu.map((sub_item, x) => {
-                              return sub_item.submenu.length == 0 ? (
-                                <li
-                                  key={x}
-                                  onClick={() =>
-                                    router.push(
-                                      item.route + "/" + sub_item.route
-                                    )
-                                  }
-                                >
-                                  <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
-                                    {sub_item.name}
-                                  </p>
-                                </li>
-                              ) 
-                              : (
-                                <>
-                                  <li key={x} className="dropdown">
-                                    <p className=" hover:bg-gray-200 rounded-sm py-2 px-4 flex flex-row  justify-between ">
-                                      <span>{sub_item.name}</span>
-                                      <IoIosArrowDown className="ml-2 mt-1 w-4 text-bold" />
-                                    </p>
-                                    <ul className="dropdown-content ml-40 absolute hidden text-gray-600 lg:w-80 bg-white text-lg lg:rounded-lg space-y-2 p-2 shadow-bannerFormShadow ">
-                                      {sub_item.submenu.map(
-                                        (sub_sub_item, y) => {
-                                          return (
-                                            <li
-                                              key={y}
-                                              onClick={() =>
-                                                router.push(
-                                                  item.route +
-                                                    "/" +
-                                                    sub_item.route +
-                                                    "/" +
-                                                    sub_sub_item.route
-                                                )
-                                              }
-                                            >
-                                              <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
-                                                {sub_sub_item.name}
-                                              </p>
-                                            </li>
-                                          );
-                                        }
-                                      )}
-                                    </ul>
-                                  </li>
-                                </>
-                              );
-                            })} */}
                           </ul>
                         </>
                       )}
@@ -258,9 +212,8 @@ const Navbar = () => {
                 <ul className="flex flex-col">
                   {DataNavbar.map((item, i) => {
                     return (
-                      <Link
+                      <div
                         key={i}
-                        href="/"
                         className="flex text-textDark p-4 
                         hover:text-textGreen cursor-pointer duration-300 nav-link "
                       >
@@ -271,7 +224,11 @@ const Navbar = () => {
                           className="w-full "
                         >
                           <div
-                            onClick={() => router.push("/")}
+                            onClick={() =>
+                              item.submenu.length == 0
+                                ? router.push(item.route)
+                                : null
+                            }
                             className="dropdown "
                           >
                             {item.submenu.length == 0 ? (
@@ -285,7 +242,15 @@ const Navbar = () => {
                                 <ul className="dropdown-content hidden bg-[#7B83FF] px-2 py-2 w-full">
                                   {item.submenu.map((sub_item, x) => {
                                     return sub_item.submenu.length == 0 ? (
-                                      <li key={x} className="text-md">
+                                      <li
+                                        key={x}
+                                        onClick={() =>
+                                          router.push(
+                                            item.route + "/" + sub_item.route
+                                          )
+                                        }
+                                        className="text-md"
+                                      >
                                         <p className="hover:bg-white rounded-sm py-2 px-4 block text-white hover:text-[#7B83FF] cursor-pointer">
                                           {sub_item.name}
                                         </p>
@@ -304,7 +269,19 @@ const Navbar = () => {
                                             {sub_item.submenu.map(
                                               (sub_sub_item, y) => {
                                                 return (
-                                                  <li key={y} className="">
+                                                  <li
+                                                    key={y}
+                                                    onClick={() =>
+                                                      router.push(
+                                                        item.route +
+                                                          "/" +
+                                                          sub_item.route +
+                                                          "/" +
+                                                          sub_sub_item.route
+                                                      )
+                                                    }
+                                                    className=""
+                                                  >
                                                     <p className="  hover:bg-white rounded-sm py-2 px-4 block text-white hover:text-[#7B83FF] cursor-pointer ">
                                                       {sub_sub_item.name}
                                                     </p>
@@ -322,7 +299,7 @@ const Navbar = () => {
                             )}
                           </div>
                         </motion.li>
-                      </Link>
+                      </div>
                     );
                   })}
                 </ul>

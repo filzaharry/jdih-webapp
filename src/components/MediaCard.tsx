@@ -6,10 +6,10 @@ import { TbFiles } from "react-icons/tb";
 interface Props {
   title: string;
   desc: string;
-  listItem: string[];
+  logo: string;
   link: string;
 }
-const MediaCard = ({ title, desc, listItem, link }: Props) => {
+const MediaCard = ({ title, desc, logo, link }: Props) => {
   return (
     <div
       className="
@@ -33,6 +33,7 @@ const MediaCard = ({ title, desc, listItem, link }: Props) => {
         <div className="">
           <Image
             className="object-cover w-14"
+            // src={logo}
             src={logoKotaTng}
             // src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Lambang_Kota_Tangerang.png/542px-Lambang_Kota_Tangerang.png"
             alt="profileImg"
@@ -41,13 +42,13 @@ const MediaCard = ({ title, desc, listItem, link }: Props) => {
           />
         </div>
         <div className="ml-2 p-2">
-          <p className="group-hover:text-white text-xl">Kota Tangerang</p>
+          <p className="group-hover:text-white text-xl">{title}</p>
         </div>
       </div>
       <div className="ml-4 ">
         <hr className="w-20 h-0.5 mb-4 bg-gray-100 group-hover:bg-white border-0 rounded dark:bg-gray-700" />
-        <p className="group-hover:text-white text-md">Situs Resmi Kota Tangerang.</p>
-        <p className="group-hover:text-white text-sm italic">https://tangerangkota.go.id/</p>
+        <p className="group-hover:text-white text-md">{desc}</p>
+        <p className="group-hover:text-white text-sm italic">{link}</p>
         <p className="mt-4 mb-4 group-hover:text-linkHover text-colorSecondary text-sm">Kunjungi Situs</p>
       </div>
     </div>

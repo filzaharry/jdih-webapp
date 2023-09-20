@@ -62,18 +62,18 @@ export default function NaskahAkademik() {
 
           <div
             className="
-         sml:pt-20
-    lg:py-10 
-    lg:mt-40
-    xl:mt-0 xl:pt-0
-    sm:w-[90%] 
-    mdl:w-[90%]
-    lg:w-[70%]
-  bg-white shadow-bannerFormShadow 
-    rounded-2xl mt-10 mx-auto py-10 sm:mb-20 lg:mb-4"
+            sm:pt-4
+            lg:py-10 
+            lg:mt-40
+            xl:mt-0 xl:pt-0
+            sm:w-[90%] 
+            mdl:w-[90%]
+            lg:w-[70%]
+          bg-white shadow-bannerFormShadow 
+            rounded-2xl mx-auto py-10 sm:mb-20 lg:mb-4"
           >
             <div className="max-w-contentContainer mx-auto sm:w-[90%] sm:mt-10 flex flex-col gap-8">
-              <div className="pt-10">
+              <div className="lg:pt-10">
                 <ItemGeneral/>
                 <ItemGeneral/>
                 <ItemGeneral/>

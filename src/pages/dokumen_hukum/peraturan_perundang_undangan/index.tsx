@@ -16,17 +16,33 @@ export default function PeraturanPerundangan() {
   return (
     <>
       <Header />
-      <main
-        className="font-bodyFont w-full h-screen overflow-x-hidden
-       overflow-y-scroll scrollbar scrollbar-track-gray-400 scrollbar-thumb-gray-700
-       "
-      >
+      <main className="font-bodyFont w-full h-screen overflow-x-hidden">
         <div
-          id="history"
-          className=" w-full h-screen bg-heroBackground2 bg-no-repeat bg-contain "
+          id="home"
+          className="
+         w-full 
+        h-screen 
+        bg-contain
+        bg-heroResponsiveBg 
+        bg-no-repeat 
+        sm:bg-cover
+        lg:bg-contain
+        lg:bg-top
+        lg:bg-heroBackground2   
+        "
         >
           <Navbar />
-          <section className="max-w-contentContainer mx-auto py-10 mdl:py-24 flex flex-col gap-4 lgl:gap-8 mdl:px-10 xl:px-4 xl:mt-20">
+          <section
+            className="
+          max-w-contentContainer mx-auto py-10 flex flex-col gap-4
+          sm:w-[90%]
+          mdl:w-[90%]
+          lg:py-24 
+          xl:px-4 
+          xl:mt-20
+          lgl:gap-8 
+          "
+          >
             <motion.h1
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -51,22 +67,22 @@ export default function PeraturanPerundangan() {
             bg-white shadow-bannerFormShadow 
             sm:w-[90%] 
             mdl:w-[90%]
-            rounded-3xl mt-10 mx-auto pt-10 sm:mb-20
+            rounded-3xl mt-10 mx-auto sm:pt-6 lg:pt-10 sm:mb-20
             "
           >
             <motion.div
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="w-full grid grid-cols-1 px-10 pb-10"
+              className="w-full grid grid-cols-1 sm:px-6 lg:px-10"
             >
               <div className="flex flex-row justify-between">
                 <p className="text-2xl pb-12">Cari Produk Hukum</p>
-                <button className="rounded-xl bg-btnPrimary text-white px-10 h-[60%]">
+                <button className="rounded-xl bg-btnPrimary text-white px-10 sm:h-[50%] lg:h-[60%]">
                   Cari
                 </button>
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid lg:grid-cols-3 sm:grid-col-1 gap-4">
                 <div className="">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />
@@ -101,7 +117,7 @@ export default function PeraturanPerundangan() {
                   ></input>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4 mt-8">
+              <div className="grid lg:grid-cols-2 sm:grid-col-1 gap-4 my-4 pb-8">
                 <div className="">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />

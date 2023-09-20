@@ -65,20 +65,20 @@ export default function KonsultasiPengaduan() {
             bg-white shadow-bannerFormShadow 
             sm:w-[90%] 
             mdl:w-[90%]
-            rounded-3xl mt-10 mx-auto pt-10 sm:mb-20
+            rounded-3xl mt-10 mx-auto sm:pt-6 lg:pt-10 sm:mb-20
             "
           >
             <motion.div
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="w-full grid grid-cols-1 px-10 "
+              className="w-full grid grid-cols-1 sm:px-6 lg:px-10"
             >
               <div className="flex flex-row justify-between">
                 <p className="text-2xl pb-12">Isi Konsultasi / Pengaduan Anda disini</p>
                 <p></p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid lg:grid-cols-2 sm:grid-col-1 gap-4">
                 <div className="">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />
@@ -115,10 +115,10 @@ export default function KonsultasiPengaduan() {
                   ></input>
                 </div>
               </div>
-              <div className="flex flex-row justify-between my-10">
-                <div className=""></div>
+              <div className="flex flex-row justify-between my-10 ">
+                <div className="sm:hidden lg:block"></div>
                 <div className="flex flex-row items-center">
-                  <div className="flex flex-row items-center">
+                  <div className="flex flex-row items-center ">
                     <div className="bg-btnPrimary w-4 h-4 rounded-md mr-2"></div>
                     <p>{`I'm not robot`}</p>
                   </div>
@@ -135,9 +135,9 @@ export default function KonsultasiPengaduan() {
           sm:w-[90%] sm:mt-10
           flex flex-col gap-8"
           >
-            <div className="flex flex-row w-[80%]">
+            <div className="flex flex-row lg:w-[80%] sm:w-[90%] sm:mx-auto lg:m-4">
               <Image
-                className="w-10 h-10 "
+                className="lg:w-10 lg:h-10 sm:w-8 sm:h-8"
                 src={user}
                 alt="user"
                 width={100}
@@ -146,33 +146,26 @@ export default function KonsultasiPengaduan() {
               <div className="mx-4">
                 <p className="text-xl text-colorPrimary">John Doe</p>
                 <p className="text-sm text-red-500">12-12-2023</p>
-                <p className="my-4">
+                <p className="my-4 sm:text-sm lg:text:lg text-justify">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
                   distinctio dicta, cum, repudiandae ex culpa illum voluptas
                   mollitia atque enim itaque et a dolorem vero nostrum. Dolorum
                   totam deserunt repellendus assumenda magnam debitis aperiam
                   vitae alias, nesciunt fuga facilis eius illo rerum quo
-                  inventore excepturi. Repudiandae perspiciatis excepturi aut.
-                  Iste dolorum excepturi possimus voluptatem illum nostrum
-                  eveniet, iusto beatae alias molestiae doloremque eos itaque
-                  consequatur? Rem sit debitis tempore non in libero quisquam,
-                  sapiente inventore atque ab ad molestiae? Laborum minima
-                  ducimus inventore veritatis repellat est enim aut earum
-                  deserunt necessitatibus voluptas vel eveniet consequatur,
-                  impedit ullam error exercitationem placeat!
+                  inventore excepturi. 
                 </p>
-                <div className="flex flex-row w-[80%] mt-4">
+                <div className="flex flex-row w-full  mt-4">
                   <Image
-                    className="w-10 h-10 "
+                    className="lg:w-10 lg:h-10 sm:w-8 sm:h-8"
                     src={user}
                     alt="user"
                     width={100}
                     height={100}
                   />
-                  <div className="mx-4">
+                  <div className="ml-4">
                     <p className="text-xl text-colorPrimary">John Doe</p>
                     <p className="text-sm text-red-500">12-12-2023</p>
-                    <p className="my-4">
+                    <p className="my-4 sm:text-sm lg:text:lg text-justify">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Rerum distinctio dicta, cum, repudiandae ex culpa illum
                       voluptas mollitia atque enim itaque et a dolorem vero

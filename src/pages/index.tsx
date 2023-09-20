@@ -50,7 +50,7 @@ export default  function Home() {
 
           <div className="h-screen bg-no-repeat bg-cover bg-center">
           {/* <div className="h-screen bg-blueWaveBackground bg-no-repeat bg-cover bg-center"> */}
-            {/* <Information /> */}
+            <Information />
             {/* <VideoBanner /> */}
             {/* <Certificate /> */}
             <MediaPartner />

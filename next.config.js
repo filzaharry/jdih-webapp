@@ -4,8 +4,14 @@ const nextConfig = {
   optimizeCss: false,
   enableBabelRuntime: true,
   images: {
-      domains: ['images.unsplash.com','upload.wikimedia.org', 'www.perumdatirtabenteng.co.id', 'jdih.tangerangkota.go.id'],
+    domains: [
+      "images.unsplash.com",
+      "upload.wikimedia.org",
+      "www.perumdatirtabenteng.co.id",
+      "jdih.tangerangkota.go.id",
+      "beta-mobilepdam.bengkelkutakkatik.id"
+    ],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
