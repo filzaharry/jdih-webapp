@@ -23,6 +23,7 @@ const InformationCard = ({ id, title, subtitle, picture, created_at }: Props) =>
                 alt="profileImg"
                 width={2670}
                 height={80}
+                crossOrigin='anonymous'
                 />
                 {/* <Image className="w-full rounded-xl" src={infoPhoto} alt="infoPhoto" /> */}
             </div>

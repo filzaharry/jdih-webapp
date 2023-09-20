@@ -171,6 +171,7 @@ export default function SaranDanMasukan() {
                 alt="user"
                 width={100}
                 height={100}
+                crossOrigin="anonymous"
               />
               <div className="mx-4">
                 <p className="text-xl text-colorPrimary">John Doe</p>

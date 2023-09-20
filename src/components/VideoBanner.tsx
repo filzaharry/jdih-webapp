@@ -25,6 +25,7 @@ const VideoBanner = () => {
                 alt="profileImg"
                 width={2670}
                 height={80}
+                crossOrigin='anonymous'
               />
               <div
                 className="
