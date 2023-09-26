@@ -125,14 +125,14 @@ export default function SejarahPerumdaTb() {
                   melakukan perlawanan terhadap VOC dengan praktik Monopolinya.
                   Tangerang Kota Benteng, Pada perjuangannya ketiga maulana
                   tersebut membangun benteng pertahanan yang disebut masyarakat
-                  sekitar dengan istilah daerah "Benteng" atau "Bentengan". Hal
+                  sekitar dengan istilah daerah <strong>Benteng</strong> atau <strong>Bentengan</strong>. Hal
                   ini turut mendasari sebutan Kota Tangerang yang dikenal dengan
                   sebutan Kota Benteng.
                 </p>
                 <p className="indent-10 sm:text-sm lg:text-lg text-justify mb-4">
-                  Saat ini sisa bangunan "Bentengan" tersebut berada di beberapa
+                  Saat ini sisa bangunan <strong>Bentengan</strong> tersebut berada di beberapa
                   titik di bawah permukaan air Sungai Cisadane yang semakin
-                  melebar. 1654 M: "Tanggeran" Bangunan Penanda nama "Tangerang"
+                  melebar. 1654 M: <strong>Tanggeran</strong> Bangunan Penanda nama <strong>Tangerang</strong>
                   berasal dari sebutan masyarakat sekitar terhadap bangunan tugu
                   dengan tinggi kira-kira 2,5 meter yang didirikan Pangeran
                   Soegiri, putra Sultan Ageng Tirtayasa dari Kesultanan Banten,
@@ -166,18 +166,18 @@ export default function SejarahPerumdaTb() {
                   wilayah kekuasaan kesultanan Banten di sebelah barat Sungai
                   Cisadane dengan wilayah yang dikuasi VOC di sebelah timur.
                   Atas dasar fungsinya tersebut, masyarakat menyebut tugu dan
-                  daerah itu dengan sebutan "Tetengger" atau "Tanggeran" yang
-                  berarti "penanda". Pasca 17 April 1684: Dari "Tanggeran"
-                  menjadi "Tangerang" Pasca penandatanganan perjanjian antara
+                  daerah itu dengan sebutan <strong>Tetengger</strong> atau <strong>Tanggeran</strong> yang
+                  berarti <strong>penanda</strong>. Pasca 17 April 1684: Dari <strong>Tanggeran</strong>
+                  menjadi <strong>Tangerang</strong> Pasca penandatanganan perjanjian antara
                   VOC dengan Kesultanan Banten yang diwakili oleh Sultan Haji
                   atau Sultan Abunnashri Abdulkahar putra Sultan Ageng Tirtayasa
                   pewaris Kesultanan Banten tanggal 17 April 1684, Belanda
-                  sepenuhnya menguasai wilayah "Tanggeran". Dalam penguasaannya,
+                  sepenuhnya menguasai wilayah <strong>Tanggeran</strong>. Dalam penguasaannya,
                   tentara Belanda juga merekrut warga pribumi di antaranya dari
                   Madura dan Makasar yang di antaranya ditempatkan di sekitar
                   wilayah benteng. Tentara VOC yang berasal dari Makasar tidak
-                  mengenal huruf mati, dan terbiasa menyebut "Tangeran" dengan
-                  "Tangerang".
+                  mengenal huruf mati, dan terbiasa menyebut <strong>Tangeran</strong> dengan
+                  <strong>Tangerang</strong>.
                 </p>
                 <p className="indent-10 sm:text-sm lg:text-lg text-justify mb-4">
                   Kesalahan ejaan dan dialek inilah yang diwariskan dari
