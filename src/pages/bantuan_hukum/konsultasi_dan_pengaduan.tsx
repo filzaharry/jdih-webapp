@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { Header } from "@/src/components/Header";
 import Navbar from "@/src/components/Navbar";
@@ -10,216 +10,404 @@ import Image from "next/image";
 import { user } from "@/public";
 import { Footer } from "@/src/components/Footer";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { useRouter } from "next/router";
+import moment from "moment";
+import { FaCheck } from "react-icons/fa";
+import axios from "axios";
 
-interface NewsDetailInterface {
+interface ConsultationInterface {
   id: string;
-  title: string;
-  subtitle: string;
+  name: string;
+  email: string;
+  suggestion: string;
+  responseDescription: string;
   created_at: string;
 }
 
-type News = {
+type Consultation = {
   statusCode: number;
   message: string;
-  data: NewsDetailInterface[];
+  data: ConsultationInterface[];
 };
 
-export const getServerSideProps = (async (context) => {
-  const path = context?.params?.id;
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL + "news/" + path;
-  const res = await fetch(apiUrl!.toString());
-  const dataResult = await res.json();
+const KonsultasiPengaduan = () => {
+  const [dataResult, setDataResult] = useState<Consultation | null>(null);
+  const [isLoading, setLoading] = useState(true);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isRobot, setIsRobot] = useState(false);
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL + "consultations";
+  const apiUrlSend = process.env.NEXT_PUBLIC_API_URL + "consultation";
+  const limit = process.env.NEXT_PUBLIC_LIMIT;
+  const [submitted, setSubmitted] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [msgSuccess, setMsgSuccess] = useState("");
+  const [isFailed, setIsFailed] = useState(false);
+  const [msgFailed, setMsgFailed] = useState("");
 
-  return { props: { dataResult } };
-}) satisfies GetServerSideProps<{
-  dataResult: News;
-}>;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await axios.get(apiUrl);
+        // console.log("response", data.data.data);
+        setDataResult(data.data);
+        setSubmitted(false);
+      } catch (error) {
+        console.error("what error ?", error);
+      }
+      setLoading(false);
+    };
 
-const KonsultasiPengaduan = ({
-  dataResult,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  return (
-    <>
-      <Header />
-      <main className="font-bodyFont w-full h-screen overflow-x-hidden">
-        <div
-          id="home"
-          className="
-         w-full 
-        h-screen 
-        bg-contain
-        bg-heroResponsiveBg 
-        bg-no-repeat 
-        sm:bg-cover
-        lg:bg-contain
-        lg:bg-top
-        lg:bg-heroBackground2   
-        "
-        >
-          <Navbar />
-          <section
-            className="
-          max-w-contentContainer mx-auto py-10 flex flex-col gap-4
-          sm:w-[90%]
-          mdl:w-[90%]
-          lg:py-24 
-          xl:px-4 
-          xl:mt-20
-          lgl:gap-8 
-          "
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [submitted]);
+
+  const handleChangeUsername = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setUsername(event.target.value);
+    // console.log('value is:', event.target.value);
+  };
+  const handleChangeEmail = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setEmail(event.target.value);
+    // console.log('value is:', event.target.value);
+  };
+  const handleChangeMessage = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setMessage(event.target.value);
+    // console.log('value is:', event.target.value);
+  };
+
+  const handleSubmit = () => {
+    const bodyFormData = new FormData();
+    bodyFormData.append("name", username);
+    bodyFormData.append("email", email);
+    bodyFormData.append("suggestion", message);
+
+    if (username == "") {
+      setIsFailed(true);
+      setTimeout(() => {
+        setIsFailed(false);
+      }, 3000);
+      setMsgFailed("Anda belum mengisi kolom Nama");
+    } else if (email == "") {
+      setIsFailed(true);
+      setTimeout(() => {
+        setIsFailed(false);
+      }, 3000);
+      setMsgFailed("Anda belum mengisi kolom Email");
+    } else if (message == "") {
+      setIsFailed(true);
+      setTimeout(() => {
+        setIsFailed(false);
+      }, 3000);
+      setMsgFailed("Anda belum mengisi kolom Pesan");
+    } else if (isRobot == false) {
+      setIsFailed(true);
+      setTimeout(() => {
+        setIsFailed(false);
+      }, 3000);
+      setMsgFailed("Anda belum men check-list I'm not robot");
+    } else {
+      axios({
+        method: "POST",
+        url: apiUrlSend,
+        data: bodyFormData,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "*/*",
+        },
+      })
+        .then(function (response) {
+          //handle success
+          setSubmitted(true);
+          setIsSuccess(true);
+          setMsgSuccess("Pesan konsultasi / pengaduan Anda telah terkirim");
+          setTimeout(() => {
+            setIsSuccess(false);
+          }, 3000);
+        })
+        .catch(function (response) {
+          //handle error
+          setIsFailed(true);
+          setMsgFailed(
+            "Segera lakukan beberapa saat lagi, error : " + response.message
+          );
+          setTimeout(() => {
+            setIsFailed(false);
+          }, 3000);
+        });
+    }
+  };
+
+  if (isLoading) {
+    return <p> Is Loading ...</p>;
+  } else {
+    return (
+      <>
+        {isSuccess && (
+          <motion.div
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="w-[30%] absolute bottom-4 right-4 bg-teal-100 border-t-4 border-teal-500 rounded-xl text-teal-900 px-4 py-3 shadow-md"
+            role="alert"
           >
-            <motion.h1
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-4xl lgl:text-5xl font-titleFont font-semibold text-white"
-            >
-              Konsultasi dan Pengaduan
-            </motion.h1>
-            <motion.p
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-lg md:max-w-[630px] font-medium text-white"
-            >
-              {`Beranda > Konsultasi dan Pengaduan`}
-            </motion.p>
-          </section>
-          <section
+            <div className="flex">
+              <div className="py-1">
+                <svg
+                  className="fill-current h-6 w-6 text-teal-500 mr-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-bold">Pesan Berhasil dikirim!</p>
+                <p className="text-sm">{msgSuccess}</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        {isFailed && (
+          <motion.div
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="w-[30%] absolute bottom-4 right-4 bg-red-100 border-t-4 border-red-500 rounded-xl text-red-900 px-4 py-3 shadow-md"
+            role="alert"
+          >
+            <div className="flex">
+              <div className="py-1">
+                <svg
+                  className="fill-current h-6 w-6 text-red-500 mr-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-bold">Pesan Gagal dikirim</p>
+                <p className="text-sm">{msgFailed}</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+        <Header />
+        <main className="font-bodyFont w-full h-screen overflow-x-hidden">
+          <div
             id="home"
             className="
-            max-w-contentContainer
-            bg-white shadow-bannerFormShadow 
-            sm:w-[90%] 
+           w-full 
+          h-screen 
+          bg-contain
+          bg-heroResponsiveBg 
+          bg-no-repeat 
+          sm:bg-cover
+          lg:bg-contain
+          lg:bg-top
+          lg:bg-heroBackground2   
+          "
+          >
+            <Navbar />
+            <section
+              className="
+            max-w-contentContainer mx-auto py-10 flex flex-col gap-4
+            sm:w-[90%]
             mdl:w-[90%]
-            rounded-3xl mt-10 mx-auto sm:pt-6 lg:pt-10 sm:mb-20
+            lg:py-24 
+            xl:px-4 
+            xl:mt-20
+            lgl:gap-8 
             "
-          >
-            <motion.div
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="w-full grid grid-cols-1 sm:px-6 lg:px-10"
             >
-              <div className="flex flex-row justify-between">
-                <p className="text-2xl pb-12">Isi Konsultasi / Pengaduan Anda disini</p>
-                <p></p>
-              </div>
-              <div className="grid lg:grid-cols-2 sm:grid-col-1 gap-4">
-                <div className="">
-                  <div className="flex">
-                    <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Nama</p>
-                  </div>
-                  <input
-                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
-                    type="text"
-                    placeholder="Masukkan Nama"
-                  ></input>
+              <motion.h1
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                className="text-4xl lgl:text-5xl font-titleFont font-semibold text-white"
+              >
+                Konsultasi dan Pengaduan
+              </motion.h1>
+              <motion.p
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="text-lg md:max-w-[630px] font-medium text-white"
+              >
+                {`Beranda > Konsultasi dan Pengaduan`}
+              </motion.p>
+            </section>
+            <section
+              id="home"
+              className="
+              max-w-contentContainer
+              bg-white shadow-bannerFormShadow 
+              sm:w-[90%] 
+              mdl:w-[90%]
+              rounded-3xl mt-10 mx-auto sm:pt-6 lg:pt-10 sm:mb-20
+              "
+            >
+              <motion.div
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="w-full grid grid-cols-1 sm:px-6 lg:px-10"
+              >
+                <div className="flex flex-row justify-between">
+                  <p className="text-2xl pb-12">
+                    Isi Konsultasi / Pengaduan Anda disini
+                  </p>
+                  <p></p>
                 </div>
-                <div className="">
-                  <div className="flex">
-                    <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Email</p>
+                <div className="grid lg:grid-cols-2 sm:grid-col-1 gap-4">
+                  <div className="">
+                    <div className="flex">
+                      <RiBox1Fill className="text-xl mr-2 mb-2" />
+                      <p className="text-base">Nama</p>
+                    </div>
+                    <input
+                      className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                      type="text"
+                      placeholder="Masukkan Nama"
+                      onChange={handleChangeUsername}
+                      value={username}
+                    ></input>
                   </div>
-                  <input
-                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
-                    type="email"
-                    placeholder="Masukkan Email"
-                  ></input>
-                </div>
-              </div>
-              <div className="mt-8">
-                <div className="col-span-3">
-                  <div className="flex">
-                    <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Tentang</p>
+                  <div className="">
+                    <div className="flex">
+                      <RiBox1Fill className="text-xl mr-2 mb-2" />
+                      <p className="text-base">Email</p>
+                    </div>
+                    <input
+                      className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                      type="email"
+                      placeholder="Masukkan Email"
+                      onChange={handleChangeEmail}
+                      value={email}
+                    ></input>
                   </div>
-                  <input
-                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
-                    type="text"
-                    placeholder="Tentang Produk Hukum"
-                  ></input>
                 </div>
-              </div>
-              <div className="flex flex-row justify-between my-10 ">
-                <div className="sm:hidden lg:block"></div>
-                <div className="flex flex-row items-center">
-                  <div className="flex flex-row items-center ">
-                    <div className="bg-btnPrimary w-4 h-4 rounded-md mr-2"></div>
-                    <p>{`I'm not robot`}</p>
+                <div className="mt-8">
+                  <div className="col-span-3">
+                    <div className="flex">
+                      <RiBox1Fill className="text-xl mr-2 mb-2" />
+                      <p className="text-base">Pesan</p>
+                    </div>
+                    <input
+                      className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                      type="text"
+                      placeholder="Pesan yang ingin disampaikan"
+                      onChange={handleChangeMessage}
+                      value={message}
+                    ></input>
                   </div>
-                  <button className="rounded-xl bg-btnPrimary text-white px-10 py-4 ml-8">
-                    Kirim
-                  </button>
                 </div>
-              </div>
-            </motion.div>
-          </section>
-          <div
-            className="
-          max-w-contentContainer mx-auto 
-          sm:w-[90%] sm:mt-10
-          flex flex-col gap-8"
-          >
-            <div className="flex flex-row lg:w-[80%] sm:w-[90%] sm:mx-auto lg:m-4">
-              <Image
-                className="lg:w-10 lg:h-10 sm:w-8 sm:h-8"
-                src={user}
-                alt="user"
-                width={100}
-                height={100}
-                crossOrigin="anonymous"
-              />
-              <div className="mx-4">
-                <p className="text-xl text-colorPrimary">John Doe</p>
-                <p className="text-sm text-red-500">12-12-2023</p>
-                <p className="my-4 sm:text-sm lg:text:lg text-justify">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                  distinctio dicta, cum, repudiandae ex culpa illum voluptas
-                  mollitia atque enim itaque et a dolorem vero nostrum. Dolorum
-                  totam deserunt repellendus assumenda magnam debitis aperiam
-                  vitae alias, nesciunt fuga facilis eius illo rerum quo
-                  inventore excepturi. 
-                </p>
-                <div className="flex flex-row w-full  mt-4">
+                <div className="flex flex-row justify-between my-10 ">
+                  <div className="sm:hidden lg:block"></div>
+                  <div className="flex flex-row items-center">
+                    <div
+                      className="flex flex-row items-center "
+                      onClick={() => {
+                        if (isRobot == true) {
+                          setIsRobot(false);
+                        } else if (isRobot == false) {
+                          setIsRobot(true);
+                        }
+                      }}
+                    >
+                      {isRobot == true && (
+                        <div className="bg-btnPrimary w-4 h-4 rounded-md mr-2">
+                          <FaCheck className="bg-white" />
+                        </div>
+                      )}
+                      {isRobot == false && (
+                        <div className="bg-btnPrimary w-4 h-4 rounded-md mr-2"></div>
+                      )}
+
+                      <p>{`I'm not robot`}</p>
+                    </div>
+                    <button
+                      onClick={handleSubmit}
+                      className="rounded-xl bg-btnPrimary text-white px-10 py-4 ml-8"
+                    >
+                      Kirim
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            </section>
+            <div
+              className="
+            max-w-contentContainer sm:mx-auto lg:mx-32
+            sm:w-[90%] sm:mt-10
+            flex flex-col gap-4"
+            >
+              {dataResult?.data?.map((val, i) => (
+                <div
+                  key={i}
+                  className="flex flex-row lg:w-[80%] sm:w-[90%] sm:mx-auto "
+                >
                   <Image
                     className="lg:w-10 lg:h-10 sm:w-8 sm:h-8"
                     src={user}
                     alt="user"
                     width={100}
                     height={100}
+                    crossOrigin="anonymous"
                   />
-                  <div className="ml-4">
-                    <p className="text-xl text-colorPrimary">John Doe</p>
-                    <p className="text-sm text-red-500">12-12-2023</p>
-                    <p className="my-4 sm:text-sm lg:text:lg text-justify">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Rerum distinctio dicta, cum, repudiandae ex culpa illum
-                      voluptas mollitia atque enim itaque et a dolorem vero
-                      nostrum. Dolorum totam deserunt repellendus assumenda
-                      magnam debitis aperiam vitae alias, nesciunt fuga facilis
-                      eius illo rerum quo inventore excepturi.{" "}
+                  <div className="mx-4">
+                    <p className="text-xl text-colorPrimary">{val.name}</p>
+                    <p className="text-sm text-red-500 italic">{val.email}</p>
+                    <p className="sm:text-sm lg:text-lg text-justify text-slate-500">
+                      {val.suggestion}
                     </p>
+                    <p className="mt-2 mb-4 text-sm text-slate-500">
+                      {moment(val.created_at).format("LLL")}
+                    </p>
+                    {val.responseDescription != null && (
+                      <div className="flex flex-row w-full mt-4">
+                        <Image
+                          className="lg:w-10 lg:h-10 sm:w-8 sm:h-8"
+                          src={user}
+                          alt="user"
+                          width={100}
+                          height={100}
+                        />
+                        <div className="ml-4">
+                          <p className="text-xl text-colorPrimary">Tanggapan</p>
+                          <p className="mb-4 sm:text-sm lg:text-lg text-justify text-slate-500">
+                            {val.responseDescription}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
-              </div>
+              ))}
+            </div>
+            <div
+              className="
+                bg-blackWaveBackground 
+                lg:bg-blackWaveBackground 
+                lg:bg-transparent
+                sm:bg-[#141721] 
+                bg-no-repeat bg-cover bg-center
+                "
+            >
+              <Footer />
             </div>
           </div>
-          <div
-            className="
-              bg-blackWaveBackground 
-              lg:bg-blackWaveBackground 
-              lg:bg-transparent
-              sm:bg-[#141721] 
-              bg-no-repeat bg-cover bg-center
-              "
-          >
-            <Footer />
-          </div>
-        </div>
-      </main>
-    </>
-  );
-}
+        </main>
+      </>
+    );
+  }
+};
 export default KonsultasiPengaduan;

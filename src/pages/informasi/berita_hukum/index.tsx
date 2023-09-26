@@ -29,7 +29,6 @@ type Products = {
 };
 
 export const getServerSideProps = (async (context) => {
-  const id = context?.params?.id;
   const apiUrl = process.env.NEXT_PUBLIC_API_URL + "news/limit/0";
   const res = await fetch(apiUrl!.toString());
   const dataResult = await res.json();
@@ -61,7 +60,7 @@ const AllNews = ({
   }, [router.isReady]);
 
   if (isLoading) {
-    return <p>Product Data Is Loading ...</p>;
+    return <p> Is Loading ...</p>;
   } else {
     return (
       <>

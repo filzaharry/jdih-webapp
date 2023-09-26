@@ -63,7 +63,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
   }, [router.isReady]);
 
   if (isLoading) {
-    return <p>Product Data Is Loading ...</p>;
+    return <p> Is Loading ...</p>;
   } else {
     return (
       <>
@@ -107,7 +107,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
                 transition={{ duration: 0.5, delay: 0.8 }}
                 className="text-lg md:max-w-[630px] font-medium text-white"
               >
-                {`${data?.data?.title}`}
+                {`Beranda > Produk Hukum > Detail Produk Hukum`}
               </motion.p>
             </section>
             <section
@@ -133,11 +133,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
                 <p className="sm:text-xl lg:text-4xl sm:pb-10 lg:pb-28">
                   {data == null
                     ? ""
-                    : data?.data?.title +
-                      " No. " +
-                      data?.data?.number +
-                      " " +
-                      data?.data?.subtitle}
+                    : data?.data?.title}
                 </p>
                 <DetailProductList
                   title="Tipe Dokumen"
@@ -166,7 +162,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
                 />
                 <DetailProductList
                   title="Status Peraturan"
-                  desc={data == null ? "" : data?.data?.status?.toString()}
+                  desc={data == null ? "" : data?.data?.status?.toString() == "" ? '1' : '1'}
                   status={2}
                 />
                 <DetailProductList

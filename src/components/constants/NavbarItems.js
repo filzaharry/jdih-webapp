@@ -50,11 +50,6 @@ const DataNavbar = [
         submenu: [],
       },
       {
-        name: "Perpustakaan JDIH",
-        route: "/perpustakaanjdih",
-        submenu: [],
-      },
-      {
         name: "Standar Operasional Prosedur",
         route: "/standar_operasional_prosedur",
         submenu: [],

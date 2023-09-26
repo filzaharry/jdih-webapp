@@ -7,7 +7,7 @@ interface Props {
 
 const Status = ({ desc }: Props) => {
 
-  if (desc == '2') {
+  if (desc == '1') {
     return (
       <div className="lg:text-md sm:text-sm px-2 py-1 mr-4 items-center rounded-md w-fit flex flex-row border border-[#B7FEAC] bg-[#F2FFEF] text-[#65D072]">
         <BiSolidCheckCircle className="text-sm mr-2" />

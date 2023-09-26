@@ -71,7 +71,7 @@ const AllProducts = ({
   }, [router.isReady]);
 
   if (isLoading) {
-    return <p>Product Data Is Loading ...</p>;
+    return <p> Is Loading ...</p>;
   } else {
     return (
       <>

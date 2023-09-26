@@ -23,8 +23,6 @@ const Product = () => {
   const limit = process.env.NEXT_PUBLIC_LIMIT
 
   useEffect(() => {
-    console.log();
-    
     const url = apiUrl + "product_of_law/limit/" +limit
     
     const fetchData = async () => {
@@ -44,7 +42,7 @@ const Product = () => {
   }, []);
 
   if (isLoading) {
-    return <p>Product Data Is Loading ...</p>;
+    return <p> Is Loading ...</p>;
   } else {
     return (
       <div
@@ -65,7 +63,7 @@ const Product = () => {
             <ProductCard
               key={i}
               id={val.id}
-              title={val.title +' No. '+ val.number}
+              title={val.title}
               subtitle={val.subtitle}
             />
           ))}
