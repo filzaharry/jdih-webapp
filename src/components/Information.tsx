@@ -56,7 +56,7 @@ const Information = () => {
         <SectionTitle title="Informasi" />
         <p
           onClick={() => router.push("/informasi/berita_hukum")}
-          className="text-colorSecondary inline-block align-bottom lg:text-lg sm:text-sm"
+          className="text-colorSecondary inline-block align-bottom lg:text-lg sm:text-sm cursor-pointer hover:border-b hover:border-colorSecondary"
         >
           Lihat Semua
         </p>

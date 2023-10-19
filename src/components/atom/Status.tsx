@@ -2,12 +2,14 @@ import React from "react";
 import { BiSolidCheckCircle } from "react-icons/bi";
 import { FaTimesCircle } from "react-icons/fa";
 interface Props {
-  desc: string;
+  desc: any;
 }
 
 const Status = ({ desc }: Props) => {
 
-  if (desc == '1') {
+  console.log(desc);
+  
+  if (desc == 1) {
     return (
       <div className="lg:text-md sm:text-sm px-2 py-1 mr-4 items-center rounded-md w-fit flex flex-row border border-[#B7FEAC] bg-[#F2FFEF] text-[#65D072]">
         <BiSolidCheckCircle className="text-sm mr-2" />

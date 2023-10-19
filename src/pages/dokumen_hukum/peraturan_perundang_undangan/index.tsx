@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import { RiBox1Fill } from "react-icons/ri";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { Header } from "@/src/components/Header";
@@ -13,6 +13,8 @@ import PeraturanPerundanganItem from "@/src/components/atom/PeraturanPerundangan
 import { Footer } from "@/src/components/Footer";
 
 export default function PeraturanPerundangan() {
+  const [satisfaction, setSatisfaction] = useState(0);
+  const [satisfactionMsg, setSatisfactionMsg] = useState("");
   return (
     <>
       <Header />
@@ -74,7 +76,7 @@ export default function PeraturanPerundangan() {
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="w-full grid grid-cols-1 sm:px-6 lg:px-10"
+              className="w-full grid grid-cols-1 sm:px-6 lg:px-10 pb-10"
             >
               <div className="flex flex-row justify-between">
                 <p className="text-2xl pb-12">Cari Produk Hukum</p>
@@ -83,53 +85,137 @@ export default function PeraturanPerundangan() {
                 </button>
               </div>
               <div className="grid lg:grid-cols-3 sm:grid-col-1 gap-4">
-                <div className="">
+              <div className="">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />
                     <p className="text-base">Produk Hukum</p>
                   </div>
+                  <div className="dropdown relative inline-block text-left w-full">
+                    {satisfactionMsg == "" ? (
+                      <p className=" px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none">
+                        Produk Hukum
+                      </p>
+                    ) : (
+                      <p className=" px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none">
+                        {satisfactionMsg}
+                      </p>
+                    )}
+                    <div
+                      className="dropdown-content hidden absolute right-0 z-10 w-full origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="menu-button"
+                    >
+                      <div className="py-1" role="none">
+                        <p
+                          onClick={() => {
+                            setSatisfaction(0);
+                            setSatisfactionMsg("Berlaku");
+                          }}
+                          className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm"
+                        >
+                          Peraturan Daerah
+                        </p>
+                        <p
+                          onClick={() => {
+                            setSatisfaction(1);
+                            setSatisfactionMsg("Puas");
+                          }}
+                          className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm"
+                        >
+                          Peraturan Walikota
+                        </p>
+                        <p
+                          onClick={() => {
+                            setSatisfaction(1);
+                            setSatisfactionMsg("Puas");
+                          }}
+                          className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm"
+                        >
+                          Keputusan Walikota
+                        </p>
+                        <p
+                          onClick={() => {
+                            setSatisfaction(1);
+                            setSatisfactionMsg("Puas");
+                          }}
+                          className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm"
+                        >
+                          Keputusan Kepala OPD
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="">
+                  <div className="flex">
+                    <RiBox1Fill className="text-xl mr-2 mb-2" />
+                    <p className="text-base">Nomor</p>
+                  </div>
                   <input
                     className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
-                    type="text"
-                    placeholder="Masukkan Tahun Produk"
+                    type="number"
+                    placeholder="Nomor Produk"
                   ></input>
                 </div>
                 <div className="">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Produk Hukum</p>
+                    <p className="text-base">Tahun</p>
                   </div>
                   <input
                     className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
-                    type="text"
-                    placeholder="Masukkan Tahun Produk"
-                  ></input>
-                </div>
-                <div className="">
-                  <div className="flex">
-                    <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Produk Hukum</p>
-                  </div>
-                  <input
-                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
-                    type="text"
-                    placeholder="Masukkan Tahun Produk"
+                    type="number"
+                    placeholder="Tahun Produk"
                   ></input>
                 </div>
               </div>
-              <div className="grid lg:grid-cols-2 sm:grid-col-1 gap-4 my-4 pb-8">
+              <div className="grid lg:grid-cols-4 sm:grid-col-1 gap-4 mt-8">
                 <div className="">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />
-                    <p className="text-base">Status</p>
+                    <p className="text-base">Pilih Status</p>
                   </div>
-                  <input
-                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
-                    type="text"
-                    placeholder="Pilih Status Produk"
-                  ></input>
+                  <div className="dropdown relative inline-block text-left w-full">
+                    {satisfactionMsg == "" ? (
+                      <p className=" px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none">
+                        Pilih Status
+                      </p>
+                    ) : (
+                      <p className=" px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none">
+                        {satisfactionMsg}
+                      </p>
+                    )}
+                    <div
+                      className="dropdown-content hidden absolute right-0 z-10 w-full origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="menu-button"
+                    >
+                      <div className="py-1" role="none">
+                        <p
+                          onClick={() => {
+                            setSatisfaction(0);
+                            setSatisfactionMsg("Berlaku");
+                          }}
+                          className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm"
+                        >
+                          Berlaku
+                        </p>
+                        <p
+                          onClick={() => {
+                            setSatisfaction(1);
+                            setSatisfactionMsg("Puas");
+                          }}
+                          className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm"
+                        >
+                          Dicabut
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="">
+                <div className="lg:col-span-3">
                   <div className="flex">
                     <RiBox1Fill className="text-xl mr-2 mb-2" />
                     <p className="text-base">Tentang</p>
@@ -138,6 +224,8 @@ export default function PeraturanPerundangan() {
                     className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
                     type="text"
                     placeholder="Tentang Produk Hukum"
+                    // onChange={handleChangeMessage}
+                    // value={message}
                   ></input>
                 </div>
               </div>

@@ -54,7 +54,7 @@ const Product = () => {
       >
         <div className="flex justify-between items-end">
           <SectionTitle title="Produk Hukum" />
-          <p onClick={() => router.push("/produk_hukum")} className="cursor-pointer text-colorSecondary inline-block align-bottom sm:text-sm lg:text-lg">
+          <p onClick={() => router.push("/produk_hukum")} className="cursor-pointer text-colorSecondary inline-block align-bottom sm:text-sm lg:text-lg hover:border-b hover:border-colorSecondary">
             Lihat Semua
           </p>
         </div>
