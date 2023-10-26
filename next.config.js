@@ -9,17 +9,17 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'beta-dashboardsiganteng.bengkelkutakkatik.id',
         port: '',
-        pathname: '/api/jdih/news'
+        pathname: '/api/**'
       }
-    ]
-    // domains: [
-    //   "images.unsplash.com",
-    //   "upload.wikimedia.org",
-    //   "www.perumdatirtabenteng.co.id",
-    //   "jdih.tangerangkota.go.id",
-    //   "beta-mobilepdam.bengkelkutakkatik.id",
-    //   "beta-dashboardsiganteng.bengkelkutakkatik.id"
-    // ],
+    ],
+    domains: [
+      "images.unsplash.com",
+      "upload.wikimedia.org",
+      "www.perumdatirtabenteng.co.id",
+      "jdih.tangerangkota.go.id",
+      "beta-mobilepdam.bengkelkutakkatik.id",
+      "beta-dashboardsiganteng.bengkelkutakkatik.id"
+    ],
   },
 };
 
