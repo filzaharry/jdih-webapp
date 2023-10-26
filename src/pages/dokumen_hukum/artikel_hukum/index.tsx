@@ -21,25 +21,13 @@ export default function ArtikelHukum() {
           <div
             id="home"
             className="
-            w-full 
-            h-screen 
-            bg-cover
-            bg-heroResponsiveBg 
-            bg-no-repeat 
-            bg-center
-            lg:bg-heroBackground2  
+           customHeader 
             "
           >
             <Navbar />
             <section
               className="
-              max-w-contentContainer mx-auto py-10 flex flex-col gap-4
-              sm:w-[90%]
-              mdl:w-[90%]
-              lg:py-24 
-              xl:px-4 
-              xl:mt-20
-              lgl:gap-8 
+              customSection
               "
             >
             <motion.h1
@@ -62,11 +50,7 @@ export default function ArtikelHukum() {
           <section
             id="home"
             className="
-            max-w-contentContainer
-            bg-white shadow-bannerFormShadow 
-            sm:w-[90%] 
-            mdl:w-[90%]
-            rounded-3xl mt-10 mx-auto pt-10 sm:mb-20
+            bannerLayout1
             "
           >
             <motion.div
@@ -88,7 +72,7 @@ export default function ArtikelHukum() {
                     <p className="text-base">Judul</p>
                   </div>
                   <input
-                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                    className="textFilterInnerBox"
                     type="text"
                     placeholder="Masukkan Judul Artikel"
                   ></input>
@@ -99,7 +83,7 @@ export default function ArtikelHukum() {
                     <p className="text-base">Sumber</p>
                   </div>
                   <input
-                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                    className="textFilterInnerBox"
                     type="text"
                     placeholder="Masukkan Sumber Artikel"
                   ></input>
@@ -112,7 +96,7 @@ export default function ArtikelHukum() {
                     <p className="text-base">Subjek</p>
                   </div>
                   <input
-                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                    className="textFilterInnerBox"
                     type="text"
                     placeholder="Masukkan Subjek Artikel"
                   ></input>
@@ -123,7 +107,7 @@ export default function ArtikelHukum() {
                     <p className="text-base">Tahun Terbit</p>
                   </div>
                   <input
-                    className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                    className="textFilterInnerBox"
                     type="text"
                     placeholder="Masukkan Tahun Terbit"
                   ></input>
@@ -142,11 +126,7 @@ export default function ArtikelHukum() {
           </div>
           <div
             className="
-              bg-blackWaveBackground 
-              lg:bg-blackWaveBackground 
-              lg:bg-transparent
-              sm:bg-[#141721] 
-              bg-no-repeat bg-cover bg-center
+              customFooter
               "
           >
             <Footer />

@@ -6,8 +6,6 @@ interface Props {
 }
 
 const Status = ({ desc }: Props) => {
-
-  console.log(desc);
   
   if (desc == 1) {
     return (

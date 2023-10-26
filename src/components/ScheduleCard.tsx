@@ -42,7 +42,7 @@ const ScheduleCard = ({
     >
       <div className="w-full grid grid-cols-1 sm:px-8 lg:px-20 lg:pt-10">
         <div className="flex flex-row sm:mr-2 lg:mr-10">
-          <AiFillInfoCircle className="sm:text-sm lg:text-xl sm:mr-1 lg:mr-2 mt-0.5 text-[#FF4E4E]" />
+          <AiFillInfoCircle className="dateIcon" />
           <p className="text-colorPrimary sm:text-sm lg:text-lg">{date}</p>
         </div>
         <p className="sm:text-xl lg:text-2xl sm:py-4 lg:py-2 lg:mb-8">

@@ -15,34 +15,20 @@ export default function PerdaPendirian() {
         <div
           id="home"
           className="
-         w-full 
-        h-screen 
-        bg-contain
-        bg-heroResponsiveBg 
-        bg-no-repeat 
-        sm:bg-cover
-        lg:bg-contain
-        lg:bg-top
-        lg:bg-heroBackground2   
+          customHeader    
         "
         >
           <Navbar />
           <section
             className="
-          max-w-contentContainer mx-auto py-10 flex flex-col gap-4
-          sm:w-[90%]
-          mdl:w-[90%]
-          lg:py-24 
-          xl:px-4 
-          xl:mt-20
-          lgl:gap-8 
+          customSection
           "
           >
             <motion.h1
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-4xl lgl:text-5xl font-titleFont font-semibold text-white"
+              className="titlePage"
             >
               Peraturan Daerah Pendirian
             </motion.h1>
@@ -58,16 +44,7 @@ export default function PerdaPendirian() {
           <section
             id="home"
             className="
-            max-w-contentContainer
-            sml:pt-20
-            lg:py-10 
-            lg:mt-40
-            xl:mt-0 xl:pt-0
-            lgl:py-32 
-            sm:w-[90%] 
-            mdl:w-[90%]
-          bg-white shadow-bannerFormShadow 
-            rounded-3xl mt-10 mx-auto py-10 sm:mb-20"
+            customLayoutContent"
           >
             <motion.div
               initial={{ y: 10, opacity: 0 }}
@@ -75,7 +52,7 @@ export default function PerdaPendirian() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="w-full grid grid-cols-1 sm:px-8 lg:px-20 lg:pt-20"
             >
-              <p className="sm:text-xl lg:text-4xl sm:pb-10 lg:pb-8">
+              <p className="titleContent">
                 Belum ada data
               </p>
 
@@ -86,11 +63,7 @@ export default function PerdaPendirian() {
           </section>
           <div
             className="
-              bg-blackWaveBackground 
-              lg:bg-blackWaveBackground 
-              lg:bg-transparent
-              sm:bg-[#141721] 
-              bg-no-repeat bg-cover bg-center
+              customFooter
               "
           >
             <Footer />

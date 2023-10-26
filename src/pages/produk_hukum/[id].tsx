@@ -72,32 +72,20 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
           <div
             id="home"
             className="
-            w-full 
-            h-screen 
-            bg-cover
-            bg-heroResponsiveBg 
-            bg-no-repeat 
-            bg-center
-            lg:bg-heroBackground2  
+           customHeader 
             "
           >
             <Navbar />
             <section
               className="
-              max-w-contentContainer mx-auto py-10 flex flex-col gap-4
-              sm:w-[90%]
-              mdl:w-[90%]
-              lg:py-24 
-              xl:px-4 
-              xl:mt-20
-              lgl:gap-8 
+              customSection
               "
             >
               <motion.h1
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="text-4xl lgl:text-5xl font-titleFont font-semibold text-white"
+                className="titlePage"
               >
                 Detail Produk Hukum
               </motion.h1>
@@ -171,17 +159,13 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
                   status={3}
                 />
 
-                <SocialMediaRow />
+                {/* <SocialMediaRow /> */}
               </motion.div>
             </section>
 
             <div
               className="
-                  bg-blackWaveBackground 
-                  lg:bg-blackWaveBackground 
-                  lg:bg-transparent
-                  sm:bg-[#141721] 
-                  bg-no-repeat bg-cover bg-center
+                  customFooter
                   "
             >
               <Footer />

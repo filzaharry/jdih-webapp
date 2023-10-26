@@ -15,34 +15,20 @@ export default function PengelolaJdih() {
         <div
           id="home"
           className="
-         w-full 
-        h-screen 
-        bg-contain
-        bg-heroResponsiveBg 
-        bg-no-repeat 
-        sm:bg-cover
-        lg:bg-contain
-        lg:bg-top
-        lg:bg-heroBackground2   
+          customHeader  
         "
         >
           <Navbar />
           <section
             className="
-          max-w-contentContainer mx-auto py-10 flex flex-col gap-4
-          sm:w-[90%]
-          mdl:w-[90%]
-          lg:py-24 
-          xl:px-4 
-          xl:mt-20
-          lgl:gap-8 
+          customSection
           "
           >
             <motion.h1
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-4xl lgl:text-5xl font-titleFont font-semibold text-white"
+              className="titlePage"
             >
               Pengelola JDIH
             </motion.h1>
@@ -52,22 +38,13 @@ export default function PengelolaJdih() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-lg md:max-w-[630px] font-medium text-white"
             >
-              {`Beranda > Struktur Organisasi > Pengelola JDIH`}
+              {`Beranda > Profil > Struktur Organisasi > Pengelola JDIH`}
             </motion.p>
           </section>
           <section
             id="home"
             className="
-            max-w-contentContainer
-            sml:pt-20
-            lg:py-10 
-            lg:mt-40
-            xl:mt-0 xl:pt-0
-            lgl:py-32 
-            sm:w-[90%] 
-            mdl:w-[90%]
-          bg-white shadow-bannerFormShadow 
-            rounded-3xl mt-10 mx-auto py-10 sm:mb-20"
+            customLayoutContent"
           >
             <motion.div
               initial={{ y: 10, opacity: 0 }}
@@ -84,10 +61,30 @@ export default function PengelolaJdih() {
                   </tr>
                 </thead>
                 <tbody>
+                <tr>
+                    <td className="border py-4 pl-4 border-slate-700">DODDY EFFENDI, SH</td>
+                    <td className="border py-4 pl-4 border-slate-700">DIREKTUR UTAMA</td>
+                    <td className="border py-4 pl-4 border-slate-700">PENANGGUNG JAWAB</td>
+                  </tr>
+                  <tr>
+                    <td className="border py-4 pl-4 border-slate-700">JOKO SURANA, ST</td>
+                    <td className="border py-4 pl-4 border-slate-700">DIREKTUR TEKNIK</td>
+                    <td className="border py-4 pl-4 border-slate-700">WAKIL PENANGGUNG JAWAB</td>
+                  </tr>
+                  <tr>
+                    <td className="border py-4 pl-4 border-slate-700">HARI HARTIAN, SH</td>
+                    <td className="border py-4 pl-4 border-slate-700">MANAGER UHPSDM</td>
+                    <td className="border py-4 pl-4 border-slate-700">KETUA</td>
+                  </tr>
+                  <tr>
+                    <td className="border py-4 pl-4 border-slate-700">BUDI RAHMAYADI</td>
+                    <td className="border py-4 pl-4 border-slate-700">STAF HUKUM</td>
+                    <td className="border py-4 pl-4 border-slate-700">ANGGOTA DAN DOKUMENTASI HUKUM</td>
+                  </tr>
                   <tr>
                     <td className="border py-4 pl-4 border-slate-700">DIAN PURNAMASARI, SH</td>
                     <td className="border py-4 pl-4 border-slate-700">ASISTEN MANAGER HUKUM</td>
-                    <td className="border py-4 pl-4 border-slate-700">KETUA</td>
+                    <td className="border py-4 pl-4 border-slate-700">WAKIL KETUA</td>
                   </tr>
                   <tr>
                     <td className="border py-4 pl-4 border-slate-700">WIWIT HAYU NIATI, SH</td>
@@ -110,11 +107,7 @@ export default function PengelolaJdih() {
           </section>
           <div
             className="
-              bg-blackWaveBackground 
-              lg:bg-blackWaveBackground 
-              lg:bg-transparent
-              sm:bg-[#141721] 
-              bg-no-repeat bg-cover bg-center
+              customFooter
               "
           >
             <Footer />

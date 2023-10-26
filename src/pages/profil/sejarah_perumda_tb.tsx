@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import SocialMediaRow from "@/src/components/SocialMediaRow";
 import { historyBentengan, historyPerumdaTb } from "@/public";
 import Image from "next/image";
+import { MdDateRange } from "react-icons/md";
 
 export default function SejarahPerumdaTb() {
   return (
@@ -17,34 +18,20 @@ export default function SejarahPerumdaTb() {
         <div
           id="home"
           className="
-        w-full 
-        h-screen 
-        bg-contain
-        bg-heroResponsiveBg 
-        bg-no-repeat 
-        sm:bg-cover
-        lg:bg-contain
-        lg:bg-top
-        lg:bg-heroBackground2  
+          customHeader  
         "
         >
           <Navbar />
           <section
             className="
-          max-w-contentContainer mx-auto py-10 flex flex-col gap-4
-          sm:w-[90%]
-          mdl:w-[90%]
-          lg:py-24 
-          xl:px-4 
-          xl:mt-20
-          lgl:gap-8 
+          customSection
           "
           >
             <motion.h1
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-4xl lgl:text-5xl font-titleFont font-semibold text-white"
+              className="titlePage"
             >
               Informasi
             </motion.h1>
@@ -60,16 +47,7 @@ export default function SejarahPerumdaTb() {
           <section
             id="home"
             className="
-            max-w-contentContainer
-            sml:pt-20
-            lg:py-10 
-            lg:mt-40
-            xl:mt-0 xl:pt-0
-            lgl:py-32 
-            sm:w-[90%] 
-            mdl:w-[90%]
-          bg-white shadow-bannerFormShadow 
-            rounded-3xl mt-10 mx-auto py-10 sm:mb-20"
+            customLayoutContent"
           >
             <motion.div
               initial={{ y: 10, opacity: 0 }}
@@ -77,23 +55,23 @@ export default function SejarahPerumdaTb() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="w-full grid grid-cols-1 sm:px-8 lg:px-20 lg:pt-20"
             >
-              <p className="sm:text-xl lg:text-4xl sm:pb-10 lg:pb-8">
+              <p className="titleContent">
                 Sejarah PDAM Kota Tangerang
               </p>
 
               <div className="flex flex-row">
                 <div className="flex flex-row sm:mr-2 lg:mr-10">
-                  <AiFillInfoCircle className="sm:text-sm lg:text-xl sm:mr-1 lg:mr-2 mt-0.5 text-[#FF4E4E]" />
+                  <MdDateRange className="dateIcon" />
                   <p className="text-colorPrimary sm:text-sm lg:text-lg">
                     Selasa, 18 Juli 2023
                   </p>
                 </div>
-                <div className="flex flex-row">
-                  <AiFillInfoCircle className="sm:text-sm lg:text-xl sm:mr-1 lg:mr-2 mt-0.5 text-[#FF4E4E]" />
+                {/* <div className="flex flex-row">
+                  <AiFillInfoCircle className="dateIcon" />
                   <p className="text-colorPrimary sm:text-sm lg:text-lg">
                     Umum
                   </p>
-                </div>
+                </div> */}
               </div>
               <div className="py-4 lg:mt-4">
                 {/* FINAL USE MARKDOWN */}
@@ -116,7 +94,7 @@ export default function SejarahPerumdaTb() {
                     </a>
                   </p>
                 </div>
-                <p className="indent-10 sm:text-sm lg:text-lg text-justify mb-4">
+                <p className="indent-10 textContent mb-4">
                   Pertengahan Abad XV: Tiga Aria Pada Masa Kolonialisme Belanda
                   (abad XV), Sultan Banten mengangkat Tiga Aria / Maulana yang
                   merupakan kerabat jauh Sultan dari Kerjaaan Sumedang Larang
@@ -129,7 +107,7 @@ export default function SejarahPerumdaTb() {
                   ini turut mendasari sebutan Kota Tangerang yang dikenal dengan
                   sebutan Kota Benteng.
                 </p>
-                <p className="indent-10 sm:text-sm lg:text-lg text-justify mb-4">
+                <p className="indent-10 textContent mb-4">
                   Saat ini sisa bangunan <strong>Bentengan</strong> tersebut berada di beberapa
                   titik di bawah permukaan air Sungai Cisadane yang semakin
                   melebar. 1654 M: <strong>Tanggeran</strong> Bangunan Penanda nama <strong>Tangerang</strong>
@@ -161,7 +139,7 @@ export default function SejarahPerumdaTb() {
                     </a>
                   </p>
                 </div>
-                <p className="indent-10 sm:text-sm lg:text-lg text-justify mb-4">
+                <p className="indent-10 textContent mb-4">
                   Fungsi tugu tersebut adalah sebagai pembatas atau penanda
                   wilayah kekuasaan kesultanan Banten di sebelah barat Sungai
                   Cisadane dengan wilayah yang dikuasi VOC di sebelah timur.
@@ -179,7 +157,7 @@ export default function SejarahPerumdaTb() {
                   mengenal huruf mati, dan terbiasa menyebut <strong>Tangeran</strong> dengan
                   <strong>Tangerang</strong>.
                 </p>
-                <p className="indent-10 sm:text-sm lg:text-lg text-justify mb-4">
+                <p className="indent-10 textContent mb-4">
                   Kesalahan ejaan dan dialek inilah yang diwariskan dari
                   generasi ke generasi bahkan hingga saat ini. Pasca Tahun 1981
                   - 1993: Wilayah yang Berkembang Pesat Seiring berjalannya
@@ -192,28 +170,28 @@ export default function SejarahPerumdaTb() {
                   Februari 1981 disahkan Peraturan Pemerintah Nomor 50 Tahun
                   1981 tentang Pembentukan Kota Administratif Tangerang.
                 </p>
-                <p className="indent-10 sm:text-sm lg:text-lg text-justify mb-4">
+                <p className="indent-10 textContent mb-4">
                   Adapun Walikota Administratif Tangerang yang telah menjabat
                   mulai terbentuk Kota Administratif adalah :
                 </p>
                 <ol className="mb-4">
                   <li>
-                    <p className="indent-10 sm:text-sm lg:text-lg text-justify">
+                    <p className="indent-10 textContent">
                       1. Periode 1982-1986 : Bapak KARSO PERMANA, BA
                     </p>
                   </li>
                   <li>
-                    <p className="indent-10 sm:text-sm lg:text-lg text-justify">
+                    <p className="indent-10 textContent">
                       2. Periode 1986-1990 : Bapak Drs. H. YITNO
                     </p>
                   </li>
                   <li>
-                    <p className="indent-10 sm:text-sm lg:text-lg text-justify">
+                    <p className="indent-10 textContent">
                       3. Periode 1990-1993 : Bapak Drs. H. DJAKARIA MACHMUD
                     </p>
                   </li>
                 </ol>
-                <p className="indent-10 sm:text-sm lg:text-lg text-justify mb-4">
+                <p className="indent-10 textContent mb-4">
                   1 Juni 1987 sampai dengan 28 Februari 1993: Dari Kabupaten ke
                   Kotamadya. Dalam perjalanan kurun waktu 12 Tahun Kabupaten Tangerang
                   kembali menunjukan perkembangan dan pertumbuhan di segala
@@ -222,7 +200,7 @@ export default function SejarahPerumdaTb() {
                   resmi Kotamadya Daerah Tingkat II Tangerang menjadi Daerah
                   Otonom Ke-25 di Jawa Barat dan Ke-312 se Indonesia.
                 </p>
-                <p className="indent-10 sm:text-sm lg:text-lg text-justify mb-4">
+                <p className="indent-10 textContent mb-4">
                   Selanjutnya, Kotamadya Daerah Tingkat II Tangerang diresmikan
                   oleh Bapak Jendral TNI ( Pur ) RUDINI ( Menteri Dalam Negri
                   Republik Indonesia ) pada hari Minggu tanggal 28 Februari 1993
@@ -230,7 +208,7 @@ export default function SejarahPerumdaTb() {
                   melantik Bapak Drs. H. DJAKARIA MACHMUD sebagai Pejabat
                   Walikotamadya Kepala Daerah Tingkat II Tangerang.
                 </p>
-                <p className="indent-10 sm:text-sm lg:text-lg text-justify mb-4">
+                <p className="indent-10 textContent mb-4">
                   1993-Sekarang: Para Pemimpin satu tahun kemudian, berdasarkan
                   hasil pemilihan DPRD Kotamadya Daerah Tingkat II Tangerang
                   Bapak Drs. H. DJAKARIA MACHMUD terpilih sebagai Walikotamadya
@@ -244,16 +222,12 @@ export default function SejarahPerumdaTb() {
                 </p>
               </div>
               <hr className="w-full h-0.5 mt-8 bg-[#D9D9D9]" />
-              <SocialMediaRow />
+              {/* <SocialMediaRow /> */}
             </motion.div>
           </section>
           <div
             className="
-              bg-blackWaveBackground 
-              lg:bg-blackWaveBackground 
-              lg:bg-transparent
-              sm:bg-[#141721] 
-              bg-no-repeat bg-cover bg-center
+              customFooter
               "
           >
             <Footer />

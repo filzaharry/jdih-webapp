@@ -25,7 +25,7 @@ const Banner = ({titleStart,titleEnd, pov, subtitle}: Props) => {
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className='sm:mt-4 text-4xl lgl:text-5xl font-titleFont font-semibold text-white'>{titleStart}<span className='text-textStabilo mt-2 lgl:mt-4'>{pov}</span>{titleEnd}
+          className='sm:mt-4 titlePage'>{titleStart}<span className='text-textStabilo mt-2 lgl:mt-4'>{pov}</span>{titleEnd}
           </motion.h1>
           <motion.p
           initial={{ y: 10, opacity: 0 }}

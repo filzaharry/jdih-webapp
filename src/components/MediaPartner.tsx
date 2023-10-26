@@ -24,7 +24,7 @@ const MediaPartner = () => {
   useEffect(() => {
     console.log();
 
-    const url = apiUrl + "mediapartner/" + limit;
+    const url = apiUrl + "mediapartner/" + 6;
 
     const fetchData = async () => {
       try {
@@ -48,6 +48,7 @@ const MediaPartner = () => {
             sm:w-[90%] sm:mt-10
             flex flex-col gap-8
             py-10 
+            hover:cursor-pointer
         "
     >
       <div className="flex justify-between items-end">
@@ -61,7 +62,7 @@ const MediaPartner = () => {
         <MediaCard
         key={i}
           title={val.title}
-          logo={apiUrl + val.logo}
+          logo={val.logo}
           link={val.link}
           desc={val.subtitle}
         />

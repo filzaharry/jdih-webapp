@@ -13,49 +13,55 @@ import SocialMediaRow from "@/src/components/SocialMediaRow";
 import NewsItem from "@/src/components/NewsItem";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
+import axios from "axios";
 
-interface ProductsInterface {
+interface NewsInterface {
   id: string;
   title: string;
   subtitle: string;
   created_at: string;
   path: string;
+  picture: string;
 }
 
-type Products = {
+type News = {
   statusCode: number;
   message: string;
-  data: ProductsInterface[];
+  data: NewsInterface[];
 };
 
-export const getServerSideProps = (async (context) => {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL + "news/limit/0";
-  const res = await fetch(apiUrl!.toString());
-  const dataResult = await res.json();
+// export const getServerSideProps = (async (context) => {
+//   const apiUrl = process.env.NEXT_PUBLIC_API_URL + "news";
+//   const res = await fetch(apiUrl!.toString());
+//   const dataResult = await res.json();
 
-  return { props: { dataResult } };
-}) satisfies GetServerSideProps<{
-  dataResult: Products;
-}>;
+//   return { props: { dataResult } };
+// }) satisfies GetServerSideProps<{
+//   dataResult: News;
+// }>;
 
-const AllNews = ({
-  dataResult,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const AllNews = () => {
   const router = useRouter();
-  const [data, setData] = useState<Products | null>(null);
+  const [data, setData] = useState<News | null>(null);
   const [isLoading, setLoading] = useState(true);
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const limit = process.env.NEXT_PUBLIC_LIMIT
 
   useEffect(() => {
-    console.log("dataResult");
-    console.log(dataResult);
+    const url = apiUrl + "news?rowPerPage=" + limit;
 
-    if (!router.isReady) return;
-    // codes using router.query
-
-    if (dataResult.statusCode == 200) {
+    const fetchData = async () => {
+      try {
+        const { data: response } = await axios.get(url);
+        setData(response.data);
+        console.log("response", response.data);
+      } catch (error) {
+        console.error("what error ?", error);
+      }
       setLoading(false);
-      setData(dataResult);
-    }
+    };
+
+    fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.isReady]);
 
@@ -69,27 +75,20 @@ const AllNews = ({
           <div
             id="home"
             className="
-         w-full 
-        h-screen 
-        bg-contain
-        bg-heroResponsiveBg 
-        bg-no-repeat 
-        sm:bg-cover
-        lg:bg-contain
-        lg:bg-top
-        lg:bg-heroBackground2   
-        "
+            w-full 
+            h-screen 
+            bg-contain
+            bg-heroResponsiveBg 
+            bg-no-repeat 
+            sm:bg-cover
+            lg:bg-cover
+            lg:bg-top
+            lg:bg-heroBackground2"
           >
             <Navbar />
             <section
               className="
-          max-w-contentContainer mx-auto py-10 flex flex-col gap-4
-          sm:w-[90%]
-          mdl:w-[90%]
-          lg:py-24 
-          xl:px-4 
-          xl:mt-20
-          lgl:gap-8 
+          customSection
           "
             >
               <motion.h1
@@ -120,17 +119,21 @@ const AllNews = ({
             "
             >
               {data?.data?.map((val, i) => (
-                <NewsItem key={i} id={val.id} subtitle="" title={val.title} path={val.path}  />
+                <NewsItem
+                  key={i}
+                  id={val.id}
+                  subtitle={val.subtitle}
+                  title={val.title}
+                  path={val.path}
+                  picture={val.picture}
+                  created_at={val.created_at}
+                />
               ))}
             </section>
 
             <div
               className="
-              bg-blackWaveBackground 
-              lg:bg-blackWaveBackground 
-              lg:bg-transparent
-              sm:bg-[#141721] 
-              bg-no-repeat bg-cover bg-center
+              customFooter
               "
             >
               <Footer />

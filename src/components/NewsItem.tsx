@@ -3,19 +3,23 @@ import React from 'react'
 import { AiFillInfoCircle } from 'react-icons/ai'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
-import { infoImage } from '@/public'
+import moment from 'moment'
+import { MdDateRange } from 'react-icons/md'
+import { BiSolidLabel } from 'react-icons/bi'
 
 
 interface Props {
   id: string,
   title: string,
-  subtitle: string
-  path:string
+  subtitle: string,
+  picture: string,
+  path:string,
+  created_at: string
 
 }
 
 
-const NewsItem = ({id, title, subtitle, path}: Props) => {
+const NewsItem = ({id, title, subtitle, picture, path, created_at}: Props) => {
   const router = useRouter()
   return (
     <motion.div
@@ -26,32 +30,31 @@ const NewsItem = ({id, title, subtitle, path}: Props) => {
   >
     <Image
       className="object-cover w-[300px] h-[200px] rounded-2xl sm:mb-4 lg:mb-10"
-      src={infoImage}
+      src={picture}
       alt="profileImg"
       width={2670}
       height={80}
     />
     <div className="sm:mx-2 lg:mx-10">
       <p className="text-2xl mb-2">
-        {title}
+        {
+        title.length > 90 ? title.substring(0,90)+'...' : title
+        }
       </p>
 
       <div className="flex flex-row">
         <div className="flex flex-row sm:mr-2 lg:mr-10">
-          <AiFillInfoCircle className="sm:text-sm lg:text-md mr-2 mt-0.5 text-[#FF4E4E]" />
-          <p className="text-colorPrimary sm:text-sm lg:text-md">Selasa, 18 Juli 2023</p>
+          <MdDateRange className="sm:text-sm lg:text-lg mr-2 text-[#FF4E4E]" />
+          <p className="text-colorPrimary sm:text-sm lg:text-md">{moment(created_at).format("LLL")}</p>
         </div>
-        <div className="flex flex-row">
-          <AiFillInfoCircle className="sm:text-sm lg:text-md mr-2 mt-0.5 text-[#FF4E4E]" />
-          <p className="text-colorPrimary sm:text-sm lg:text-md">Umum</p>
-        </div>
+        {/* <div className="flex flex-row">
+          <BiSolidLabel className="sm:text-sm lg:text-lg mr-2 text-[#FF4E4E]" />
+          <p className="text-colorPrimary sm:text-sm lg:text-md">category not found</p>
+        </div> */}
       </div>
       <div className="py-4 sm:mt-0 sm:mb-4 lg:mt-4">
         <p className='sm:text-sm lg:text-md'>
-          Peraturan Walikota Nomor 53 Tahun 2023 Perubahan Atas
-          Peraturan Wali Kota Nomor 11 Tahun 2019 Tentang Pedoman
-          Pelaksanaan Kegiatan Pembangunan Sarana dan Prasarana
-          Kelurahan dan Pemberdayaan Masyarakat di Kelurahan.
+          { subtitle.length > 140 ? subtitle.substring(0,140)+'...' : subtitle}
         </p>
         <p onClick={()=>router.push('/informasi/berita_hukum/'+path)} className="text-red-400 mt-2 sm:text-sm lg:text-md">Lihat Selengkapnya ...</p>
       </div>

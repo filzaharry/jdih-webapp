@@ -12,28 +12,14 @@ import Certificate from "@/src/components/Certificate";
 import MediaPartner from "@/src/components/MediaPartner";
 import { Header } from "@/src/components/Header";
 
-
-export default  function Home() {
-
-
+export default function Home() {
   return (
     <>
       <Header />
       <main className="font-bodyFont w-full h-screen overflow-x-hidden">
-        <div
-          id="home"
-          className="
-        w-full 
-        h-screen 
-        bg-cover
-        bg-heroResponsiveBg 
-        bg-no-repeat 
-        bg-center
-        lg:bg-heroBackground  
-        "
-        >
+        <div id="home" className="homepageHeader">
           <Navbar />
-          <div className="xl:mt-48">
+          <div className="xl:mt-18">
             <Banner
               titleStart="Produk Hukum "
               pov="Perumda Tirta Benteng "
@@ -45,25 +31,16 @@ export default  function Home() {
           <div className="mt-20">
             <Statistic />
           </div>
-          
+
           <Product />
 
           <div className="h-screen bg-no-repeat bg-cover bg-center">
-          {/* <div className="h-screen bg-blueWaveBackground bg-no-repeat bg-cover bg-center"> */}
+            {/* <div className="h-screen bg-blueWaveBackground bg-no-repeat bg-cover bg-center"> */}
             <Information />
             {/* <VideoBanner /> */}
             {/* <Certificate /> */}
             <MediaPartner />
-            <div
-              className="
-              bg-blackWaveBackground 
-              lg:bg-blackWaveBackground 
-              lg:bg-transparent
-              sm:bg-[#141721] 
-              bg-no-repeat bg-cover bg-center
-              xl:-mt-60
-              "
-            >
+            <div className="customFooter">
               <Footer />
             </div>
           </div>

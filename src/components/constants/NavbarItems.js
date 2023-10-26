@@ -44,16 +44,16 @@ const DataNavbar = [
         route: "/sk_tim_jdih",
         submenu: [],
       },
-      {
-        name: "SK Pengelola",
-        route: "/sk_pengelola",
-        submenu: [],
-      },
-      {
-        name: "Standar Operasional Prosedur",
-        route: "/standar_operasional_prosedur",
-        submenu: [],
-      },
+      // {
+      //   name: "SK Pengelola",
+      //   route: "/sk_pengelola",
+      //   submenu: [],
+      // },
+      // {
+      //   name: "Standar Operasional Prosedur",
+      //   route: "/standar_operasional_prosedur",
+      //   submenu: [],
+      // },
       {
         name: "Kontak",
         route: "/kontak",
@@ -62,43 +62,43 @@ const DataNavbar = [
     ],
   },
 
-  {
-    name: "Informasi",
-    route: "/informasi",
-    submenu: [
-      {
-        name: "Berita Hukum",
-        route: "/berita_hukum",
-        submenu: [],
-      },
-      {
-        name: "Agenda",
-        route: "/agenda",
-        submenu: [],
-      },
-      {
-        name: "Informasi Lainnya",
-        route: "/informasi_lainnya",
-        submenu: [
-          {
-            name: "Naskah Akademik",
-            route: "/naskah_akademik",
-            submenu: [],
-          },
-          {
-            name: "Propemperda",
-            route: "/propemperda",
-            submenu: [],
-          },
-          {
-            name: "Surat Edaran",
-            route: "/surat_edaran",
-            submenu: [],
-          },
-        ],
-      },
-    ],
-  },
+  // {
+  //   name: "Informasi",
+  //   route: "/informasi",
+  //   submenu: [
+  //     {
+  //       name: "Berita Hukum",
+  //       route: "/berita_hukum",
+  //       submenu: [],
+  //     },
+  //     {
+  //       name: "Agenda",
+  //       route: "/agenda",
+  //       submenu: [],
+  //     },
+  //     {
+  //       name: "Informasi Lainnya",
+  //       route: "/informasi_lainnya",
+  //       submenu: [
+  //         {
+  //           name: "Naskah Akademik",
+  //           route: "/naskah_akademik",
+  //           submenu: [],
+  //         },
+  //         {
+  //           name: "Propemperda",
+  //           route: "/propemperda",
+  //           submenu: [],
+  //         },
+  //         {
+  //           name: "Surat Edaran",
+  //           route: "/surat_edaran",
+  //           submenu: [],
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 
   {
     name: "Dokumen Hukum",
@@ -109,11 +109,11 @@ const DataNavbar = [
         route: "/peraturan_perundang_undangan",
         submenu: [],
       },
-      {
-        name: "Artikel Hukum",
-        route: "/artikel_hukum",
-        submenu: [],
-      },
+      // {
+      //   name: "Artikel Hukum",
+      //   route: "/artikel_hukum",
+      //   submenu: [],
+      // },
       {
         name: "Kepdir",
         route: "/kepdir",

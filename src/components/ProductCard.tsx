@@ -41,8 +41,12 @@ const ProductCard = ({id, title, subtitle}: Props) => {
                 <Image className="w-24 " src={cardBoxes} alt="cardBoxes" />
             </div>
             <div>
-                <h2 className='text-xl font-titleFont font-semibold tracking-wide text-colorPrimary group-hover:text-white'>{title}</h2>
-                <p className='text-sm mt-3 group-hover:text-white'>{subtitle}</p>
+                <h2 className='text-xl font-titleFont font-semibold tracking-wide text-colorPrimary group-hover:text-white'>{
+                title.length > 90 ? title.substring(0,90)+'...' : title
+                }</h2>
+                <p className='text-sm mt-3 group-hover:text-white'>{
+                subtitle.length > 140 ? subtitle.substring(0,140)+'...' : subtitle
+                }</p>
             </div>
             <button onClick={()=>router.push('/produk_hukum/'+id)} className="group-hover:bg-colorSecondary border border-colorSecondary bg-white text-colorSecondary px-10 py-3 group-hover:text-white rounded-full xl:w-48">
                 Lihat Detail

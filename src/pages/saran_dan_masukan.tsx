@@ -200,34 +200,20 @@ const SaranDanMasukan = () => {
           <div
             id="home"
             className="
-         w-full 
-        h-screen 
-        bg-contain
-        bg-heroResponsiveBg 
-        bg-no-repeat 
-        sm:bg-cover
-        lg:bg-contain
-        lg:bg-top
-        lg:bg-heroBackground2   
+         customHeader  
         "
           >
             <Navbar />
             <section
               className="
-          max-w-contentContainer mx-auto py-10 flex flex-col gap-4
-          sm:w-[90%]
-          mdl:w-[90%]
-          lg:py-24 
-          xl:px-4 
-          xl:mt-20
-          lgl:gap-8 
+          customSection
           "
             >
               <motion.h1
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="text-4xl lgl:text-5xl font-titleFont font-semibold text-white"
+                className="titlePage"
               >
                 Saran dan Masukan
               </motion.h1>
@@ -267,7 +253,7 @@ const SaranDanMasukan = () => {
                       <p className="text-base">Nama</p>
                     </div>
                     <input
-                      className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                      className="textFilterInnerBox"
                       type="text"
                       placeholder="Masukkan Nama"
                       onChange={handleChangeUsername}
@@ -280,7 +266,7 @@ const SaranDanMasukan = () => {
                       <p className="text-base">Email</p>
                     </div>
                     <input
-                      className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                      className="textFilterInnerBox"
                       type="email"
                       placeholder="Masukkan Email"
                       onChange={handleChangeEmail}
@@ -296,16 +282,16 @@ const SaranDanMasukan = () => {
                     </div>
                     <div className="dropdown relative inline-block text-left w-full">
                       {satisfactionMsg == "" ? (
-                        <p className=" px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none">
+                        <p className=" textFilterInnerBox">
                           Pilih Subjek
                         </p>
                       ) : (
-                        <p className=" px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none">
+                        <p className=" textFilterInnerBox">
                           {satisfactionMsg}
                         </p>
                       )}
                       <div
-                        className="dropdown-content hidden absolute right-0 z-10 w-full origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                        className="dropdownCustom"
                         role="menu"
                         aria-orientation="vertical"
                         aria-labelledby="menu-button"
@@ -316,7 +302,7 @@ const SaranDanMasukan = () => {
                               setSatisfaction(0);
                               setSatisfactionMsg("Sangat Puas");
                             }}
-                            className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm"
+                            className="dropdownValueCustom"
                           >
                             Sangat Puas
                           </p>
@@ -325,7 +311,7 @@ const SaranDanMasukan = () => {
                               setSatisfaction(1);
                               setSatisfactionMsg("Puas");
                             }}
-                            className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm"
+                            className="dropdownValueCustom"
                           >
                             Puas
                           </p>
@@ -334,7 +320,7 @@ const SaranDanMasukan = () => {
                               setSatisfaction(2);
                               setSatisfactionMsg("Tidak Puas");
                             }}
-                            className="text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm"
+                            className="dropdownValueCustom"
                           >
                             Tidak Puas
                           </p>
@@ -348,7 +334,7 @@ const SaranDanMasukan = () => {
                       <p className="text-base">Saran dan Masukan</p>
                     </div>
                     <input
-                      className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                      className="textFilterInnerBox"
                       type="text"
                       placeholder="Saran dan Masukan Anda"
                       onChange={handleChangeMessage}
@@ -412,7 +398,7 @@ const SaranDanMasukan = () => {
                   <div className="mx-4">
                     <p className="text-xl text-colorPrimary">{val.name}</p>
                     <p className="text-sm text-red-500 italic">{val.email}</p>
-                    <p className="sm:text-sm lg:text-lg text-justify text-slate-500">
+                    <p className="textContent text-slate-500">
                       {val.suggestion}
                     </p>
                     <p className="mt-2 mb-4 text-sm text-slate-500">
@@ -424,11 +410,7 @@ const SaranDanMasukan = () => {
             </div>
             <div
               className="
-              bg-blackWaveBackground 
-              lg:bg-blackWaveBackground 
-              lg:bg-transparent
-              sm:bg-[#141721] 
-              bg-no-repeat bg-cover bg-center
+              customFooter
               "
             >
               <Footer />

@@ -47,7 +47,7 @@ const Statistic = () => {
       sml:pt-20
       lg:py-10 
       lg:mt-40
-      xl:mt-0 xl:pt-0
+      xl:mt-50 xl:pt-10
       lgl:py-32 
       sm:w-[90%] 
       mdl:w-[90%]">

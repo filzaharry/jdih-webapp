@@ -205,15 +205,15 @@ const KonsultasiPengaduan = () => {
           <div
             id="home"
             className="
-           w-full 
-          h-screen 
-          bg-contain
-          bg-heroResponsiveBg 
-          bg-no-repeat 
-          sm:bg-cover
-          lg:bg-contain
-          lg:bg-top
-          lg:bg-heroBackground2   
+            w-full 
+            h-screen 
+            bg-contain
+            bg-heroResponsiveBg 
+            bg-no-repeat 
+            sm:bg-cover
+            lg:bg-cover
+            lg:bg-top
+            lg:bg-heroBackground2   
           "
           >
             <Navbar />
@@ -232,7 +232,7 @@ const KonsultasiPengaduan = () => {
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="text-4xl lgl:text-5xl font-titleFont font-semibold text-white"
+                className="titlePage"
               >
                 Konsultasi dan Pengaduan
               </motion.h1>
@@ -274,7 +274,7 @@ const KonsultasiPengaduan = () => {
                       <p className="text-base">Nama</p>
                     </div>
                     <input
-                      className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                      className="textFilterInnerBox"
                       type="text"
                       placeholder="Masukkan Nama"
                       onChange={handleChangeUsername}
@@ -287,7 +287,7 @@ const KonsultasiPengaduan = () => {
                       <p className="text-base">Email</p>
                     </div>
                     <input
-                      className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                      className="textFilterInnerBox"
                       type="email"
                       placeholder="Masukkan Email"
                       onChange={handleChangeEmail}
@@ -302,7 +302,7 @@ const KonsultasiPengaduan = () => {
                       <p className="text-base">Pesan</p>
                     </div>
                     <input
-                      className="px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-79 text-textPlaceholder leading-tight focus:outline-none"
+                      className="textFilterInnerBox"
                       type="text"
                       placeholder="Pesan yang ingin disampaikan"
                       onChange={handleChangeMessage}
@@ -366,7 +366,7 @@ const KonsultasiPengaduan = () => {
                   <div className="mx-4">
                     <p className="text-xl text-colorPrimary">{val.name}</p>
                     <p className="text-sm text-red-500 italic">{val.email}</p>
-                    <p className="sm:text-sm lg:text-lg text-justify text-slate-500">
+                    <p className="textContent text-slate-500">
                       {val.suggestion}
                     </p>
                     <p className="mt-2 mb-4 text-sm text-slate-500">
@@ -383,7 +383,7 @@ const KonsultasiPengaduan = () => {
                         />
                         <div className="ml-4">
                           <p className="text-xl text-colorPrimary">Tanggapan</p>
-                          <p className="mb-4 sm:text-sm lg:text-lg text-justify text-slate-500">
+                          <p className="mb-4 textContent text-slate-500">
                             {val.responseDescription}
                           </p>
                         </div>

@@ -9,7 +9,8 @@ const nextConfig = {
       "upload.wikimedia.org",
       "www.perumdatirtabenteng.co.id",
       "jdih.tangerangkota.go.id",
-      "beta-mobilepdam.bengkelkutakkatik.id"
+      "beta-mobilepdam.bengkelkutakkatik.id",
+      "beta-dashboardsiganteng.bengkelkutakkatik.id"
     ],
   },
 };

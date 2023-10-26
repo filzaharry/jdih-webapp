@@ -5,22 +5,6 @@ import { MdOutlineMail } from 'react-icons/md';
 import { CgPin } from 'react-icons/cg'
 import { LuLineChart } from 'react-icons/lu';
 
-const LINKS = [
-    {
-        title: "Alamat",
-        icons: [],
-        items: ["Jl. Satria Sudirman, RT.002 / RW.001 Sukarasa, Kec. Tangerang, Kota Tangerang, Banten 15111", "(021) 55764955 ext. 3100", "jdih@tangerangkota.go.id"],
-    },
-    {
-        title: "Link Terkait",
-        items: ["Website SiGanteng", "JDIH Pusat", "JDIH Kota Tangerang", "JDIH Provinsi Banten", "Kemendagri"],
-    },
-    {
-        title: "Kunjungan",
-        items: ["Hari ini", "Minggu ini", "Bulan ini", "Semua"],
-    },
-];
-
 const currentYear = new Date().getFullYear();
 
 export function Footer() {
@@ -47,16 +31,16 @@ export function Footer() {
                             <p className="text-xl mb-4 font-semibold">Alamat</p>
                             <div className="flex flex-row mb-2">
                                 <CgPin className='text-[#66B3F9] text-2xl' />
-                                <p className="w-[60%] text-md ml-4 mb-4 font-extralight">Jl. Satria Sudirman, RT.002 / RW.001 Sukarasa, Kec. Tangerang, Kota Tangerang, Banten 15111</p>
+                                <p className="w-[60%] text-md ml-4 mb-4 font-extralight">Jalan Komp. Pu Prosida o.10, RT.001/RW.002, Mekarsari, Kec. Neglasari, Kota Tangerang, Banten 15129</p>
                             </div>
                             <div className="flex flex-row mb-2">
                                 <HiPhone className='text-[#66B3F9] text-2xl' />
-                                <p className="text-md ml-4 mb-4 font-extralight">(021) 55764955 ext. 3100</p>
+                                <p className="text-md ml-4 mb-4 font-extralight">(021)-5587234</p>
                             </div>
-                            <div className="flex flex-row mb-2">
+                            {/* <div className="flex flex-row mb-2">
                                 <MdOutlineMail className='text-[#66B3F9] text-2xl' />
-                                <p className="text-md ml-4 mb-4 font-extralight">jdih@tangerangkota.go.id</p>
-                            </div>
+                                <p className="text-md ml-4 mb-4 font-extralight">jdih.harmonidigital.id</p>
+                            </div> */}
                         </div>
                         <div className="lg:w-[30%] mr-20 sm:w-[100%]">
                             <p className="text-xl mb-4 font-semibold">Link Terkait</p>
@@ -99,7 +83,8 @@ export function Footer() {
                     </div>
                 </div>
                 <div className="mt-12 flex w-full sm:w-[100%] sm:pb-14 flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
-                    <p className='mx-auto'>Copyright &copy; {currentYear}{" "} JDIH PDAM Kota Tangerang</p>
+                    <p className='mx-auto'>Perumda Tirta Benteng Kota Tangerang</p>
+                    {/* <p className='mx-auto'>Copyright &copy; {currentYear}{" "} JDIH PDAM Kota Tangerang</p> */}
                 </div>
             </div>
         </footer>
