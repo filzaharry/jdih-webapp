@@ -399,14 +399,14 @@ const AllProducts = () => {
               <div className="flex flex-row justify-between py-10">
                 {data?.data?.length! > 0 ? (
                   <>
-                    <p className="linkViewAll text-gray-600">
+                    <p className="linkViewAllDisabled">
                       Menampilkan 1 sampai {data?.data?.length!} dari{" "}
                       {data?.totalData} entri
                     </p>
                   </>
                 ) : (
                   <>
-                    <p className="linkViewAll text-gray-600">
+                    <p className="linkViewAllDisabled">
                       Menampilkan 0 dari {data?.totalData} entri
                     </p>
                   </>
@@ -426,8 +426,8 @@ const AllProducts = () => {
                   ) : (
                     <>
                       <div className="flex flex-row gap-4 items-center justify-center cursor-pointer">
-                        <IoMdArrowDropleft className="linkViewAll text-gray-400" />
-                        <p className="linkViewAll text-gray-400">Sebelumnya</p>
+                        <IoMdArrowDropleft className="linkViewAllDisabled text-gray-400" />
+                        <p className="linkViewAllDisabled text-gray-400">Sebelumnya</p>
                       </div>
                     </>
                   )}
@@ -435,8 +435,8 @@ const AllProducts = () => {
                   {data?.data?.length! < parseInt(rowPerPage) ? (
                     <>
                       <div className="flex flex-row gap-4 items-center justify-center cursor-pointer">
-                        <p className="linkViewAll text-gray-400">Selanjutnya</p>
-                        <IoMdArrowDropright className="linkViewAll text-gray-400" />
+                        <p className="linkViewAllDisabled text-gray-400">Selanjutnya</p>
+                        <IoMdArrowDropright className="linkViewAllDisabled text-gray-400" />
                       </div>
                     </>
                   ) : (

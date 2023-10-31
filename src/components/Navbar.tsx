@@ -101,9 +101,9 @@ const Navbar = () => {
                   >
                     <div className="dropdown inline-block relative">
                       {item.submenu.length == 0 ? (
-                        <span onClick={() => router.push(item.route)}>
-                          {item.name}
-                        </span>
+                        <Link href={item.route}>
+                          <span>{item.name}</span>
+                        </Link>
                       ) : (
                         <>
                           <button className="flex flex-row items-center">
@@ -114,17 +114,15 @@ const Navbar = () => {
                             {item.submenu.map((sub_item, x) => (
                               <div key={x}>
                                 {sub_item.submenu.length == 0 ? (
-                                  <li
-                                    onClick={() =>
-                                      router.push(
-                                        item.route + "/" + sub_item.route
-                                      )
-                                    }
+                                  <Link
+                                    href={item.route + "/" + sub_item.route}
                                   >
-                                    <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
-                                      {sub_item.name}
-                                    </p>
-                                  </li>
+                                    <li>
+                                      <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
+                                        {sub_item.name}
+                                      </p>
+                                    </li>
+                                  </Link>
                                 ) : (
                                   <li className="dropdown">
                                     <p className=" hover:bg-gray-200 rounded-sm py-2 px-4 flex flex-row  justify-between ">
@@ -135,22 +133,21 @@ const Navbar = () => {
                                       {sub_item.submenu.map(
                                         (sub_sub_item, y) => {
                                           return (
-                                            <li
-                                              key={y}
-                                              onClick={() =>
-                                                router.push(
-                                                  item.route +
-                                                    "/" +
-                                                    sub_item.route +
-                                                    "/" +
-                                                    sub_sub_item.route
-                                                )
+                                            <Link
+                                              href={
+                                                item.route +
+                                                "/" +
+                                                sub_item.route +
+                                                "/" +
+                                                sub_sub_item.route
                                               }
                                             >
-                                              <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
-                                                {sub_sub_item.name}
-                                              </p>
-                                            </li>
+                                              <li key={y}>
+                                                <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
+                                                  {sub_sub_item.name}
+                                                </p>
+                                              </li>
+                                            </Link>
                                           );
                                         }
                                       )}

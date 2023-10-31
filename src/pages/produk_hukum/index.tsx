@@ -22,6 +22,7 @@ import {
 import { useRouter } from "next/router";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
+import Highlighted from "@/src/components/atom/Highlight";
 
 interface ProductsInterface {
   id: string;
@@ -79,6 +80,10 @@ const AllProducts = () => {
   const [fromRoute, setFromRoute] = useState(false);
   const [currentPage, setCurrentPage] = useState<number>(0);
 
+  const [highlight, setHighlight] = useState<string | null | string[]>(
+    ""
+  )
+
   let url: string;
   let urlCategory: string = "";
   let urlNumberProduct: string = "";
@@ -102,20 +107,29 @@ const AllProducts = () => {
       }
     }
 
+    if (category == 0) {
+      setCategoryMsg("");
+    }
+
     if (category != 0) {
       urlCategory = `&category=${category}`;
+      setHighlight(categoryMsg)
     }
     if (numberProduct != "") {
       urlNumberProduct = `&number=${numberProduct}`;
+      setHighlight(numberProduct)
     }
     if (yearProduct != "") {
       urlYearProduct = `&year=${yearProduct}`;
+      setHighlight(yearProduct)
     }
     if (status != "") {
       urlStatusProduct = `&status=${status}`;
+      setHighlight(statusMsg)
     }
     if (aboutProduct != "") {
       urlAboutProduct = `&about=${aboutProduct}`;
+      setHighlight(aboutProduct)
     }
 
     url = `${apiUrl}product_of_law?rowPerPage=${rowPerPage}&page=${currentPage}${urlCategory}${urlNumberProduct}${urlYearProduct}${urlStatusProduct}${urlAboutProduct}`;
@@ -163,7 +177,8 @@ const AllProducts = () => {
     setNumberProduct("");
     setYearProduct("");
     setAboutProduct("");
-    setStatus("");
+    setStatus(0);
+    setStatusMsg("");
   };
 
   return (
@@ -225,7 +240,7 @@ const AllProducts = () => {
                     {categoryMsg == "" ? (
                       <p className=" textFilterInnerBox">Pilih Kategori</p>
                     ) : (
-                      <p className=" textFilterInnerBox">{categoryMsg}</p>
+                      <p className=" textFilterInnerBox text-black">{categoryMsg}</p>
                     )}
                     <div
                       className="dropdownCustom"
@@ -271,7 +286,7 @@ const AllProducts = () => {
                     <p className="text-base">Nomor</p>
                   </div>
                   <input
-                    className="textFilterInnerBox"
+                    className="textFilterInnerBox text-black placeholder-textPlaceholder"
                     type="number"
                     placeholder="Nomor Produk"
                     value={numberProduct || ""}
@@ -284,7 +299,7 @@ const AllProducts = () => {
                     <p className="text-base">Tahun</p>
                   </div>
                   <input
-                    className="textFilterInnerBox"
+                    className="textFilterInnerBox text-black placeholder-textPlaceholder"
                     type="number"
                     placeholder="Tahun Produk"
                     // onChange={yearHandleChange}
@@ -303,7 +318,7 @@ const AllProducts = () => {
                     {statusMsg == "" ? (
                       <p className=" textFilterInnerBox">Pilih Status</p>
                     ) : (
-                      <p className=" textFilterInnerBox">{statusMsg}</p>
+                      <p className=" textFilterInnerBox  text-black">{statusMsg}</p>
                     )}
                     <div
                       className="dropdownCustom"
@@ -324,15 +339,6 @@ const AllProducts = () => {
                         <p
                           onClick={() => {
                             setStatus(2);
-                            setStatusMsg("Sedang Proses");
-                          }}
-                          className="dropdownValueCustom"
-                        >
-                          Sedang Proses
-                        </p>
-                        <p
-                          onClick={() => {
-                            setStatus(3);
                             setStatusMsg("Dicabut");
                           }}
                           className="dropdownValueCustom"
@@ -349,7 +355,7 @@ const AllProducts = () => {
                     <p className="text-base">Tentang</p>
                   </div>
                   <input
-                    className="textFilterInnerBox"
+                    className="textFilterInnerBox text-black placeholder-textPlaceholder"
                     type="text"
                     placeholder="Tentang Produk Hukum"
                     value={aboutProduct || ""}
@@ -397,9 +403,10 @@ const AllProducts = () => {
                               <BiSolidCity className="sm:hidden lg:block text-slate-400 h-6 w-6" />
                             </div>
                             <div className="w-[100%]">
-                              <p className="sm:text-sm text-justify lg:text-base text-gray-500 sm:ml-0 lg:ml-4">
+                            <Highlighted text={val.title + " " + val.subtitle} highlight={highlight?.toString()}/>
+                              {/* <p className="sm:text-sm text-justify lg:text-base text-gray-500 sm:ml-0 lg:ml-4">
                                 {val.title + " " + val.subtitle}
-                              </p>
+                              </p> */}
                             </div>
                           </div>
                           <hr className="w-full h-0.5 border-0 mt-4 rounded bg-slate-200" />
@@ -412,14 +419,14 @@ const AllProducts = () => {
               <div className="flex flex-row justify-between py-10">
                 {data?.data?.length! > 0 ? (
                   <>
-                    <p className="linkViewAll text-gray-600">
+                    <p className="linkViewAllDisabled">
                       Menampilkan 1 sampai {data?.data?.length!} dari{" "}
                       {data?.totalData} entri
                     </p>
                   </>
                 ) : (
                   <>
-                    <p className="linkViewAll text-gray-600">
+                    <p className="linkViewAllDisabled">
                       Menampilkan 0 dari {data?.totalData} entri
                     </p>
                   </>
@@ -439,8 +446,8 @@ const AllProducts = () => {
                   ) : (
                     <>
                       <div className="flex flex-row gap-4 items-center justify-center cursor-pointer">
-                        <IoMdArrowDropleft className="linkViewAll text-gray-400" />
-                        <p className="linkViewAll text-gray-400">Sebelumnya</p>
+                        <IoMdArrowDropleft className="linkViewAllDisabled text-gray-400" />
+                        <p className="linkViewAllDisabled text-gray-400">Sebelumnya</p>
                       </div>
                     </>
                   )}
@@ -448,8 +455,8 @@ const AllProducts = () => {
                   {data?.data?.length! < parseInt(rowPerPage) ? (
                     <>
                       <div className="flex flex-row gap-4 items-center justify-center cursor-pointer">
-                        <p className="linkViewAll text-gray-400">Selanjutnya</p>
-                        <IoMdArrowDropright className="linkViewAll text-gray-400" />
+                        <p className="linkViewAllDisabled text-gray-400">Selanjutnya</p>
+                        <IoMdArrowDropright className="linkViewAllDisabled text-gray-400" />
                       </div>
                     </>
                   ) : (

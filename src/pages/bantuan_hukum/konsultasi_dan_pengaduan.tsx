@@ -204,30 +204,11 @@ const KonsultasiPengaduan = () => {
         <main className="font-bodyFont w-full h-screen overflow-x-hidden">
           <div
             id="home"
-            className="
-            w-full 
-            h-screen 
-            bg-contain
-            bg-heroResponsiveBg 
-            bg-no-repeat 
-            sm:bg-cover
-            lg:bg-cover
-            lg:bg-top
-            lg:bg-heroBackground2   
+            className="bannerLayout4 
           "
           >
             <Navbar />
-            <section
-              className="
-            max-w-contentContainer mx-auto py-10 flex flex-col gap-4
-            sm:w-[90%]
-            mdl:w-[90%]
-            lg:py-24 
-            xl:px-4 
-            xl:mt-20
-            lgl:gap-8 
-            "
-            >
+            <section className="bannerLayout5">
               <motion.h1
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -274,7 +255,7 @@ const KonsultasiPengaduan = () => {
                       <p className="text-base">Nama</p>
                     </div>
                     <input
-                      className="textFilterInnerBox"
+                      className="textFilterInnerBox text-black placeholder-textPlaceholder"
                       type="text"
                       placeholder="Masukkan Nama"
                       onChange={handleChangeUsername}
@@ -287,7 +268,7 @@ const KonsultasiPengaduan = () => {
                       <p className="text-base">Email</p>
                     </div>
                     <input
-                      className="textFilterInnerBox"
+                      className="textFilterInnerBox text-black placeholder-textPlaceholder"
                       type="email"
                       placeholder="Masukkan Email"
                       onChange={handleChangeEmail}
@@ -302,7 +283,7 @@ const KonsultasiPengaduan = () => {
                       <p className="text-base">Pesan</p>
                     </div>
                     <input
-                      className="textFilterInnerBox"
+                      className="textFilterInnerBox text-black placeholder-textPlaceholder"
                       type="text"
                       placeholder="Pesan yang ingin disampaikan"
                       onChange={handleChangeMessage}
@@ -324,9 +305,10 @@ const KonsultasiPengaduan = () => {
                       }}
                     >
                       {isRobot == true && (
-                        <div className="bg-btnPrimary w-4 h-4 rounded-md mr-2">
-                          <FaCheck className="bg-white" />
-                        </div>
+                         <div className="flex-column">
+                         <FaCheck className="bg-white text-xl" />
+                         <div className="bg-btnPrimary w-4 h-4 rounded-md mr-2 mt-[-18px]"></div>
+                       </div>
                       )}
                       {isRobot == false && (
                         <div className="bg-btnPrimary w-4 h-4 rounded-md mr-2"></div>

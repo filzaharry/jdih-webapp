@@ -11,7 +11,7 @@ interface NewsInterface {
   subtitle: string;
   created_at: string;
   path: string;
-  picture:string;
+  picture: string;
 }
 
 type News = {
@@ -23,9 +23,9 @@ type News = {
 const Information = () => {
   const router = useRouter();
   const [data, setData] = useState<News | null>(null);
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const limit = process.env.NEXT_PUBLIC_LIMIT
+  const limit = process.env.NEXT_PUBLIC_LIMIT;
 
   useEffect(() => {
     const url = apiUrl + "news?rowPerPage=" + limit;
@@ -34,52 +34,56 @@ const Information = () => {
       try {
         const { data: response } = await axios.get(url);
         setData(response.data);
-        console.log("response", response.data);
+        // console.log("response", response.data);
       } catch (error) {
         console.error("what error ?", error);
       }
-      setLoading(false);
+      setIsLoading(false);
     };
 
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <div
-      id="info"
-      className="
+  if (isLoading) {
+    return <p> Is Loading ...</p>;
+  } else {
+    return (
+      <div
+        id="info"
+        className="
             max-w-contentContainer mx-auto 
             sm:w-[90%] sm:mt-10
             flex flex-col gap-8
             lg:py-10
             "
-    >
-      <div className="flex justify-between items-end">
-        <SectionTitle title="Berita Hukum" />
-        <p
-          onClick={() => router.push("/informasi/berita_hukum")}
-          className="linkViewAll"
-        >
-          Lihat Semua
-        </p>
+      >
+        <div className="flex justify-between items-end">
+          <SectionTitle title="Berita Hukum" />
+          <p
+            onClick={() => router.push("/informasi/berita_hukum")}
+            className="linkViewAll"
+          >
+            Lihat Semua
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {/* <p>{JSON.stringify(data)}</p> */}
+          {data?.data?.map((val, i) => (
+            <InformationCard
+              title={val.title}
+              created_at={val.created_at}
+              picture={val.picture}
+              key={i}
+              id={val.id}
+              subtitle={val.subtitle}
+              path={val.path}
+            />
+          ))}
+        </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-      {/* <p>{JSON.stringify(data)}</p> */}
-        {data?.data?.map((val, i) => (
-          <InformationCard
-            title={val.title}
-            created_at={val.created_at}
-            picture={val.picture}
-            key={i}
-            id={val.id}
-            subtitle={val.subtitle}
-            path={val.path}
-          />
-        ))}
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Information;

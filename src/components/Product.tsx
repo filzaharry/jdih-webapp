@@ -42,7 +42,7 @@ const Product = () => {
       try {
         const { data: response } = await axios.get(url);
         setData(response.data);
-        console.log("response", response.data);
+        // console.log("response", response.data);
         
       } catch (error) {
         console.error("what error ?", error);

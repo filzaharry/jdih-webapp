@@ -7,29 +7,61 @@ import { Chart as ChartJS, registerables } from "chart.js";
 import { Bar, Line } from "react-chartjs-2";
 import { FaCircle } from "react-icons/fa";
 import { data } from "autoprefixer";
+import axios from "axios";
+import { useRouter } from "next/router";
 ChartJS.register(...registerables);
 
-type Statistic = number[];
+type ChartValue = number[];
+type ChartTitle = string[];
+
+interface StatisticInterface {
+  categories: string[];
+  seriesStatusBerlaku: number[];
+  seriesStatusDicabut: number[];
+}
+
+type Statistic = {
+  statusCode: number;
+  message: string;
+  data: StatisticInterface;
+};
 
 const Statistic = () => {
+  const router = useRouter();
+  const [data, setData] = useState<Statistic | null>(null);
   const [perdir, setperdir] = useState(true);
   const [perwal, setPerwal] = useState(false);
-  const [terbit, setTerbit] = useState<Statistic | null>([])
-  const [berlaku, setBerlaku] = useState<Statistic | null>([])
-  const [dicabut, setDicabut] = useState<Statistic | null>([])
+  const [category, setCategory] = useState<ChartTitle | undefined>([]);
+  const [berlaku, setBerlaku] = useState<ChartValue | undefined>([]);
+  const [dicabut, setDicabut] = useState<ChartValue | undefined>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
+    let url: string;
     if (perdir == true) {
-      setTerbit([100, 200, 120, 300, 200, 124, 320, 500])
-      setDicabut([130, 210, 190, 310, 210, 120, 320, 200])
-      setBerlaku([140, 280, 520, 120, 200, 424, 120, 200])
-    } else if (perwal == true){
-      setTerbit([140, 240, 290, 320, 400, 474, 520, 600])
-      setDicabut([130, 210, 290, 310, 410, 520, 520, 600])
-      setBerlaku([100, 200, 320, 400, 450, 524, 620, 700])
+      url = apiUrl + "product_of_law/dashboard?type=1";
+    } else if (perwal == true) {
+      url = apiUrl + "product_of_law/dashboard?type=2";
     }
-  }, [perdir, perwal])
-  
+
+    const fetchData = async () => {
+      try {
+        const { data: response } = await axios.get(url);
+        setData(data);
+        setCategory(response.data.categories);
+        setBerlaku(response.data.seriesStatusBerlaku);
+        setDicabut(response.data.seriesStatusDicabut);
+        console.log("response", response.data.categories);
+      } catch (error) {
+        console.error("what error ?", error);
+      }
+      setIsLoading(false);
+    };
+
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [perdir, perwal]);
 
   const handleperdir = () => {
     setperdir(true);
@@ -50,7 +82,8 @@ const Statistic = () => {
       xl:mt-50 xl:pt-10
       lgl:py-32 
       sm:w-[90%] 
-      mdl:w-[90%]">
+      mdl:w-[90%]"
+    >
       <div className="flex flex-col">
         <SectionTitle title="Statistik" />
 
@@ -79,83 +112,85 @@ const Statistic = () => {
       </div>
       <br />
       <div>
-      <Line id="myChart"
-        data={{
-          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags"],
-          datasets: [
-            {
-              label: "Terbit",
-              fill: false,
-              borderColor: "#2E90FA",
-              backgroundColor: "#2E90FA",
-              borderWidth: 6,
-              pointRadius: 0,
+        <Line
+          id="myChart"
+          data={{
+            labels: category,
+            // labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags"],
+            datasets: [
+              // {
+              //   label: "Terbit",
+              //   fill: false,
+              //   borderColor: "#2E90FA",
+              //   backgroundColor: "#2E90FA",
+              //   borderWidth: 6,
+              //   pointRadius: 0,
 
-              data: terbit,
-            },
-            {
-              label: "Dicabut",
-              fill: false,
-              borderColor: "#FF4E4E",
-              backgroundColor: "#FF4E4E",
-              borderWidth: 6,
-              pointRadius: 0,
+              //   data: terbit,
+              // },
+              {
+                label: "Dicabut",
+                fill: false,
+                borderColor: "#FF4E4E",
+                backgroundColor: "#FF4E4E",
+                borderWidth: 6,
+                pointRadius: 0,
 
-              data: dicabut,
-            },
-            {
-              label: "Berlaku",
-              fill: false,
-              borderColor: "#38FFB7",
-              backgroundColor: "#38FFB7",
-              borderWidth: 6,
-              pointRadius: 0,
+                data: dicabut,
+              },
+              {
+                label: "Berlaku",
+                fill: false,
+                borderColor: "#38FFB7",
+                backgroundColor: "#38FFB7",
+                borderWidth: 6,
+                pointRadius: 0,
 
-              data: berlaku,
-            },
-          ],
-        }}
-        options={{
-          plugins: {
-            legend: {
-              display: false
-            },
-          },
-          elements: {
-            line: {
-              tension: 0.4,
-            },
-          },
-          scales: {
-            x: {
-              grid: {
+                data: berlaku,
+              },
+            ],
+          }}
+          options={{
+            plugins: {
+              legend: {
                 display: false,
               },
             },
-            y: {
-              grid: {
-                display: false,
+            elements: {
+              line: {
+                tension: 0.4,
               },
             },
-          },
-        }}
-      ></Line>
+            scales: {
+              x: {
+                grid: {
+                  display: false,
+                },
+              },
+              y: {
+                grid: {
+                  display: false,
+                },
+              },
+            },
+          }}
+        ></Line>
 
-      <div className="flex flex-row mx-auto w-full justify-center mt-10">
-        <div id="terbit" className="flex flex-row mx-4">
-          <FaCircle className="text-[#2E90FA] mt-1" />
-          <p className="ml-2">Terbit</p>
-        </div>
-        <div id="dicabut" className="flex flex-row mx-4">
-          <FaCircle className="text-[#FF4E4E] mt-1" />
-          <p className="ml-2">Dicabut</p>
-        </div>
-        <div id="berlaku" className="flex flex-row mx-4">
-          <FaCircle className="text-[#38FFB7] mt-1" />
-          <p className="ml-2">Berlaku</p>
+        <div className="flex flex-row mx-auto w-full justify-center mt-10">
+          {/* <div id="terbit" className="flex flex-row mx-4">
+            <FaCircle className="text-[#2E90FA] mt-1" />
+            <p className="ml-2">Terbit</p>
+          </div> */}
+          <div id="dicabut" className="flex flex-row mx-4">
+            <FaCircle className="text-[#FF4E4E] mt-1" />
+            <p className="ml-2">Dicabut</p>
+          </div>
+          <div id="berlaku" className="flex flex-row mx-4">
+            <FaCircle className="text-[#38FFB7] mt-1" />
+            <p className="ml-2">Berlaku</p>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

@@ -11,13 +11,12 @@
 }
 
 @layer components {
-
   .searchBtnBannerHomePage {
-    @apply rounded-xl bg-btnPrimary text-white sm:py-4 px-10 h-[50%] float-right sm:w-full lg:w-[60%]
+    @apply rounded-xl bg-btnPrimary text-white sm:py-4 px-10 h-[50%] float-right sm:w-full lg:w-[60%];
   }
 
   .formBannerHomePage {
-    @apply mr-4 w-full border-b xl:border-r border-[#EFEFEF] lg:py-10 sm:py-4
+    @apply mr-4 w-full border-b xl:border-r border-[#EFEFEF] lg:py-10 sm:py-4;
   }
 
   .homepageHeader {
@@ -27,13 +26,13 @@
     bg-heroResponsiveBg 
     bg-no-repeat 
     bg-center
-    lg:bg-heroBackground 
+    lg:bg-heroBackground;
   }
 
   .homepageFilter {
-    @apply py-2 appearance-none rounded-xl flex-auto w-full bg-transparent xl:w-full text-textPlaceholder leading-tight focus:outline-none
+    @apply py-2 appearance-none rounded-xl flex-auto w-full bg-transparent xl:w-full text-textPlaceholder leading-tight focus:outline-none;
   }
-  
+
   .customHeader {
     @apply w-full 
       h-screen 
@@ -66,11 +65,56 @@
     bg-white shadow-bannerFormShadow 
     sm:w-[90%] 
     mdl:w-[90%]
-    rounded-3xl mt-10 mx-auto pt-10 sm:mb-20
+    rounded-3xl mt-10 mx-auto pt-10 sm:mb-20;
+  }
+
+  .bannerLayout2 {
+    @apply max-w-contentContainer
+    bg-white shadow-bannerFormShadow 
+    sm:w-[90%] 
+    mdl:w-[90%]
+    rounded-3xl mt-10 mx-auto sm:pt-6 lg:pt-10 sm:mb-20;
+  }
+
+  .bannerLayout3 {
+    @apply max-w-contentContainer sm:mx-auto lg:mx-32
+    sm:w-[90%] sm:mt-10
+    flex flex-col gap-4;
+  }
+
+  .bannerLayout4 {
+    @apply w-full 
+    h-screen 
+    bg-contain
+    bg-heroResponsiveBg 
+    bg-no-repeat 
+    sm:bg-cover
+    lg:bg-cover
+    lg:bg-top
+    lg:bg-heroBackground2;
+  }
+
+  .bannerLayout5 {
+    @apply max-w-contentContainer 
+    mx-auto 
+    py-10 
+    flex 
+    flex-col 
+    gap-4
+    sm:w-[90%]
+    mdl:w-[90%]
+    lg:py-24 
+    xl:px-4 
+    xl:mt-20
+    lgl:gap-8;
   }
 
   .linkViewAll {
-    @apply text-colorSecondary inline-block align-bottom lg:text-lg sm:text-sm cursor-pointer hover:border-b hover:border-colorSecondary
+    @apply text-colorSecondary inline-block align-bottom lg:text-lg sm:text-sm cursor-pointer hover:border-b hover:border-colorSecondary;
+  }
+
+  .linkViewAllDisabled {
+    @apply text-gray-600 inline-block align-bottom lg:text-lg sm:text-sm cursor-pointer ;
   }
 
   .customLayoutContent {
@@ -125,14 +169,11 @@
     @apply px-4 py-4 appearance-none rounded-xl flex-auto w-full bg-transparent border border-[#EBEBEB] xl:w-full text-textPlaceholder leading-tight focus:outline-none;
   }
 
-
   .dropdownCustom {
-    @apply dropdown-content hidden absolute right-0 z-10 w-full origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none
+    @apply dropdown-content hidden absolute right-0 z-10 w-full origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none;
   }
 
   .dropdownValueCustom {
-    @apply text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm
+    @apply text-gray-700 cursor-pointer hover:bg-slate-100 block px-4 py-2 text-sm;
   }
 }
-
-

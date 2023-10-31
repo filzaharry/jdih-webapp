@@ -12,6 +12,7 @@ import Certificate from "@/src/components/Certificate";
 import MediaPartner from "@/src/components/MediaPartner";
 import { Header } from "@/src/components/Header";
 
+
 export default function Home() {
   return (
     <>

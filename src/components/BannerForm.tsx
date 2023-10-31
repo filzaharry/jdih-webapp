@@ -39,7 +39,7 @@ const BannerForm = () => {
             {categoryMsg == "" ? (
               <p className=" homepageFilter">Pilih Kategori</p>
             ) : (
-              <p className=" homepageFilter">{categoryMsg}</p>
+              <p className=" homepageFilter text-black">{categoryMsg}</p>
             )}
             <div
               className="dropdownCustom"
@@ -48,6 +48,15 @@ const BannerForm = () => {
               aria-labelledby="menu-button"
             >
               <div className="py-1" role="none">
+                <p
+                  onClick={() => {
+                    setCategory(0);
+                    setCategoryMsg("Lihat Semua");
+                  }}
+                  className="dropdownValueCustom"
+                >
+                  Lihat Semua
+                </p>
                 <p
                   onClick={() => {
                     setCategory(1);
@@ -85,7 +94,7 @@ const BannerForm = () => {
             <p className="text-base">Nomor</p>
           </div>
           <input
-            className="homepageFilter"
+            className="homepageFilter text-black placeholder-textPlaceholder"
             type="number"
             placeholder="Nomor Produk"
             onChange={(e) => setNumberProduct(e.target.value)}
@@ -97,7 +106,7 @@ const BannerForm = () => {
             <p className="text-base">Tahun</p>
           </div>
           <input
-            className="homepageFilter"
+            className="homepageFilter text-black placeholder-textPlaceholder"
             type="number"
             placeholder="Tahun Produk"
             onChange={(e) => setYearProduct(e.target.value)}
@@ -109,7 +118,7 @@ const BannerForm = () => {
             <p className="text-base">Tentang</p>
           </div>
           <input
-            className="homepageFilter"
+            className="homepageFilter text-black placeholder-textPlaceholder"
             type="text"
             placeholder="Tentang Produk"
             onChange={(e) => setAboutProduct(e.target.value)}

@@ -25,14 +25,15 @@ const InformationCard = ({
   return (
     <div className="transition ease-in-out delay-100 duration-100 w-full bg-white border border-gray-200 rounded-xl hover:bg-colorPrimary hover:shadow-lg hover:shadow-colorPrimary/20 hover:border-colorPrimary  flex flex-col justify-center gap-6 hover:-translate-y-2 group">
       <div className="items-center">
-        <Image
+        <img className="w-full rounded-xl" src={picture} alt={picture} />
+        {/* <Image
           className="w-full rounded-xl"
           src={picture}
           alt={picture}
           width={2670}
           height={80}
           crossOrigin="anonymous"
-        />
+        /> */}
         {/* <Image className="w-full rounded-xl" src={infoPhoto} alt="infoPhoto" /> */}
       </div>
       <div className="px-7">

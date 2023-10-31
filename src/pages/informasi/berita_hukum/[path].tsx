@@ -76,16 +76,7 @@ const NewsDetail = ({
         >
           <div
             id="news"
-            className="
-            w-full 
-            h-screen 
-            bg-contain
-            bg-heroResponsiveBg 
-            bg-no-repeat 
-            sm:bg-cover
-            lg:bg-cover
-            lg:bg-top
-            lg:bg-heroBackground2  
+            className="bannerLayout4 
             "
           >
             <Navbar />
@@ -123,14 +114,15 @@ const NewsDetail = ({
                   transition={{ duration: 0.5, delay: 0.8 }}
                   className="w-full grid grid-cols-1 px-20 pt-10"
                 >
-                  <Image
+                  <img className="object-cover w-full h-[800px] rounded-2xl mb-10 shadow-bannerFormShadow " src={data?.data[0].picture??''} alt={data?.data[0].picture??''} />
+                  {/* <Image
                     className="object-cover w-full h-[800px] rounded-2xl mb-10 shadow-bannerFormShadow "
                     src={data?.data[0].picture??''}
                     // src={infoImage}
                     alt="profileImg"
                     width={2670}
                     height={80}
-                  />
+                  /> */}
                   <div className="mx-10 mt-10">
                     <p className="text-4xl mb-4">{data?.data[0].title}</p>
 

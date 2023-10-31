@@ -197,18 +197,9 @@ const SaranDanMasukan = () => {
         )}
         <Header />
         <main className="font-bodyFont w-full h-screen overflow-x-hidden">
-          <div
-            id="home"
-            className="
-         customHeader  
-        "
-          >
+          <div id="home" className="customHeader">
             <Navbar />
-            <section
-              className="
-          customSection
-          "
-            >
+            <section className="customSection">
               <motion.h1
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -226,16 +217,7 @@ const SaranDanMasukan = () => {
                 {`Beranda > Saran dan Masukan`}
               </motion.p>
             </section>
-            <section
-              id="home"
-              className="
-            max-w-contentContainer
-            bg-white shadow-bannerFormShadow 
-            sm:w-[90%] 
-            mdl:w-[90%]
-            rounded-3xl mt-10 mx-auto sm:pt-6 lg:pt-10 sm:mb-20
-            "
-            >
+            <section id="home" className="bannerLayout2">
               <motion.div
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -253,7 +235,7 @@ const SaranDanMasukan = () => {
                       <p className="text-base">Nama</p>
                     </div>
                     <input
-                      className="textFilterInnerBox"
+                      className="textFilterInnerBox text-black placeholder-textPlaceholder"
                       type="text"
                       placeholder="Masukkan Nama"
                       onChange={handleChangeUsername}
@@ -266,7 +248,7 @@ const SaranDanMasukan = () => {
                       <p className="text-base">Email</p>
                     </div>
                     <input
-                      className="textFilterInnerBox"
+                      className="textFilterInnerBox text-black placeholder-textPlaceholder"
                       type="email"
                       placeholder="Masukkan Email"
                       onChange={handleChangeEmail}
@@ -282,13 +264,9 @@ const SaranDanMasukan = () => {
                     </div>
                     <div className="dropdown relative inline-block text-left w-full">
                       {satisfactionMsg == "" ? (
-                        <p className=" textFilterInnerBox">
-                          Pilih Subjek
-                        </p>
+                        <p className=" textFilterInnerBox">Pilih Subjek</p>
                       ) : (
-                        <p className=" textFilterInnerBox">
-                          {satisfactionMsg}
-                        </p>
+                        <p className=" textFilterInnerBox text-black">{satisfactionMsg}</p>
                       )}
                       <div
                         className="dropdownCustom"
@@ -334,7 +312,7 @@ const SaranDanMasukan = () => {
                       <p className="text-base">Saran dan Masukan</p>
                     </div>
                     <input
-                      className="textFilterInnerBox"
+                      className="textFilterInnerBox text-black placeholder-textPlaceholder"
                       type="text"
                       placeholder="Saran dan Masukan Anda"
                       onChange={handleChangeMessage}
@@ -356,8 +334,9 @@ const SaranDanMasukan = () => {
                       }}
                     >
                       {isRobot == true && (
-                        <div className="bg-btnPrimary w-4 h-4 rounded-md mr-2">
-                          <FaCheck className="bg-white" />
+                        <div className="flex-column">
+                          <FaCheck className="bg-white text-xl" />
+                          <div className="bg-btnPrimary w-4 h-4 rounded-md mr-2 mt-[-18px]"></div>
                         </div>
                       )}
                       {isRobot == false && (
@@ -376,12 +355,7 @@ const SaranDanMasukan = () => {
                 </div>
               </motion.div>
             </section>
-            <div
-              className="
-              max-w-contentContainer sm:mx-auto lg:mx-32
-              sm:w-[90%] sm:mt-10
-              flex flex-col gap-4"
-            >
+            <div className="bannerLayout3">
               {dataResult?.data?.map((val, i) => (
                 <div
                   key={i}

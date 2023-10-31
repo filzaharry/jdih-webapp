@@ -61,6 +61,11 @@ const DataNavbar = [
       },
     ],
   },
+  {
+    name: "Berita Hukum",
+    route: "/informasi/berita_hukum",
+    submenu: [],
+  },
 
   // {
   //   name: "Informasi",

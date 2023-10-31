@@ -35,7 +35,8 @@ const MediaCard = ({ title, desc, logo, link }: Props) => {
     >
       <div className="flex flex-row p-4">
         <div className="">
-          <Image
+          <img className="object-cover w-14" src={logo} alt={logo} />
+          {/* <Image
             className="object-cover w-14"
             // src={logoKotaTng}
             src={logo}
@@ -43,7 +44,7 @@ const MediaCard = ({ title, desc, logo, link }: Props) => {
             alt="profileImg"
             width={2670}
             height={80}
-          />
+          /> */}
         </div>
         <div className="ml-2 p-2">
           <p className="group-hover:text-white text-xl">{title}</p>
