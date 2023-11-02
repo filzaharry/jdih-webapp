@@ -57,12 +57,6 @@ export default function Kontak() {
                 Kontak dan Alamat Perumda Tirta Benteng
               </p>
               <div className="flex flex-row">
-                <div className="flex flex-row sm:mr-2 lg:mr-10">
-                  <MdDateRange className="dateIcon" />
-                  <p className="text-colorPrimary sm:text-sm lg:text-lg">
-                    Selasa, 18 Juli 2023
-                  </p>
-                </div>
                 {/* <div className="flex flex-row">
                   <AiFillInfoCircle className="dateIcon" />
                   <p className="text-colorPrimary sm:text-sm lg:text-lg">
@@ -72,13 +66,15 @@ export default function Kontak() {
               </div>
               <div className="py-4 lg:mt-4 ">
                 <p className="textContent">
-                  Jln.Satria Sudirman Nomor 1 Telp 55764955 ( hunting )
-                  fax.55764957 Kota Tangerang jdih.tangerangkota.go.id
+                jdih@perumdatirtabenteng.co.id
                 </p>
                 <br />
                 <p className="textContent">
-                  Gedung Pusat Pemerintahan Kota Tangerang Bagian Hukum Lantai 3
-                  Jln.Satria Sudirman Nomor 1 Kota tangerang Provinsi Banten
+                021 - 5587234
+                </p>
+                <br />
+                <p className="textContent">
+                Komplek PU Prosida Bendungan 10 Kel. Mekarsari Kec. Neglasari
                 </p>
               </div>
               <hr className="w-full h-0.5 mt-8 bg-[#D9D9D9]" />

@@ -4,10 +4,81 @@ import { HiPhone } from 'react-icons/hi';
 import { MdOutlineMail } from 'react-icons/md';
 import { CgPin } from 'react-icons/cg'
 import { LuLineChart } from 'react-icons/lu';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const currentYear = new Date().getFullYear();
 
+interface VisitorInterface {
+    daily: number,
+    weekly: number,
+    monthly: number,
+    all: number
+}
+
+type Visitor = {
+    statusCode: number;
+    message: string;
+    data: VisitorInterface;
+    daily: number,
+    weekly: number,
+    monthly: number,
+    all: number
+};
+
 export function Footer() {
+    const [data, setData] = useState<Visitor | null>(null);
+    const [daily, setDaily] = useState<string | null | number >(0);
+    const [weekly, setWeekly] = useState<string | null | number >(0);
+    const [monthly, setMonthly] = useState<string | null | number >(0);
+    const [all, setAll] = useState<string | null | number >(0);
+    const [isLoading, setIsLoading] = useState(true);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    let url: string;
+    let urlPost: string;
+
+    useEffect(() => {
+        // insertVisitor();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        fetchData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        
+        setIsLoading(false);
+      }, [isLoading]);
+    
+      const insertVisitor = async () => {
+        try {
+            urlPost = `${apiUrl}visitor`;
+            const browser = navigator.userAgent
+            const ip  = await axios.get("https://api.ipify.org/?format=json").then(()=> {
+            });
+            const res = await axios.post(urlPost, {
+                ip,
+                browser
+            });
+            console.log(res);
+        } catch (error) {
+             console.error("what error ?", error);
+        }
+      }
+      const fetchData = async () => {
+        try {
+        url = `${apiUrl}allVisitor`;
+        const { data: response } = await axios.get(url);
+        setData(response.data);
+        setDaily(data!.daily!)
+        setWeekly(data!.weekly!)
+        setMonthly(data!.monthly!)
+        setAll(data!.all)
+        console.log('');
+        
+        
+        
+      } catch (error) {
+        console.error("what error ?", error);
+      }
+    };
+
     return (
         <footer className="max-w-contentContainer text-white mx-auto relative w-full sm:w-[90%]">
             <div className="mx-auto w-full sm:pt-20 lg:pt-48 lg:mt-48 ">
@@ -55,28 +126,32 @@ export function Footer() {
                                     <LuLineChart className='text-[#66B3F9] text-2xl mr-1' />
                                     <p className="text-md ml-4 font-extralight">Hari ini</p>
                                 </div>
-                                <p className="text-md ml-4 font-extralight">2.713</p>
+                                {isLoading == false && (
+                                <p className="text-md ml-4 font-extralight">{daily}</p>)}
                             </div>
                             <div className="flex flex-row mb-2 justify-between">
                                 <div className="flex flex-row mr-20">
                                     <LuLineChart className='text-[#66B3F9] text-2xl mr-1' />
                                     <p className="text-md ml-4 font-extralight">Minggu ini</p>
                                 </div>
-                                <p className="text-md ml-4 font-extralight">2.713</p>
+                                {isLoading == false && (
+                                <p className="text-md ml-4 font-extralight">{weekly}</p> )}
                             </div>
                             <div className="flex flex-row mb-2 justify-between">
                                 <div className="flex flex-row mr-20">
                                     <LuLineChart className='text-[#66B3F9] text-2xl mr-1' />
                                     <p className="text-md ml-4 font-extralight">Bulan ini</p>
                                 </div>
-                                <p className="text-md ml-4 font-extralight">2.713</p>
+                                {isLoading == false && (
+                                <p className="text-md ml-4 font-extralight">{monthly}</p> )}
                             </div>
                             <div className="flex flex-row mb-2 justify-between">
                                 <div className="flex flex-row mr-20">
                                     <LuLineChart className='text-[#66B3F9] text-2xl mr-1' />
                                     <p className="text-md ml-4 font-extralight">Semua</p>
                                 </div>
-                                <p className="text-md ml-4 font-extralight">2.713</p>
+                                {isLoading == false && (
+                                <p className="text-md ml-4 font-extralight">{all}</p> )}
                             </div>
                         </div>
 

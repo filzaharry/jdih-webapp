@@ -95,29 +95,13 @@ export default function SejarahPerumdaTb() {
                   </p>
                 </div>
                 <p className="indent-10 textContent mb-4">
-                  Pertengahan Abad XV: Tiga Aria Pada Masa Kolonialisme Belanda
-                  (abad XV), Sultan Banten mengangkat Tiga Aria / Maulana yang
-                  merupakan kerabat jauh Sultan dari Kerjaaan Sumedang Larang
-                  bernama Yudhanegara, Wangsakara dan Santika. Kegiatannya
-                  bertugas untuk membantu perekonomian Kesultanan Banten dengan
-                  melakukan perlawanan terhadap VOC dengan praktik Monopolinya.
-                  Tangerang Kota Benteng, Pada perjuangannya ketiga maulana
-                  tersebut membangun benteng pertahanan yang disebut masyarakat
-                  sekitar dengan istilah daerah <strong>Benteng</strong> atau <strong>Bentengan</strong>. Hal
-                  ini turut mendasari sebutan Kota Tangerang yang dikenal dengan
-                  sebutan Kota Benteng.
+                Perumda Tirta Benteng Kota Tangerang merupakan user dalam pengelolaan  air minum di Kota Tangerang yang mana pada awalnya didirikannya berdasarkan pada Peraturan Daerah Kotamadya Daerah Tingkat II Tangerang Nomor 33 tahun 1995 tentang pembentukan Perusahaan Daerah Air Minum (PDAM) Kotamadya Daerah Tingkat II Tangerang, Organisasi dan Tata Kerja Perusahaan Daerah Air Minum (PDAM) yang kemudian ditetapkan dengan Keputusan Walikotamadya Kepala Daerah Tingkat II Nomor 30 Tahun 1995 tentang Organisai dan Tata Kerja Perusahaan Daerah Air minum Kotamadya Daerah Tingkat II Tangerang .
                 </p>
                 <p className="indent-10 textContent mb-4">
-                  Saat ini sisa bangunan <strong>Bentengan</strong> tersebut berada di beberapa
-                  titik di bawah permukaan air Sungai Cisadane yang semakin
-                  melebar. 1654 M: <strong>Tanggeran</strong> Bangunan Penanda nama <strong>Tangerang</strong>
-                  berasal dari sebutan masyarakat sekitar terhadap bangunan tugu
-                  dengan tinggi kira-kira 2,5 meter yang didirikan Pangeran
-                  Soegiri, putra Sultan Ageng Tirtayasa dari Kesultanan Banten,
-                  bersama-sama dengan masyarakat sekitar pada tanggal 5 Sapar
-                  tahun Wawu ( 1654 Masehi ) yang terletak kira-kira 500 meter
-                  di tepi barat bantaran sungai Cisadane tepatnya di Gardu Gede
-                  yang kini dikenal dengan nama Kampung Gerendeng.
+                Adapun dalam perjalanannya dasar hukum PDAM Tirta benteng Kota Tangerang mengalami perubahan yaitu, Peraturan daerah kota tangerang nomor : 14 tahun 2002 tentang perubahan atas peraturan daerah kotamadya daerah tingkat II tangerang nomor 11 tahun 1999 tentang  pelayanan air minum di wilayah  kotamadya daerah tingkat II tangerang. Peraturan daerah kota tangerang nomor : 10 tahun 2009 tentang perubahan atas peraturan daerah kotamadya daerah tingkat II tangerang nomor 33 tahun 1995 tentang pembentukan perusahaan daerah air minum kotamadya daerah tingkat II tangerang peraturan daerah kota tangerang nomor : 11 tahun 2009 tentang organ dan kepegawaian pdam
+                </p>
+                <p className="indent-10 textContent mb-4">
+                Tugas dari PDAM itu sendiri yaitu menyelenggarakan pengelolaan air minum untuk meningkatkan kesejahteraan masyarakat yang mencakup aspek social, kesehatan, pelayanan umum serta melaksanakan kebijakan umum yang digariskan oleh walikota Tangerang.
                 </p>
 
                 <div className="lg:w-full drop-shadow-xl">
@@ -140,86 +124,25 @@ export default function SejarahPerumdaTb() {
                   </p>
                 </div>
                 <p className="indent-10 textContent mb-4">
-                  Fungsi tugu tersebut adalah sebagai pembatas atau penanda
-                  wilayah kekuasaan kesultanan Banten di sebelah barat Sungai
-                  Cisadane dengan wilayah yang dikuasi VOC di sebelah timur.
-                  Atas dasar fungsinya tersebut, masyarakat menyebut tugu dan
-                  daerah itu dengan sebutan <strong>Tetengger</strong> atau <strong>Tanggeran</strong> yang
-                  berarti <strong>penanda</strong>. Pasca 17 April 1684: Dari <strong>Tanggeran</strong>
-                  menjadi <strong>Tangerang</strong> Pasca penandatanganan perjanjian antara
-                  VOC dengan Kesultanan Banten yang diwakili oleh Sultan Haji
-                  atau Sultan Abunnashri Abdulkahar putra Sultan Ageng Tirtayasa
-                  pewaris Kesultanan Banten tanggal 17 April 1684, Belanda
-                  sepenuhnya menguasai wilayah <strong>Tanggeran</strong>. Dalam penguasaannya,
-                  tentara Belanda juga merekrut warga pribumi di antaranya dari
-                  Madura dan Makasar yang di antaranya ditempatkan di sekitar
-                  wilayah benteng. Tentara VOC yang berasal dari Makasar tidak
-                  mengenal huruf mati, dan terbiasa menyebut <strong>Tangeran</strong> dengan
-                  <strong>Tangerang</strong>.
-                </p>
-                <p className="indent-10 textContent mb-4">
-                  Kesalahan ejaan dan dialek inilah yang diwariskan dari
-                  generasi ke generasi bahkan hingga saat ini. Pasca Tahun 1981
-                  - 1993: Wilayah yang Berkembang Pesat Seiring berjalannya
-                  waktu, daerah Tangerang yang kala itu berbentuk Kabupaten
-                  Daerah Tingkat II mengalami perkembangan yang sangat pesat.
-                  Letaknya yang berbatasan langsung dengan Ibu Kota menjadikan
-                  beberapa kecematan yang berbatasan langsung menjadi pusat
-                  segala kegiatan baik Pemerintah, Ekonomi, industri, dan
-                  Perdagangan, Politik, Sosial Budaya.Hingga pada tanggal 28
-                  Februari 1981 disahkan Peraturan Pemerintah Nomor 50 Tahun
-                  1981 tentang Pembentukan Kota Administratif Tangerang.
-                </p>
-                <p className="indent-10 textContent mb-4">
-                  Adapun Walikota Administratif Tangerang yang telah menjabat
-                  mulai terbentuk Kota Administratif adalah :
+                Fungsi dari PDAM Tirta Benteng Kota Tangerang meliputi :
                 </p>
                 <ol className="mb-4">
                   <li>
                     <p className="indent-10 textContent">
-                      1. Periode 1982-1986 : Bapak KARSO PERMANA, BA
+                      1. Pelayanan umum dan jasa
                     </p>
                   </li>
                   <li>
                     <p className="indent-10 textContent">
-                      2. Periode 1986-1990 : Bapak Drs. H. YITNO
+                      2. Penyelenggara kepetingan umum
                     </p>
                   </li>
                   <li>
                     <p className="indent-10 textContent">
-                      3. Periode 1990-1993 : Bapak Drs. H. DJAKARIA MACHMUD
+                      3. Peningkatan pendapatan daerah
                     </p>
                   </li>
                 </ol>
-                <p className="indent-10 textContent mb-4">
-                  1 Juni 1987 sampai dengan 28 Februari 1993: Dari Kabupaten ke
-                  Kotamadya. Dalam perjalanan kurun waktu 12 Tahun Kabupaten Tangerang
-                  kembali menunjukan perkembangan dan pertumbuhan di segala
-                  bidang. Dengan lama proses 5 tahun 8 bulan 27 hari yaitu sejak
-                  tanggal 1 Juni 1987 sampai dengan 28 Februari 1993 dan secara
-                  resmi Kotamadya Daerah Tingkat II Tangerang menjadi Daerah
-                  Otonom Ke-25 di Jawa Barat dan Ke-312 se Indonesia.
-                </p>
-                <p className="indent-10 textContent mb-4">
-                  Selanjutnya, Kotamadya Daerah Tingkat II Tangerang diresmikan
-                  oleh Bapak Jendral TNI ( Pur ) RUDINI ( Menteri Dalam Negri
-                  Republik Indonesia ) pada hari Minggu tanggal 28 Februari 1993
-                  bertepatan dengan bulan Suci Ramadhan 1413 H sekaligus
-                  melantik Bapak Drs. H. DJAKARIA MACHMUD sebagai Pejabat
-                  Walikotamadya Kepala Daerah Tingkat II Tangerang.
-                </p>
-                <p className="indent-10 textContent mb-4">
-                  1993-Sekarang: Para Pemimpin satu tahun kemudian, berdasarkan
-                  hasil pemilihan DPRD Kotamadya Daerah Tingkat II Tangerang
-                  Bapak Drs. H. DJAKARIA MACHMUD terpilih sebagai Walikotamadya
-                  Kepala Daerah Tingkat II Tangerang yang pertama.Adapun urutan
-                  Walikotamadya Kepala Daerah Tingkat II Tangerang adalah
-                  sebagai berikut:Tahun 1993-1998 : Bapak Drs. H. DJAKARIA
-                  MACHMUDTahun 1998-2003 : Bapak Drs. H. MOCH. THAMRINTahun
-                  2003-2013 : Bapak Drs. H. WAHIDIN HALIM (2 Periode)Tahun
-                  2013-2023 : Bapak H. ARIEF R. WISMANSYAH, B.Sc., M.Kes. (2
-                  Periode)Sumber : tangerangkota.go.id
-                </p>
               </div>
               <hr className="w-full h-0.5 mt-8 bg-[#D9D9D9]" />
               {/* <SocialMediaRow /> */}

@@ -134,7 +134,7 @@ const AllProducts = () => {
 
     url = `${apiUrl}product_of_law?rowPerPage=${rowPerPage}&page=${currentPage}${urlCategory}${urlNumberProduct}${urlYearProduct}${urlStatusProduct}${urlAboutProduct}`;
 
-    console.log(url);
+    // console.log(url);
 
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
