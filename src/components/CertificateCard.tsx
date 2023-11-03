@@ -26,7 +26,7 @@ const CertificateCard = ({ title, desc, listItem, link }: Props) => {
             "
     >
       <div className="flex flex-col items-center  rounded-xl border border-slate-400 ">
-        <Image
+        {/* <Image
           width={2670}
           height={80}
           className="w-full m-2 "
@@ -34,7 +34,7 @@ const CertificateCard = ({ title, desc, listItem, link }: Props) => {
             "https://jdih.tangerangkota.go.id/assets/files/foto_berita/penghargaan-64992cdf21e87.jpg"
           }
           alt="infoPhoto"
-        />
+        /> */}
         <div
           className="
               hidden 

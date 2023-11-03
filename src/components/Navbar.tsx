@@ -53,8 +53,8 @@ const Navbar = () => {
     }
   }
   return (
-    <div className=" w-full h-20 lg:h-[12vh] lg:pt-10 top-10 z-50 bg-transparent text-white px-4">
-      <div className="max-w-container h-full mx-auto py-1 font-titleFont flex items-center justify-between">
+    <div className="navbarContainer">
+      <div className="navbarContainerLayout">
         {/* free motion library */}
         <motion.div
           className="flex flex-row"
@@ -62,38 +62,19 @@ const Navbar = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div
-            className="
-          xs:h-12 xs:w-12 
-          sm:h-18 sm:w-20 
-          mdl:h-20 mdl:w-32
-          lg:h-28 lg:w-36
-          mt-2
-          "
-          >
+          <div className="navbarLayout">
             <Image src={logo} alt="logo" />
           </div>
-          <div
-            className="
-          xs:h-12 xs:w-12 
-          sm:h-18 sm:w-18 
-          sm:ml-2 sm:mt-2 
-          bg-white rounded-lg
-          mdl:h-20 mdl:w-24
-          lg:h-20 lg:w-20
-          lg:mt-4 lg:pr-1
-          lg:ml-4
-          "
-          >
+          {/* <div className="navbarSubLayout">
             <Image className="w-full h-full" src={ayoTng} alt="ayoTng" />
-          </div>
+          </div> */}
         </motion.div>
 
         <div className="hidden xl:inline-flex items-center gap-7 ">
           {DataNavbar.map((item, i) => {
             return (
               <ul key={i} className="flex text-xl gap-7">
-                <div className="flex items-center gap-1 text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link">
+                <div className="navbarMainDropdown">
                   <motion.li
                     initial={{ y: -10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -101,7 +82,7 @@ const Navbar = () => {
                   >
                     <div className="dropdown inline-block relative">
                       {item.submenu.length == 0 ? (
-                        <Link href={item.route}>
+                        <Link href={item.route} replace>
                           <span>{item.name}</span>
                         </Link>
                       ) : (
@@ -110,15 +91,15 @@ const Navbar = () => {
                             <span>{item.name}</span>
                             <IoIosArrowDown className="ml-2 mt-1 w-4 text-bold" />
                           </button>
-                          <ul className="dropdown-content absolute hidden text-gray-600 lg:w-80 bg-white text-lg lg:rounded-lg space-y-2 p-2 shadow-bannerFormShadow ">
+                          <ul className="dropdown-content navbarSubDropdown">
                             {item.submenu.map((sub_item, x) => (
                               <div key={x}>
                                 {sub_item.submenu.length == 0 ? (
                                   <Link
-                                    href={item.route + "/" + sub_item.route}
+                                    href={item.route + sub_item.route} replace
                                   >
                                     <li>
-                                      <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
+                                      <p className="hover:bg-gray-200 rounded-sm py-2 px-4 block ">
                                         {sub_item.name}
                                       </p>
                                     </li>
@@ -129,20 +110,21 @@ const Navbar = () => {
                                       <span>{sub_item.name}</span>
                                       <IoIosArrowDown className="ml-2 mt-1 w-4 text-bold" />
                                     </p>
-                                    <ul className="dropdown-content ml-40 absolute hidden text-gray-600 lg:w-80 bg-white text-lg lg:rounded-lg space-y-2 p-2 shadow-bannerFormShadow ">
+                                    <ul className="dropdown-content navbarSubSubDropdown">
                                       {sub_item.submenu.map(
                                         (sub_sub_item, y) => {
                                           return (
                                             <Link
+                                            key={y}
                                               href={
                                                 item.route +
-                                                "/" +
+                                                // "/" +
                                                 sub_item.route +
-                                                "/" +
+                                                // "/" +
                                                 sub_sub_item.route
-                                              }
+                                              } replace
                                             >
-                                              <li key={y}>
+                                              <li >
                                                 <p className="  hover:bg-gray-200 rounded-sm py-2 px-4 block ">
                                                   {sub_sub_item.name}
                                                 </p>
@@ -243,7 +225,7 @@ const Navbar = () => {
                                         key={x}
                                         onClick={() =>
                                           router.push(
-                                            item.route + "/" + sub_item.route
+                                            item.route + sub_item.route
                                           )
                                         }
                                         className="text-md"

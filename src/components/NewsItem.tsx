@@ -28,13 +28,19 @@ const NewsItem = ({id, title, subtitle, picture, path, created_at}: Props) => {
     transition={{ duration: 0.5, delay: 0.8 }}
     className="w-full flex sm:flex-col lg:flex-row sm:px-4 sm:mx-auto lg:ml-auto lg:px-10"
   >
-    <Image
+    <img className="object-cover w-[300px] h-[200px] rounded-2xl sm:mb-4 lg:mb-10" 
+    src={picture}
+    alt="profileImg"
+    width={2670}
+    height={80}
+     />
+    {/* <Image
       className="object-cover w-[300px] h-[200px] rounded-2xl sm:mb-4 lg:mb-10"
       src={picture}
       alt="profileImg"
       width={2670}
       height={80}
-    />
+    /> */}
     <div className="sm:mx-2 lg:mx-10">
       <p className="text-2xl mb-2">
         {

@@ -11,6 +11,46 @@
 }
 
 @layer components {
+  .navbarContainer {
+    @apply w-full h-20 lg:h-[12vh] lg:pt-10 top-10 z-50 bg-transparent text-white px-4
+  }
+  .navbarContainerLayout {
+    @apply max-w-container h-full mx-auto py-1 font-titleFont flex items-center justify-between
+  }
+
+  .navbarLayout {
+    @apply 
+    xs:h-12 xs:w-12 
+    sm:h-20 sm:w-20 
+    mdl:h-20 mdl:w-32
+    lg:h-28 lg:w-36
+    mt-2
+  }
+
+  .navbarSubLayout {
+    @apply 
+    xs:h-12 xs:w-12 
+    sm:h-20 sm:w-20
+    sm:ml-2 sm:mt-2 
+    bg-white rounded-lg
+    mdl:h-20 mdl:w-24
+    lg:h-20 lg:w-20
+    lg:mt-4 lg:pr-1
+    lg:ml-4
+  }
+
+  .navbarMainDropdown {
+    @apply flex items-center gap-1 hover:text-textGreen cursor-pointer duration-300 
+  }
+
+  .navbarSubDropdown {
+    @apply absolute hidden text-gray-600 lg:w-80 bg-white text-lg lg:rounded-lg space-y-2 p-2 shadow-bannerFormShadow 
+  }
+
+  .navbarSubSubDropdown {
+    @apply  ml-40 absolute hidden text-gray-600 lg:w-80 bg-white text-lg lg:rounded-lg space-y-2 p-2 shadow-bannerFormShadow 
+  }
+
   .searchBtnBannerHomePage {
     @apply rounded-xl bg-btnPrimary text-white sm:py-4 px-10 h-[50%] float-right sm:w-full lg:w-[60%];
   }

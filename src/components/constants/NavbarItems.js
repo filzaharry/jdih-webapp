@@ -106,7 +106,7 @@ const DataNavbar = [
   // },
 
   {
-    name: "Dokumen Hukum",
+    name: "Produk Hukum",
     route: "/dokumen_hukum",
     submenu: [
       {
@@ -119,21 +119,21 @@ const DataNavbar = [
       //   route: "/artikel_hukum",
       //   submenu: [],
       // },
-      {
-        name: "Kepdir",
-        route: "/kepdir",
-        submenu: [],
-      },
-      {
-        name: "Perda Pendirian",
-        route: "/perda_pendirian",
-        submenu: [],
-      },
-      {
-        name: "Perdir",
-        route: "/perdir",
-        submenu: [],
-      },
+      // {
+      //   name: "Kepdir",
+      //   route: "/kepdir",
+      //   submenu: [],
+      // },
+      // {
+      //   name: "Perda Pendirian",
+      //   route: "/perda_pendirian",
+      //   submenu: [],
+      // },
+      // {
+      //   name: "Perdir",
+      //   route: "/perdir",
+      //   submenu: [],
+      // },
       {
         name: "Perwal Pelaksanaan",
         route: "/perwal_pelaksanaan",

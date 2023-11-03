@@ -2,7 +2,7 @@ import Navbar from "@/src/components/Navbar";
 import Head from "next/head";
 
 import Banner from "@/src/components/Banner";
-import { Footer } from "@/src/components/Footer";
+import FooterComponent from "@/src/components/Footer";
 import BannerForm from "@/src/components/BannerForm";
 import Statistic from "@/src/components/Statistic";
 import Product from "@/src/components/Product";
@@ -42,7 +42,7 @@ export default function Home() {
             {/* <Certificate /> */}
             <MediaPartner />
             <div className="customFooter">
-              <Footer />
+              <FooterComponent />
             </div>
           </div>
         </div>
