@@ -129,7 +129,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
                   status={1}
                 />
                 <DetailProductList
-                  title="Judul"
+                  title="Deskripsi"
                   desc={data == null ? "" : data?.data?.subtitle}
                   status={1}
                 />
