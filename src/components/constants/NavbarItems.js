@@ -39,11 +39,11 @@ const DataNavbar = [
           },
         ],
       },
-      {
-        name: "SK Tim JDIH",
-        route: "/sk_tim_jdih",
-        submenu: [],
-      },
+      // {
+      //   name: "SK Tim JDIH",
+      //   route: "/sk_tim_jdih",
+      //   submenu: [],
+      // },
       // {
       //   name: "SK Pengelola",
       //   route: "/sk_pengelola",
@@ -135,7 +135,7 @@ const DataNavbar = [
       //   submenu: [],
       // },
       {
-        name: "Perwal Pelaksanaan",
+        name: "Perwal",
         route: "/perwal_pelaksanaan",
         submenu: [],
       },
