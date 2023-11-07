@@ -1,4 +1,4 @@
-import { Footer } from "@/src/components/Footer";
+
 import { Header } from "@/src/components/Header";
 import Navbar from "@/src/components/Navbar";
 import Status from "@/src/components/atom/Status";
@@ -9,6 +9,7 @@ import { BiSolidCity } from "react-icons/bi";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import { RiBox1Fill } from "react-icons/ri";
 import { motion } from "framer-motion";
+import FooterComponent from "@/src/components/Footer";
 
 interface ProductsInterface {
   id: string;
@@ -456,7 +457,7 @@ const AllProducts = () => {
           </div>
 
           <div className="customFooter">
-            <Footer />
+            <FooterComponent />
           </div>
         </div>
       </main>

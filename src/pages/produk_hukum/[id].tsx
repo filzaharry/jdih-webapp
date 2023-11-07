@@ -1,4 +1,4 @@
-import { Footer } from "@/src/components/Footer";
+import FooterComponent from "@/src/components/Footer";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -168,7 +168,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
                   customFooter
                   "
             >
-              <Footer />
+              <FooterComponent />
             </div>
           </div>
         </main>

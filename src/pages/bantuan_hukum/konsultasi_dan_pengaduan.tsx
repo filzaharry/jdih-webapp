@@ -8,12 +8,13 @@ import SocialMediaRow from "@/src/components/SocialMediaRow";
 import { RiBox1Fill } from "react-icons/ri";
 import Image from "next/image";
 import { user } from "@/public";
-import { Footer } from "@/src/components/Footer";
+// import { FooterComponent } from "@/src/components/Footer";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
 import moment from "moment";
 import { FaCheck } from "react-icons/fa";
 import axios from "axios";
+import FooterComponent from "@/src/components/Footer";
 
 interface ConsultationInterface {
   id: string;
@@ -384,7 +385,7 @@ const KonsultasiPengaduan = () => {
                 bg-no-repeat bg-cover bg-center
                 "
             >
-              <Footer />
+              <FooterComponent />
             </div>
           </div>
         </main>

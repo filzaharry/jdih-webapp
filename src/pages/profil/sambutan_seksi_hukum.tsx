@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import { Footer } from "@/src/components/Footer";
+import FooterComponent from "@/src/components/Footer";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { Header } from "@/src/components/Header";
 import Navbar from "@/src/components/Navbar";
@@ -113,7 +113,7 @@ export default function VisiDanMisi() {
             </motion.div>
           </section>
           <div className="customFooter">
-            <Footer />
+            <FooterComponent />
           </div>
         </div>
       </main>

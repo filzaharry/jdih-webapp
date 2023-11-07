@@ -1,11 +1,12 @@
 import Head from "next/head";
 import React from "react";
-import { Footer } from "@/src/components/Footer";
+
 import { AiFillInfoCircle } from "react-icons/ai";
 import { Header } from "@/src/components/Header";
 import Navbar from "@/src/components/Navbar";
 import { motion } from "framer-motion";
 import SocialMediaRow from "@/src/components/SocialMediaRow";
+import FooterComponent from "@/src/components/Footer";
 
 export default function Kepdir() {
   return (
@@ -66,7 +67,7 @@ export default function Kepdir() {
               customFooter
               "
           >
-            <Footer />
+            <FooterComponent />
           </div>
         </div>
       </main>

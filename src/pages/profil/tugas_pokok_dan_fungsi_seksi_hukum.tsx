@@ -4,7 +4,7 @@ import { Viewer, Worker } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import { Header } from "@/src/components/Header";
 import Navbar from "@/src/components/Navbar";
-import { Footer } from "@/src/components/Footer";
+import FooterComponent from "@/src/components/Footer";
 import SocialMediaRow from "@/src/components/SocialMediaRow";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { MdDateRange } from "react-icons/md";
@@ -159,7 +159,7 @@ export default function Tupoksi() {
               customFooter
               "
           >
-            <Footer />
+            <FooterComponent />
           </div>
         </div>
       </main>

@@ -5,7 +5,8 @@ import { Header } from "@/src/components/Header";
 import Navbar from "@/src/components/Navbar";
 import { motion } from "framer-motion";
 import SocialMediaRow from "@/src/components/SocialMediaRow";
-import { Footer } from "@/src/components/Footer";
+import FooterComponent from "@/src/components/Footer";
+
 
 export default function PerwalPelaksanaan() {
   return (
@@ -66,7 +67,7 @@ export default function PerwalPelaksanaan() {
               customFooter
               "
           >
-            <Footer />
+            <FooterComponent />
           </div>
         </div>
       </main>

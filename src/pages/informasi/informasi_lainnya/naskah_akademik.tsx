@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import { Footer } from "@/src/components/Footer";
+
 import { AiFillInfoCircle } from "react-icons/ai";
 import { Header } from "@/src/components/Header";
 import Navbar from "@/src/components/Navbar";
@@ -10,6 +10,7 @@ import { BiSolidCity } from "react-icons/bi";
 import { HiDocumentText } from "react-icons/hi";
 import AcademicScriptCard from "@/src/components/ItemGeneral";
 import ItemGeneral from "@/src/components/ItemGeneral";
+import FooterComponent from "@/src/components/Footer";
 
 export default function NaskahAkademik() {
   return (
@@ -73,7 +74,7 @@ export default function NaskahAkademik() {
               customFooter
               "
           >
-            <Footer />
+            <FooterComponent />
           </div>
         </div>
       </main>

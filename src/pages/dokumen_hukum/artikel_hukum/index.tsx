@@ -10,8 +10,9 @@ import { motion } from "framer-motion";
 import Status from "@/src/components/atom/Status";
 import { BiSolidCity } from "react-icons/bi";
 import PeraturanPerundanganItem from "@/src/components/atom/PeraturanPerundanganItem";
-import { Footer } from "@/src/components/Footer";
+
 import ArticleOfLaw from "@/src/components/ArticleOfLaw";
+import FooterComponent from "@/src/components/Footer";
 
 export default function ArtikelHukum() {
   return (
@@ -129,7 +130,7 @@ export default function ArtikelHukum() {
               customFooter
               "
           >
-            <Footer />
+            <FooterComponent />
           </div>
         </div>
       </main>

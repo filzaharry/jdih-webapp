@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import { Footer } from "@/src/components/Footer";
+
 import { RiBox1Fill } from "react-icons/ri";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { Header } from "@/src/components/Header";
@@ -14,6 +14,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
 import moment from "moment";
 import { MdDateRange } from "react-icons/md";
+import FooterComponent from "@/src/components/Footer";
 
 interface NewsDetailInterface {
   id: string;
@@ -155,7 +156,7 @@ const NewsDetail = ({
             customFooter
               "
             >
-              <Footer />
+              <FooterComponent />
             </div>
           </div>
         </main>

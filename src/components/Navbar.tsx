@@ -5,7 +5,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
-import { Footer } from "./Footer";
 import { ayoTng } from "@/public";
 import {
   SlSocialFacebook,

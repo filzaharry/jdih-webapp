@@ -8,7 +8,7 @@ import SocialMediaRow from "../components/SocialMediaRow";
 import { RiBox1Fill } from "react-icons/ri";
 import Image from "next/image";
 import { user } from "@/public";
-import { Footer } from "../components/Footer";
+import FooterComponent from "../components/Footer";
 import axios from "axios";
 import { FaCheck } from "react-icons/fa";
 import moment from "moment";
@@ -387,7 +387,7 @@ const SaranDanMasukan = () => {
               customFooter
               "
             >
-              <Footer />
+              <FooterComponent />
             </div>
           </div>
         </main>

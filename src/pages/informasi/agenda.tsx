@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import SocialMediaRow from "@/src/components/SocialMediaRow";
 import { DetailProductList } from "@/src/components/DetailProductList";
 import ScheduleCard from "@/src/components/ScheduleCard";
-import { Footer } from "@/src/components/Footer";
+import FooterComponent from "@/src/components/Footer";
+
 
 export default function Agenda() {
   return (
@@ -101,7 +102,7 @@ export default function Agenda() {
               customFooter
               "
           >
-            <Footer />
+            <FooterComponent />
           </div>
         </div>
       </main>

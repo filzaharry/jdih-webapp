@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import { Footer } from "@/src/components/Footer";
+
 import { RiBox1Fill } from "react-icons/ri";
 import { AiFillInfoCircle } from "react-icons/ai";
 import { Header } from "@/src/components/Header";
@@ -15,6 +15,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
+import FooterComponent from "@/src/components/Footer";
 
 interface NewsInterface {
   id: string;
@@ -200,7 +201,7 @@ const handleNext = () => {
           </section>
 
           <div className="customFooter">
-            <Footer />
+            <FooterComponent />
           </div>
         </div>
       </main>

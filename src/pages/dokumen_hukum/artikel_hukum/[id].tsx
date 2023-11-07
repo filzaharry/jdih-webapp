@@ -1,4 +1,4 @@
-import { Footer } from "@/src/components/Footer";
+
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -8,6 +8,7 @@ import { DetailProductList } from "@/src/components/DetailProductList";
 import SocialMediaRow from "@/src/components/SocialMediaRow";
 import axios from "axios";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import FooterComponent from "@/src/components/Footer";
 
 interface ProductDetailInterface {
   id: string;
@@ -139,7 +140,7 @@ const DetailArtikelHukum = () => {
                   customFooter
                   "
             >
-              <Footer />
+              <FooterComponent />
             </div>
           </div>
         </main>
