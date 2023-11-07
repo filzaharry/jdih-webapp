@@ -107,13 +107,13 @@ const DataNavbar = [
 
   {
     name: "Produk Hukum",
-    route: "/dokumen_hukum",
+    route: "/produk_hukum",
     submenu: [
-      {
-        name: "Peraturan Perundang-Undangan",
-        route: "/peraturan_perundang_undangan",
-        submenu: [],
-      },
+      // {
+      //   name: "Peraturan Perundang-Undangan",
+      //   route: "/peraturan_perundang_undangan",
+      //   submenu: [],
+      // },
       // {
       //   name: "Artikel Hukum",
       //   route: "/artikel_hukum",
@@ -134,11 +134,11 @@ const DataNavbar = [
       //   route: "/perdir",
       //   submenu: [],
       // },
-      {
-        name: "Perwal",
-        route: "/perwal_pelaksanaan",
-        submenu: [],
-      },
+      // {
+      //   name: "Perwal",
+      //   route: "/perwal_pelaksanaan",
+      //   submenu: [],
+      // },
     ],
   },
 

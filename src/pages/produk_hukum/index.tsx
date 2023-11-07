@@ -37,6 +37,11 @@ interface ProductsInterface {
   attachment: string;
   year: string;
 }
+interface CategoriesInterface {
+  id: string;
+  name: string;
+  status: number;
+}
 
 type Products = {
   statusCode: number;
@@ -44,6 +49,12 @@ type Products = {
   currentPage: string | number;
   totalData: string;
   data: ProductsInterface[];
+};
+
+type Categories = {
+  statusCode: number;
+  message: string;
+  data: CategoriesInterface[];
 };
 
 // export const getServerSideProps = (async (context) => {
@@ -61,6 +72,7 @@ const AllProducts = () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const router = useRouter();
   const [data, setData] = useState<Products | null>(null);
+  const [dataCategories, setDataCategories] = useState<Categories | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [status, setStatus] = useState<
     string | null | string[] | number | number[]
@@ -70,6 +82,9 @@ const AllProducts = () => {
     string | null | string[] | number | number[]
   >(0);
   const [categoryMsg, setCategoryMsg] = useState<string | null | string[]>("");
+  const [categoryTitle, setCategoryTitle] = useState<string | null | string[]>(
+    ""
+  );
   const [numberProduct, setNumberProduct] = useState<string | null | string[]>(
     ""
   );
@@ -80,9 +95,9 @@ const AllProducts = () => {
   const [fromRoute, setFromRoute] = useState(false);
   const [currentPage, setCurrentPage] = useState<number>(0);
 
-  const [highlight, setHighlight] = useState<string | null | string[]>(
-    ""
-  )
+  const [highlight, setHighlight] = useState<string | null | string[]>("");
+
+  let urlMasterCategory: string;
 
   let url: string;
   let urlCategory: string = "";
@@ -94,6 +109,22 @@ const AllProducts = () => {
   const clearQueryUrl = "";
 
   useEffect(() => {
+    urlMasterCategory = `${apiUrl}master_category`;
+
+    const fetchCategory = async () => {
+      try {
+        const { data: response } = await axios.get(urlMasterCategory);
+        setDataCategories(response);
+      } catch (error) {
+        console.error("what error ?", error);
+      }
+    };
+
+    fetchCategory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     if (!router.isReady) return;
 
     if (Object.keys(router.query).length > 0) {
@@ -101,6 +132,7 @@ const AllProducts = () => {
       if (fromRoute == true) {
         setCategory(router?.query?.category ?? "");
         setCategoryMsg(router?.query?.categoryMsg ?? "");
+        setCategoryTitle(router?.query?.categoryMsg ?? "");
         setNumberProduct(router?.query?.numberProduct ?? "");
         setYearProduct(router?.query?.yearProduct ?? "");
         setAboutProduct(router?.query?.aboutProduct ?? "");
@@ -113,28 +145,26 @@ const AllProducts = () => {
 
     if (category != 0) {
       urlCategory = `&category=${category}`;
-      setHighlight(categoryMsg)
+      setHighlight(categoryMsg);
     }
     if (numberProduct != "") {
       urlNumberProduct = `&number=${numberProduct}`;
-      setHighlight(numberProduct)
+      setHighlight(numberProduct);
     }
     if (yearProduct != "") {
       urlYearProduct = `&year=${yearProduct}`;
-      setHighlight(yearProduct)
+      setHighlight(yearProduct);
     }
     if (status != "") {
       urlStatusProduct = `&status=${status}`;
-      setHighlight(statusMsg)
+      setHighlight(statusMsg);
     }
     if (aboutProduct != "") {
       urlAboutProduct = `&about=${aboutProduct}`;
-      setHighlight(aboutProduct)
+      setHighlight(aboutProduct);
     }
 
     url = `${apiUrl}product_of_law?rowPerPage=${rowPerPage}&page=${currentPage}${urlCategory}${urlNumberProduct}${urlYearProduct}${urlStatusProduct}${urlAboutProduct}`;
-
-    // console.log(url);
 
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -153,6 +183,7 @@ const AllProducts = () => {
   const filterSearch = () => {
     setIsLoading(true);
     setFromRoute(false);
+    setCategoryTitle(categoryMsg);
     router.replace({ search: clearQueryUrl });
   };
 
@@ -194,7 +225,7 @@ const AllProducts = () => {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="titlePage"
             >
-              Produk Hukum
+              {`Produk Hukum ${categoryTitle}`}
             </motion.h1>
             <motion.p
               initial={{ y: 10, opacity: 0 }}
@@ -202,7 +233,7 @@ const AllProducts = () => {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-lg md:max-w-[630px] font-medium text-white"
             >
-              {`Beranda > Produk Hukum`}
+              {`Beranda > Produk Hukum ${categoryTitle}`}
             </motion.p>
           </section>
 
@@ -240,7 +271,9 @@ const AllProducts = () => {
                     {categoryMsg == "" ? (
                       <p className=" textFilterInnerBox">Pilih Kategori</p>
                     ) : (
-                      <p className=" textFilterInnerBox text-black">{categoryMsg}</p>
+                      <p className=" textFilterInnerBox text-black">
+                        {categoryMsg}
+                      </p>
                     )}
                     <div
                       className="dropdownCustom"
@@ -249,33 +282,18 @@ const AllProducts = () => {
                       aria-labelledby="menu-button"
                     >
                       <div className="py-1" role="none">
-                        <p
-                          onClick={() => {
-                            setCategory(1);
-                            setCategoryMsg("Peraturan Daerah");
-                          }}
-                          className="dropdownValueCustom"
-                        >
-                          Peraturan Daerah
-                        </p>
-                        <p
-                          onClick={() => {
-                            setCategory(2);
-                            setCategoryMsg("Peraturan Walikota");
-                          }}
-                          className="dropdownValueCustom"
-                        >
-                          Peraturan Walikota
-                        </p>
-                        <p
-                          onClick={() => {
-                            setCategory(3);
-                            setCategoryMsg("Keputusan Walikota");
-                          }}
-                          className="dropdownValueCustom"
-                        >
-                          Keputusan Walikota
-                        </p>
+                        {dataCategories?.data?.map((val, i) => (
+                          <p
+                            key={i}
+                            onClick={() => {
+                              setCategory(val.id);
+                              setCategoryMsg(val.name);
+                            }}
+                            className="dropdownValueCustom"
+                          >
+                            {val.name}
+                          </p>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -318,7 +336,9 @@ const AllProducts = () => {
                     {statusMsg == "" ? (
                       <p className=" textFilterInnerBox">Pilih Status</p>
                     ) : (
-                      <p className=" textFilterInnerBox  text-black">{statusMsg}</p>
+                      <p className=" textFilterInnerBox  text-black">
+                        {statusMsg}
+                      </p>
                     )}
                     <div
                       className="dropdownCustom"
@@ -403,7 +423,10 @@ const AllProducts = () => {
                               <BiSolidCity className="sm:hidden lg:block text-slate-400 h-6 w-6" />
                             </div>
                             <div className="w-[100%]">
-                            <Highlighted text={val.title + " " + val.subtitle} highlight={highlight?.toString()}/>
+                              <Highlighted
+                                text={val.title + " " + val.subtitle}
+                                highlight={highlight?.toString()}
+                              />
                               {/* <p className="sm:text-sm text-justify lg:text-base text-gray-500 sm:ml-0 lg:ml-4">
                                 {val.title + " " + val.subtitle}
                               </p> */}
@@ -447,7 +470,9 @@ const AllProducts = () => {
                     <>
                       <div className="flex flex-row gap-4 items-center justify-center cursor-pointer">
                         <IoMdArrowDropleft className="linkViewAllDisabled text-gray-400" />
-                        <p className="linkViewAllDisabled text-gray-400">Sebelumnya</p>
+                        <p className="linkViewAllDisabled text-gray-400">
+                          Sebelumnya
+                        </p>
                       </div>
                     </>
                   )}
@@ -455,7 +480,9 @@ const AllProducts = () => {
                   {data?.data?.length! < parseInt(rowPerPage) ? (
                     <>
                       <div className="flex flex-row gap-4 items-center justify-center cursor-pointer">
-                        <p className="linkViewAllDisabled text-gray-400">Selanjutnya</p>
+                        <p className="linkViewAllDisabled text-gray-400">
+                          Selanjutnya
+                        </p>
                         <IoMdArrowDropright className="linkViewAllDisabled text-gray-400" />
                       </div>
                     </>

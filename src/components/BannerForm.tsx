@@ -1,17 +1,49 @@
+import axios from "axios";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiBox1Fill } from "react-icons/ri";
 
+interface CategoriesInterface {
+  id: string;
+  name: string;
+  status: number;
+}
+
+type Categories = {
+  statusCode: number;
+  message: string;
+  data: CategoriesInterface[];
+};
+
 const BannerForm = () => {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const [category, setCategory] = useState(0);
   const [categoryMsg, setCategoryMsg] = useState("");
+  const [dataCategories, setDataCategories] = useState<Categories | null>(null);
   const [numberProduct, setNumberProduct] = useState("");
   const [yearProduct, setYearProduct] = useState("");
   const [aboutProduct, setAboutProduct] = useState("");
   const router = useRouter();
 
-  const handleSubmit = () => {
+  let urlMasterCategory: string;
 
+  useEffect(() => {
+    urlMasterCategory = `${apiUrl}master_category`;
+
+    const fetchCategory = async () => {
+      try {
+        const { data: response } = await axios.get(urlMasterCategory);
+        setDataCategories(response);
+      } catch (error) {
+        console.error("what error ?", error);
+      }
+    };
+
+    fetchCategory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleSubmit = () => {
     router.push({
       pathname: "/produk_hukum",
       query: {
@@ -48,7 +80,7 @@ const BannerForm = () => {
               aria-labelledby="menu-button"
             >
               <div className="py-1" role="none">
-                <p
+                {/* <p
                   onClick={() => {
                     setCategory(0);
                     setCategoryMsg("Lihat Semua");
@@ -56,34 +88,19 @@ const BannerForm = () => {
                   className="dropdownValueCustom"
                 >
                   Lihat Semua
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory(1);
-                    setCategoryMsg("Peraturan Daerah");
-                  }}
-                  className="dropdownValueCustom"
-                >
-                  Peraturan Daerah
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory(2);
-                    setCategoryMsg("Peraturan Walikota");
-                  }}
-                  className="dropdownValueCustom"
-                >
-                  Peraturan Walikota
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory(3);
-                    setCategoryMsg("Keputusan Walikota");
-                  }}
-                  className="dropdownValueCustom"
-                >
-                  Keputusan Walikota
-                </p>
+                </p> */}
+                {dataCategories?.data?.map((val, i) => (
+                  <p
+                    key={i}
+                    onClick={() => {
+                      setCategory(parseInt(val.id));
+                      setCategoryMsg(val.name);
+                    }}
+                    className="dropdownValueCustom"
+                  >
+                    {val.name}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
