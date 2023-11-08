@@ -210,6 +210,7 @@ const AllProducts = () => {
     setAboutProduct("");
     setStatus(0);
     setStatusMsg("");
+    setHighlight("");
   };
 
   return (
@@ -424,7 +425,8 @@ const AllProducts = () => {
                             </div>
                             <div className="w-[100%]">
                               <Highlighted
-                                text={val.title + " " + val.subtitle}
+                                title={val.title}
+                                text={val.subtitle}
                                 highlight={highlight?.toString()}
                               />
                               {/* <p className="sm:text-sm text-justify lg:text-base text-gray-500 sm:ml-0 lg:ml-4">
