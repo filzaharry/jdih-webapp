@@ -245,9 +245,9 @@ const AllProducts = () => {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="w-full grid grid-cols-1 sm:px-6 lg:px-10 pb-10"
             >
-              <div className="flex flex-row justify-between">
-                <p className="text-2xl pb-12">Cari Produk Hukum</p>
-                <div className="flex flex-row gap-4 items-center">
+              <div className="flex sm:flex-col lg:flex-row justify-between">
+                <p className="text-2xl lg:pb-12 sm:pb-2">Cari Produk Hukum</p>
+                <div className="flex flex-row gap-4 items-center sm:pb-12">
                   <div
                     className="flex flex-row gap-4 items-center justify-center cursor-pointer"
                     onClick={handleResetFilter}
@@ -255,7 +255,7 @@ const AllProducts = () => {
                     <p className="linkViewAll text-sm">Reset Filter</p>
                   </div>
                   <button
-                    className="rounded-xl bg-btnPrimary text-white px-10 sm:h-[50%] lg:h-[60%]"
+                    className="rounded-xl bg-btnPrimary text-white px-10 lg:h-14 sm:h-10"
                     onClick={filterSearch}
                   >
                     Cari
