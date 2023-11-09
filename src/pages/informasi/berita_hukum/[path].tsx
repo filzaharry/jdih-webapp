@@ -140,9 +140,11 @@ const NewsDetail = ({
                       </div> */}
                     </div>
                     <div className="py-4 mt-4">
-                      <p>
-                        {data?.data[0].content}
-                      </p>
+                      <div className="whitespace-normal">
+                          <div className="whitespace-pre-line">
+                            {data?.data[0].content}
+                          </div>
+                      </div>
                     </div>
                     <hr className="w-full h-0.5 mt-8 bg-[#D9D9D9]" />
                     {/* <SocialMediaRow /> */}

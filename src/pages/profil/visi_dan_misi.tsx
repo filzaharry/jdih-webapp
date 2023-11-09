@@ -39,7 +39,7 @@ export default function VisiDanMisi() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="breadcumbPage"
             >
-              {`Beranda > Informasi > Visi dan Misi`}
+              {`Beranda > Profil > Visi dan Misi`}
             </motion.p>
           </section>
           <section

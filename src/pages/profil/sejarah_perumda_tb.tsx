@@ -33,7 +33,7 @@ export default function SejarahPerumdaTb() {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="titlePage"
             >
-              Informasi
+              Sejarah
             </motion.h1>
             <motion.p
               initial={{ y: 10, opacity: 0 }}

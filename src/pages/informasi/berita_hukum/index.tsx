@@ -113,7 +113,7 @@ const handleNext = () => {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-lg md:max-w-[630px] font-medium text-white"
             >
-              {`Beranda > Informasi > Berita Hukum`}
+              {`Beranda > Berita Hukum`}
             </motion.p>
           </section>
           <section id="home" className="bannerLayout2">

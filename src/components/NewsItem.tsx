@@ -62,7 +62,7 @@ const NewsItem = ({id, title, subtitle, picture, path, created_at}: Props) => {
         <p className='sm:text-sm lg:text-md'>
           { subtitle.length > 140 ? subtitle.substring(0,140)+'...' : subtitle}
         </p>
-        <p onClick={()=>router.push('/informasi/berita_hukum/'+path)} className="text-red-400 mt-2 sm:text-sm lg:text-md">Lihat Selengkapnya ...</p>
+        <p onClick={()=>router.push('/informasi/berita_hukum/'+path)} className="text-red-400 mt-2 sm:text-sm lg:text-md cursor-pointer">Lihat Selengkapnya ...</p>
       </div>
     </div>
   </motion.div>
