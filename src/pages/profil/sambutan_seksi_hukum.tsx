@@ -109,7 +109,7 @@ export default function VisiDanMisi() {
                 </p>
               </div>
               <hr className="w-full h-0.5 mt-8 bg-[#D9D9D9]" />
-              <SocialMediaRow />
+              {/* <SocialMediaRow /> */}
             </motion.div>
           </section>
           <div className="customFooter">
