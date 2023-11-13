@@ -84,7 +84,7 @@ const NewsDetail = ({
                 transition={{ duration: 0.5, delay: 0.7 }}
                 className="titlePage"
               >
-                Informasi
+                Detail Berita Hukum
               </motion.h1>
               <motion.p
                 initial={{ y: 10, opacity: 0 }}
