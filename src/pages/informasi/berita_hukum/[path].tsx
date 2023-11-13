@@ -92,7 +92,7 @@ const NewsDetail = ({
                 transition={{ duration: 0.5, delay: 0.8 }}
                 className="text-lg md:max-w-[630px] font-medium text-white"
               >
-                {`Beranda > Informasi > Berita Hukum > Detail`}
+                {`Beranda > Berita Hukum > Detail`}
               </motion.p>
             </section>
             <section
