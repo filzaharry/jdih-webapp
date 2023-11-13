@@ -180,7 +180,8 @@ const Navbar = () => {
               initial={{ x: 20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.1 }}
-              className="sm:w-full lg:w-[50%] h-full overflow-y-scroll scrollbarHide bg-[#4D57F5] flex flex-col items-center px-4 py-10 relative"
+              className="sm:w-full lg:w-[50%] h-full overflow-y-scroll scrollbarHide bg-[#4D57F5] z-50 flex flex-col items-center px-4 py-10 relative"
+              // className="sm:w-full lg:w-[50%] h-full overflow-y-scroll scrollbarHide bg-[#4D57F5] flex flex-col items-center px-4 py-10 relative"
             >
               <MdOutlineClose
                 onClick={() => setShowMenu(false)}

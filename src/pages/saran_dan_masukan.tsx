@@ -118,6 +118,12 @@ const SaranDanMasukan = () => {
         },
       })
         .then(function (response) {
+          setUsername("");
+          setEmail("");
+          setSatisfaction(0);
+          setSatisfactionMsg("");
+          setMessage("");
+          setIsRobot(false);
           //handle success
           setSubmitted(true);
           setIsSuccess(true);
@@ -149,7 +155,7 @@ const SaranDanMasukan = () => {
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="w-[30%] absolute bottom-4 right-4 bg-teal-100 border-t-4 border-teal-500 rounded-xl text-teal-900 px-4 py-3 shadow-md"
+            className="lg:w-[30%] sm:w-[90%] absolute bottom-4 right-4 bg-teal-100 border-t-4 border-teal-500 rounded-xl text-teal-900 px-4 py-3 shadow-md"
             role="alert"
           >
             <div className="flex">
@@ -175,7 +181,7 @@ const SaranDanMasukan = () => {
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="w-[30%] absolute bottom-4 right-4 bg-red-100 border-t-4 border-red-500 rounded-xl text-red-900 px-4 py-3 shadow-md"
+            className="lg:w-[30%] sm:w-[90%] absolute bottom-4 right-4 bg-red-100 border-t-4 border-red-500 rounded-xl text-red-900 px-4 py-3 shadow-md"
             role="alert"
           >
             <div className="flex">
@@ -277,7 +283,7 @@ const SaranDanMasukan = () => {
                         <div className="py-1" role="none">
                           <p
                             onClick={() => {
-                              setSatisfaction(0);
+                              setSatisfaction(1);
                               setSatisfactionMsg("Sangat Puas");
                             }}
                             className="dropdownValueCustom"
@@ -286,7 +292,7 @@ const SaranDanMasukan = () => {
                           </p>
                           <p
                             onClick={() => {
-                              setSatisfaction(1);
+                              setSatisfaction(2);
                               setSatisfactionMsg("Puas");
                             }}
                             className="dropdownValueCustom"
@@ -295,7 +301,7 @@ const SaranDanMasukan = () => {
                           </p>
                           <p
                             onClick={() => {
-                              setSatisfaction(2);
+                              setSatisfaction(3);
                               setSatisfactionMsg("Tidak Puas");
                             }}
                             className="dropdownValueCustom"

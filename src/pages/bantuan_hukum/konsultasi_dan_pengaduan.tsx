@@ -124,6 +124,12 @@ const KonsultasiPengaduan = () => {
         },
       })
         .then(function (response) {
+
+          setUsername("");
+          setEmail("");
+          setMessage("");
+          setIsRobot(false);
+
           //handle success
           setSubmitted(true);
           setIsSuccess(true);
@@ -155,7 +161,7 @@ const KonsultasiPengaduan = () => {
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="w-[30%] absolute bottom-4 right-4 bg-teal-100 border-t-4 border-teal-500 rounded-xl text-teal-900 px-4 py-3 shadow-md"
+            className="lg:w-[30%] sm:w-[90%] absolute bottom-4 right-4 bg-teal-100 border-t-4 border-teal-500 rounded-xl text-teal-900 px-4 py-3 shadow-md"
             role="alert"
           >
             <div className="flex">
@@ -181,7 +187,7 @@ const KonsultasiPengaduan = () => {
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="w-[30%] absolute bottom-4 right-4 bg-red-100 border-t-4 border-red-500 rounded-xl text-red-900 px-4 py-3 shadow-md"
+            className="lg:w-[30%] sm:w-[90%] absolute bottom-4 right-4 bg-red-100 border-t-4 border-red-500 rounded-xl text-red-900 px-4 py-3 shadow-md"
             role="alert"
           >
             <div className="flex">
