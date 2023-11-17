@@ -69,18 +69,9 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
       <>
         <Header />
         <main className="font-bodyFont w-full h-screen overflow-x-hidden">
-          <div
-            id="home"
-            className="
-           customHeader 
-            "
-          >
+          <div id="home" className="customHeader">
             <Navbar />
-            <section
-              className="
-              customSection
-              "
-            >
+            <section className="customSection">
               <motion.h1
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -93,32 +84,19 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="text-lg md:max-w-[630px] font-medium text-white"
+                className="breadcumbPage"
               >
                 {`Beranda > Produk Hukum > Detail Produk Hukum`}
               </motion.p>
             </section>
-            <section
-              id="home"
-              className="
-                max-w-contentContainer
-                sml:pt-20
-                lg:py-10 
-                lg:mt-40
-                xl:mt-0 xl:pt-0
-                lgl:py-32 
-                sm:w-[90%] 
-                mdl:w-[90%]
-              bg-white shadow-bannerFormShadow 
-                rounded-3xl mt-10 mx-auto py-10 sm:mb-20"
-            >
+            <section id="home" className="bannerLayout2">
               <motion.div
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="w-full grid grid-cols-1 sm:px-8 lg:px-20 lg:pt-20"
+                className="w-full grid grid-cols-1 lg:px-20 lg:py-10 sm:px-4"
               >
-                <p className="sm:text-xl lg:text-4xl sm:pb-10 lg:pb-28">
+                <p className="sm:text-xl lg:text-4xl sm:pb-10 lg:pb-18">
                   {data == null
                     ? ""
                     : data?.data?.title}
@@ -163,11 +141,7 @@ const ProdukHukumDetail = ({dataResult}: InferGetServerSidePropsType<typeof getS
               </motion.div>
             </section>
 
-            <div
-              className="
-                  customFooter
-                  "
-            >
+            <div className="customFooter">
               <FooterComponent />
             </div>
           </div>

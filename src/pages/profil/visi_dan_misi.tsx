@@ -13,18 +13,9 @@ export default function VisiDanMisi() {
     <>
       <Header />
       <main className="font-bodyFont w-full h-screen overflow-x-hidden">
-        <div
-          id="home"
-          className="
-          customHeader     
-        "
-        >
+        <div id="home" className="customHeader">
           <Navbar />
-          <section
-            className="
-          customSection
-          "
-          >
+          <section className="customSection">
             <motion.h1
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -42,16 +33,12 @@ export default function VisiDanMisi() {
               {`Beranda > Profil > Visi dan Misi`}
             </motion.p>
           </section>
-          <section
-            id="home"
-            className="
-            customLayoutContent"
-          >
+          <section id="home" className="bannerLayout2">
             <motion.div
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="w-full grid grid-cols-1 sm:px-8 lg:px-20 lg:pt-20"
+              className="w-full grid grid-cols-1 lg:px-10 lg:pt-10 sm:px-4"
             >
               {/* <p className="titleContent">Visi dan Misi</p> */}
 
@@ -93,26 +80,51 @@ export default function VisiDanMisi() {
 
               <p className="titleContent text-center">Visi</p>
               <p className="lg:text-xl text-center mb-4 italic">
-              "TERWUJUDNYA PERUSAHAAN YANG MANDIRI, BERKEMBANG, SEHAT, DAN PROFESIONAL"
+                "TERWUJUDNYA PERUSAHAAN YANG MANDIRI, BERKEMBANG, SEHAT, DAN
+                PROFESIONAL"
               </p>
               <br />
               <p className="titleContent text-center">Misi</p>
               <div className="flex flex-row w-[80%] my-2 m-4 mx-auto">
                 <ol className="list-decimal">
                   <li>
-                    <p className="lg:text-lg md:text-sm sm:text-sm">MENINGKATKAN KINERJA PERUSAHAAN SECARA PROFESIONAL</p></li>
+                    <p className="lg:text-lg md:text-sm sm:text-sm">
+                      MENINGKATKAN KINERJA PERUSAHAAN SECARA PROFESIONAL
+                    </p>
+                  </li>
                   <li>
-                    <p className="lg:text-lg md:text-sm sm:text-sm">MENINGKATKAN KUALITAS, KUANTITAS dan KONTINUITAS PELAYANAN KEPADA PELANGGAN</p></li>
+                    <p className="lg:text-lg md:text-sm sm:text-sm">
+                      MENINGKATKAN KUALITAS, KUANTITAS dan KONTINUITAS PELAYANAN
+                      KEPADA PELANGGAN
+                    </p>
+                  </li>
                   <li>
-                    <p className="lg:text-lg md:text-sm sm:text-sm">PERCEPATAN PENAMBAH JUMLAH CAKUPAN PELAYANAN</p></li>
+                    <p className="lg:text-lg md:text-sm sm:text-sm">
+                      PERCEPATAN PENAMBAH JUMLAH CAKUPAN PELAYANAN
+                    </p>
+                  </li>
                   <li>
-                    <p className="lg:text-lg md:text-sm sm:text-sm">MENINGKATKAN KESEJAHTERAAN DAN PROFESIONALISME KARYAWAN</p></li>
+                    <p className="lg:text-lg md:text-sm sm:text-sm">
+                      MENINGKATKAN KESEJAHTERAAN DAN PROFESIONALISME KARYAWAN
+                    </p>
+                  </li>
                   <li>
-                    <p className="lg:text-lg md:text-sm sm:text-sm">MEMBINA HUBUNGAN BAIK DENGAN PELANGGAN DAN STAKEHOLDER</p></li>
+                    <p className="lg:text-lg md:text-sm sm:text-sm">
+                      MEMBINA HUBUNGAN BAIK DENGAN PELANGGAN DAN STAKEHOLDER
+                    </p>
+                  </li>
                   <li>
-                    <p className="lg:text-lg md:text-sm sm:text-sm">MEMBERIKAN KONTRIBUSI TERHADAP PEMBANGUNAN DAERAH DAN PAD</p></li>
+                    <p className="lg:text-lg md:text-sm sm:text-sm">
+                      MEMBERIKAN KONTRIBUSI TERHADAP PEMBANGUNAN DAERAH DAN PAD
+                    </p>
+                  </li>
                   <li>
-                    <p className="lg:text-lg md:text-sm sm:text-sm">MENJADIKAN PERUMDA TIRTA BENTENG KOTA TANGERANG / MENJADI PERUSAHAAN DENGAN SISTEM PENYEDIAAN AIR MINUM TERBAIK DI INDONESIA</p></li>
+                    <p className="lg:text-lg md:text-sm sm:text-sm">
+                      MENJADIKAN PERUMDA TIRTA BENTENG KOTA TANGERANG / MENJADI
+                      PERUSAHAAN DENGAN SISTEM PENYEDIAAN AIR MINUM TERBAIK DI
+                      INDONESIA
+                    </p>
+                  </li>
                 </ol>
               </div>
 

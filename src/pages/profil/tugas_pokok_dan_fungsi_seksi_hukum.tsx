@@ -16,18 +16,9 @@ export default function Tupoksi() {
     <>
       <Header />
       <main className="font-bodyFont w-full h-screen overflow-x-hidden">
-        <div
-          id="home"
-          className="
-          customHeader   
-        "
-        >
+      <div id="home" className="customHeader">
           <Navbar />
-          <section
-            className="
-          customSection
-          "
-          >
+          <section className="customSection">
             <motion.h1
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -40,21 +31,17 @@ export default function Tupoksi() {
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-lg md:max-w-[630px] font-medium text-white"
+              className="breadcumbPage"
             >
               {`Beranda > Profil > Tugas Pokok dan Fungsi Seksi Hukum`}
             </motion.p>
           </section>
-          <section
-            id="home"
-            className="
-            customLayoutContent"
-          >
+          <section id="home" className="bannerLayout2">
             <motion.div
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="w-full grid grid-cols-1 sm:px-8 lg:px-20 lg:pt-20"
+              className="w-full grid grid-cols-1 lg:px-10 lg:pt-10 sm:px-4"
             >
               <p className="titleContent text-center">
                 Deskripsi Jabatan

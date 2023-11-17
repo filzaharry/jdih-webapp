@@ -103,83 +103,79 @@ const FooterComponent = () => {
                 "
         >
           <div className="lg:w-[40%] sm:w-[100%] mr-8">
-            <p className="text-2xl font-semibold">JDIH PDAM</p>
-            <p className="text-md mt-4 mr-4 font-thin">
+            <p className="text-2xl">JDIH PDAM</p>
+            <p className="text-sm mt-4 mr-4 font-thin">
               Merupakan wadah pendayagunaan bersama atas dokumen hukum secara
               tertib dan terpadu.
             </p>
           </div>
           <div className="w-full flex lg:flex-row sm:flex-col justify-between">
             <div className="lg:w-[70%] sm:w-[100%] ">
-              <p className="text-xl mb-4 font-semibold">Alamat</p>
+              <p className="text-xl mb-4">Alamat</p>
               <div className="flex flex-row mb-2">
                 <CgPin className="text-[#66B3F9] text-2xl" />
-                <p className="w-[80%] text-md ml-4 mb-4 font-extralight">
+                <p className="w-[80%] text-sm ml-4 mb-4 font-extralight">
                 Jl. Komp. Pu Prosida Bendungan No.10, RT.001/RW.002, Mekarsari, Kec. Neglasari, Kota Tangerang, Banten 15129
                 </p>
               </div>
               <div className="flex flex-row mb-2">
                 <HiPhone className="text-[#66B3F9] text-2xl" />
-                <p className="text-md ml-4 mb-4 font-extralight">
+                <p className="text-sm ml-4 mb-4 font-extralight">
                   (021)-5587234
                 </p>
               </div>
-              {/* <div className="flex flex-row mb-2">
-                                <MdOutlineMail className='text-[#66B3F9] text-2xl' />
-                                <p className="text-md ml-4 mb-4 font-extralight">jdih.harmonidigital.id</p>
-                            </div> */}
             </div>
             <div className="lg:w-[40%] mr-4 sm:w-[100%]">
-              <p className="text-xl mb-4 font-semibold">Link Terkait</p>
-              <p className="text-md mb-4 font-extralight hover:text-linkHover hover:cursor-pointer">Website SIGANTENG</p>
-              <p className="text-md mb-4 font-extralight hover:text-linkHover hover:cursor-pointer">JDIH Pusat</p>
-              <p className="text-md mb-4 font-extralight hover:text-linkHover hover:cursor-pointer">
+              <p className="text-xl mb-4">Link Terkait</p>
+              <p className="text-sm mb-4 font-extralight hover:text-linkHover hover:cursor-pointer">Website SIGANTENG</p>
+              <p className="text-sm mb-4 font-extralight hover:text-linkHover hover:cursor-pointer">JDIH Pusat</p>
+              <p className="text-sm mb-4 font-extralight hover:text-linkHover hover:cursor-pointer">
                 JDIH Kota Tangerang
               </p>
             </div>
             <div className="lg:w-[50%] sm:w-[100%]">
-              <p className="text-xl mb-4 font-semibold">Kunjungan</p>
+              <p className="text-xl mb-4">Kunjungan</p>
               <div className="flex flex-row mb-2 justify-between">
                 <div className="flex flex-row mr-20">
                   <LuLineChart className="text-[#66B3F9] text-2xl mr-1" />
-                  <p className="text-md ml-4 font-extralight">Hari ini</p>
+                  <p className="text-sm ml-4 font-extralight">Hari ini</p>
                 </div>
                 {isLoading == false && (
-                  <p className="text-md ml-4 font-extralight">{daily}</p>
+                  <p className="text-sm ml-4 font-extralight">{daily}</p>
                 )}
               </div>
               <div className="flex flex-row mb-2 justify-between">
                 <div className="flex flex-row mr-20">
                   <LuLineChart className="text-[#66B3F9] text-2xl mr-1" />
-                  <p className="text-md ml-4 font-extralight">Minggu ini</p>
+                  <p className="text-sm ml-4 font-extralight">Minggu ini</p>
                 </div>
                 {isLoading == false && (
-                  <p className="text-md ml-4 font-extralight">{weekly}</p>
+                  <p className="text-sm ml-4 font-extralight">{weekly}</p>
                 )}
               </div>
               <div className="flex flex-row mb-2 justify-between">
                 <div className="flex flex-row mr-20">
                   <LuLineChart className="text-[#66B3F9] text-2xl mr-1" />
-                  <p className="text-md ml-4 font-extralight">Bulan ini</p>
+                  <p className="text-sm ml-4 font-extralight">Bulan ini</p>
                 </div>
                 {isLoading == false && (
-                  <p className="text-md ml-4 font-extralight">{monthly}</p>
+                  <p className="text-sm ml-4 font-extralight">{monthly}</p>
                 )}
               </div>
               <div className="flex flex-row mb-2 justify-between">
                 <div className="flex flex-row mr-20">
                   <LuLineChart className="text-[#66B3F9] text-2xl mr-1" />
-                  <p className="text-md ml-4 font-extralight">Semua</p>
+                  <p className="text-sm ml-4 font-extralight">Semua</p>
                 </div>
                 {isLoading == false && (
-                  <p className="text-md ml-4 font-extralight">{all}</p>
+                  <p className="text-sm ml-4 font-extralight">{all}</p>
                 )}
               </div>
             </div>
           </div>
         </div>
         <div className="mt-12 flex w-full sm:w-[100%] sm:pb-14 flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
-          <p className="mx-auto">Perumda Tirta Benteng Kota Tangerang</p>
+          <p className="mx-auto text-sm">Perumda Tirta Benteng Kota Tangerang</p>
           {/* <p className='mx-auto'>Copyright &copy; {currentYear}{" "} JDIH PDAM Kota Tangerang</p> */}
         </div>
       </div>

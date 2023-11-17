@@ -211,11 +211,11 @@ const KonsultasiPengaduan = () => {
         <main className="font-bodyFont w-full h-screen overflow-x-hidden">
           <div
             id="home"
-            className="bannerLayout4 
+            className="customHeader 
           "
           >
             <Navbar />
-            <section className="bannerLayout5">
+            <section className="customSection">
               <motion.h1
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -228,21 +228,12 @@ const KonsultasiPengaduan = () => {
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="text-lg md:max-w-[630px] font-medium text-white"
+                className="breadcumbPage"
               >
                 {`Beranda > Konsultasi dan Pengaduan`}
               </motion.p>
             </section>
-            <section
-              id="home"
-              className="
-              max-w-contentContainer
-              bg-white shadow-bannerFormShadow 
-              sm:w-[90%] 
-              mdl:w-[90%]
-              rounded-3xl mt-10 mx-auto sm:pt-6 lg:pt-10 sm:mb-20
-              "
-            >
+            <section id="home" className="bannerLayout2">
               <motion.div
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}

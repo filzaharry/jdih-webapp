@@ -96,7 +96,7 @@ const handleNext = () => {
     <>
       <Header />
       <main className="font-bodyFont w-full h-screen overflow-x-hidden">
-        <div id="home" className="bannerLayout4">
+        <div id="home" className="customHeader">
           <Navbar />
           <section className="customSection">
             <motion.h1
@@ -111,7 +111,7 @@ const handleNext = () => {
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-lg md:max-w-[630px] font-medium text-white"
+              className="breadcumbPage"
             >
               {`Beranda > Berita Hukum`}
             </motion.p>
