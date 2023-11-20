@@ -116,7 +116,7 @@ const Statistic = () => {
           id="myChart"
           data={{
             labels: category,
-            // labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags"],
+            // labels: ["Jan", "Feb", "Mar", "Apr", "Mei"],
             datasets: [
               // {
               //   label: "Terbit",
@@ -134,8 +134,10 @@ const Statistic = () => {
                 borderColor: "#FF4E4E",
                 backgroundColor: "#FF4E4E",
                 borderWidth: 6,
-                pointRadius: 0,
-
+                pointStyle: 'rectRot',
+                pointRadius: 5,
+                pointBorderColor: '#FF4E4E',
+                // data: [3, 12, 20, 12, 41, 9, 10, 12],
                 data: dicabut,
               },
               {
@@ -144,8 +146,10 @@ const Statistic = () => {
                 borderColor: "#38FFB7",
                 backgroundColor: "#38FFB7",
                 borderWidth: 6,
-                pointRadius: 0,
-
+                pointStyle: 'rectRot',
+                pointRadius: 5,
+                pointBorderColor: '#38FFB7',
+                // data: [0, 10, 8, 12, 6],
                 data: berlaku,
               },
             ],

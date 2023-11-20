@@ -172,7 +172,7 @@
   }
 
   .titleContent {
-    @apply sm:text-xl lg:text-4xl sm:pb-10 lg:pb-8;
+    @apply sm:text-xl md:text-3xl lg:text-4xl sm:pb-10 lg:pb-8;
   }
 
   .textContent {
