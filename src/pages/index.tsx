@@ -11,6 +11,7 @@ import VideoBanner from "@/src/components/VideoBanner";
 import Certificate from "@/src/components/Certificate";
 import MediaPartner from "@/src/components/MediaPartner";
 import { Header } from "@/src/components/Header";
+import NewsBanner from "../components/NewsBanner";
 
 
 export default function Home() {
@@ -29,14 +30,14 @@ export default function Home() {
             />
           </div>
           <BannerForm />
-          <div className="mt-20">
-            <Statistic />
+          <div className="pt-20">
+            <Product />
+            {/* <Statistic /> */}
           </div>
 
-          <Product />
 
           <div className="h-screen bg-no-repeat bg-cover bg-center">
-            {/* <div className="h-screen bg-blueWaveBackground bg-no-repeat bg-cover bg-center"> */}
+            <NewsBanner />
             <Information />
             {/* <VideoBanner /> */}
             {/* <Certificate /> */}

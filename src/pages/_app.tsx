@@ -2,6 +2,7 @@ import '@/src/styles/globals.css'
 import type { AppProps } from 'next/app'
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import "tw-elements-react/dist/css/tw-elements-react.min.css";
 import 'tailwindcss/tailwind.css'
 
 

@@ -68,7 +68,6 @@ const Information = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {/* <p>{JSON.stringify(data)}</p> */}
           {data?.data?.map((val, i) => (
             <InformationCard
               title={val.title}

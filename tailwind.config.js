@@ -3,9 +3,10 @@ module.exports = {
   important: true,
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/tw-elements-react/dist/js/**/*.js",
   ],
   theme: {
     maxWidth: {
@@ -70,6 +71,7 @@ module.exports = {
     },
   },
   plugins: [
-    require("tailwind-scrollbar")
+    require("tailwind-scrollbar"),
+    require("tw-elements-react/dist/plugin.cjs")
   ],
 }
