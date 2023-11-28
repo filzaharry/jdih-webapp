@@ -61,12 +61,12 @@ const Product = () => {
       <div
         id="product"
         className="max-w-contentContainer mx-auto sm:w-[90%] sm:mt-10 flex flex-col gap-8">
-        {/* <div className="flex justify-between items-end">
+        <div className="flex justify-between items-end">
           <SectionTitle title="Produk Hukum" />
           <p onClick={() => router.push("/produk_hukum")} className="linkViewAll">
             Lihat Semua
           </p>
-        </div> */}
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
           {data?.data?.map((val, i) => (
             <ProductCard

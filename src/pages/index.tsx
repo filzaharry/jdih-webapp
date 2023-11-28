@@ -31,13 +31,13 @@ export default function Home() {
           </div>
           <BannerForm />
           <div className="pt-20">
+            <Statistic />
             <Product />
-            {/* <Statistic /> */}
           </div>
 
 
           <div className="h-screen bg-no-repeat bg-cover bg-center">
-            <NewsBanner />
+            {/* <NewsBanner /> */}
             <Information />
             {/* <VideoBanner /> */}
             {/* <Certificate /> */}
