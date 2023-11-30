@@ -11,7 +11,7 @@ services:
             TZ: Asia/Jakarta
         restart: always
         volumes:
-            - hdi-jdih-web-front-end-volume:/vol/app
+            - /opt/jdih-webapp:/vol/app
         networks:
             - hdi-jdih
 
