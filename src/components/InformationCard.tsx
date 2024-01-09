@@ -41,13 +41,13 @@ const InformationCard = ({
           {created_at}
         </p>
         <h2 className="text-xl font-titleFont font-semibold tracking-wide text-colorPrimary group-hover:text-white">
-          {
-          title.length > 90 ? title.substring(0,90)+'...' : title
-          }
+          {title.length > 90 ? title.substring(0, 20) + "..." : title}
         </h2>
-        <p className="text-sm mt-3 group-hover:text-white">{
-        subtitle.length > 140 ? subtitle.substring(0,140)+'...' : subtitle
-        }</p>
+        <p className="text-sm mt-3 group-hover:text-white">
+          {subtitle.length > 100
+            ? subtitle.substring(0, 100) + "..."
+            : subtitle}
+        </p>
       </div>
       <div className="px-7 pb-4">
         <button
