@@ -30,8 +30,8 @@ export default function Home() {
             />
           </div>
           <BannerForm />
-          <div className="pt-20">
-            <Statistic />
+          <div className="pt-28">
+            {/* <Statistic /> */}
             <Product />
           </div>
 
